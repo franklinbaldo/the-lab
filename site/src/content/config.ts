@@ -70,4 +70,15 @@ const rfes = defineCollection({
   }),
 });
 
-export const collections = { papers, logs, experiments, audits, literature, rfes };
+const personas = defineCollection({
+  loader: glob({ pattern: "**/soul.md", base: `${contentBase}/personas` }),
+  schema: z.object({
+    name: z.string(),
+    role: z.string(),
+    prefix: z.string(),
+    color: z.string(),
+    type: z.literal("soul").default("soul"),
+  }),
+});
+
+export const collections = { papers, logs, experiments, audits, literature, rfes, personas };

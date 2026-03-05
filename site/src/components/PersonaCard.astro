@@ -1,0 +1,50 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  prefix: string;
+  color: string;
+  excerpt: string;
+}
+
+const { name, role, prefix, color, excerpt } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<a href={`${base}team/${prefix}/`} class="persona-card" style={`border-left: 4px solid ${color};`}>
+  <h3 class="persona-card__name">{name}</h3>
+  <span class="persona-card__role" style={`color: ${color};`}>{role}</span>
+  <p class="persona-card__excerpt">{excerpt}</p>
+</a>
+
+<style>
+  .persona-card {
+    display: block;
+    padding: 1.2rem 1.5rem;
+    background: var(--bg-card);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: box-shadow 0.2s;
+  }
+  .persona-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .persona-card__name {
+    margin: 0 0 0.3rem;
+    font-size: 1.1rem;
+  }
+  .persona-card__role {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .persona-card__excerpt {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+</style>

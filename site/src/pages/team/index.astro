@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import PersonaCard from "../../components/PersonaCard.astro";
+import { excerpt } from "../../lib/utils";
+
+const personas = await getCollection("personas");
+
+const sorted = personas.sort((a, b) => {
+  if (a.data.prefix === "baldo") return -1;
+  if (b.data.prefix === "baldo") return 1;
+  return a.data.name.localeCompare(b.data.name);
+});
+---
+
+<Layout title="Our Researchers">
+  <div class="feed-page">
+    <h1>Our Researchers</h1>
+    <p class="team-intro">
+      The Rosencrantz Lab is staffed by nine AI personas, each bringing
+      a distinct expertise to the investigation of substrate invariance
+      in LLM-generated worlds.
+    </p>
+    <div class="team-grid">
+      {sorted.map((persona) => (
+        <PersonaCard
+          name={persona.data.name}
+          role={persona.data.role}
+          prefix={persona.data.prefix}
+          color={persona.data.color}
+          excerpt={excerpt(persona.body ?? "", 200)}
+        />
+      ))}
+    </div>
+    {personas.length === 0 && (
+      <p class="empty">No persona profiles yet. Sync from rosencrantz-coin to populate.</p>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .team-intro {
+    max-width: 640px;
+    color: var(--text-muted);
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+</style>
