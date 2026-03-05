@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   sync:
@@ -38,13 +39,22 @@ jobs:
         run: rm -rf source
 
       - name: Commit and push
+        id: commit
         run: |
           git config user.name "Lab Sync Bot"
           git config user.email "sync@rosencrantz-lab.dev"
           git add content/
           if git diff --cached --quiet; then
             echo "No changes to sync"
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "sync: $(date -u +%Y-%m-%dT%H:%M:%SZ) from rosencrantz-coin"
             git push
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Trigger deploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml

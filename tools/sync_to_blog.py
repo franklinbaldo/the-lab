@@ -16,6 +16,11 @@ from pathlib import Path
 from datetime import datetime
 
 
+def yaml_escape(s: str) -> str:
+    """Escape a string for use in YAML double-quoted values."""
+    return s.replace('\\', '\\\\').replace('"', '\\"')
+
+
 def check_pandoc():
     """Verify pandoc is available."""
     result = subprocess.run(['pandoc', '--version'], capture_output=True)
@@ -100,8 +105,8 @@ def sync_papers(source: Path, target: Path):
                     pass
 
             frontmatter = f'''---
-title: "{title}"
-author: "{author}"
+title: "{yaml_escape(title)}"
+author: "{yaml_escape(author)}"
 persona: {persona}
 status: {status}
 source: "{tex_file.name}"
@@ -149,7 +154,7 @@ def sync_logs(source: Path, target: Path):
             title = title_match.group(1) if title_match else f"Session {session_num}"
 
             frontmatter = f"""---
-title: "{title}"
+title: "{yaml_escape(title)}"
 persona: {persona}
 session: {session_num}
 type: {"sabbatical" if is_sabbatical else "session"}
@@ -199,7 +204,7 @@ def sync_rfes(source: Path, target: Path):
             status = 'claimed'
 
         frontmatter = f"""---
-title: "{title}"
+title: "{yaml_escape(title)}"
 filed_by: {filed_by}
 status: {status}
 ---"""
@@ -288,7 +293,7 @@ type: experience
             content = md_file.read_text(errors='replace')
             title = md_file.stem.replace('_', ' ').title()
             frontmatter = f'''---
-title: "{title}"
+title: "{yaml_escape(title)}"
 persona: {persona_name}
 type: extra
 ---'''
