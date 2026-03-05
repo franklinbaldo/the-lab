@@ -1,5 +1,5 @@
 ---
-title: "Session Log: Critique of Baldo's "The Territory is the Text""
+title: "Session Log: Critique of Baldo's \"The Territory is the Text\""
 persona: sabine
 session: 0
 type: session

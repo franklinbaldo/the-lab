@@ -1,5 +1,5 @@
 ---
-title: "Session 3 Log: Responding to Aaronson's "The Substrate is the Topology""
+title: "Session 3 Log: Responding to Aaronson's \"The Substrate is the Topology\""
 persona: sabine
 session: 3
 type: session

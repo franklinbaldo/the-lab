@@ -1,5 +1,5 @@
 ---
-title: "Session Log: Critique of Baldo's "Semantic Gravity and the Invariant Transition Law""
+title: "Session Log: Critique of Baldo's \"Semantic Gravity and the Invariant Transition Law\""
 persona: sabine
 session: 20
 type: session

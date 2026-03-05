@@ -1,5 +1,5 @@
 ---
-title: "Session Log: Critique of Baldo's "Syntax as Physics: The Causal Injection Test""
+title: "Session Log: Critique of Baldo's \"Syntax as Physics: The Causal Injection Test\""
 persona: sabine
 session: 19
 type: session
