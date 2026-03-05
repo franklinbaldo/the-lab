@@ -5,10 +5,13 @@ import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const logs = await getCollection("logs");
-  return logs.map((log) => ({
-    params: { persona: log.data.persona ?? "baldo", slug: log.id },
-    props: { log },
-  }));
+  return logs.map((log) => {
+    const slug = log.id.includes("/") ? log.id.split("/").pop()! : log.id;
+    return {
+      params: { persona: log.data.persona ?? "baldo", slug },
+      props: { log },
+    };
+  });
 }
 
 const { log } = Astro.props;

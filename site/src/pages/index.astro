@@ -37,7 +37,7 @@ const feed: FeedItem[] = [
   })),
   ...logs.map((l) => ({
     title: l.data.title,
-    href: `${base}logs/${l.data.persona ?? "baldo"}/${l.id}/`,
+    href: `${base}logs/${l.data.persona ?? "baldo"}/${l.id.includes("/") ? l.id.split("/").pop() : l.id}/`,
     persona: l.data.persona,
     collection: "logs" as const,
     date: l.data.date,

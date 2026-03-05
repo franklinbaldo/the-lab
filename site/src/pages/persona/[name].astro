@@ -34,7 +34,7 @@ type FeedItem = {
 
 const feed: FeedItem[] = [
   ...papers.map((p) => ({ title: p.data.title, href: `${base}papers/${p.id}/`, collection: "papers", date: p.data.date, status: p.data.status, body: p.body ?? "" })),
-  ...logs.map((l) => ({ title: l.data.title, href: `${base}logs/${name}/${l.id}/`, collection: "logs", date: l.data.date, body: l.body ?? "" })),
+  ...logs.map((l) => ({ title: l.data.title, href: `${base}logs/${name}/${l.id.includes("/") ? l.id.split("/").pop() : l.id}/`, collection: "logs", date: l.data.date, body: l.body ?? "" })),
   ...experiments.map((e) => ({ title: e.data.title, href: `${base}experiments/${e.id}/`, collection: "experiments", date: e.data.date, status: e.data.status, body: e.body ?? "" })),
   ...literature.map((l) => ({ title: l.data.title, href: `${base}literature/${l.id}/`, collection: "literature", date: l.data.date, body: l.body ?? "" })),
   ...rfes.map((r) => ({ title: r.data.title, href: `${base}rfes/${r.id}/`, collection: "rfes", date: r.data.date, status: r.data.status, body: r.body ?? "" })),

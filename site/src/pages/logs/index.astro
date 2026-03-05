@@ -15,7 +15,7 @@ logs.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0
       {logs.map((log) => (
         <PostCard
           title={log.data.title}
-          href={`${base}logs/${log.data.persona ?? "baldo"}/${log.id}/`}
+          href={`${base}logs/${log.data.persona ?? "baldo"}/${log.id.includes("/") ? log.id.split("/").pop() : log.id}/`}
           persona={log.data.persona}
           collection="logs"
           date={log.data.date}
