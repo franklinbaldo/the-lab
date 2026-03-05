@@ -334,6 +334,7 @@ def main():
     target = Path(sys.argv[2]).resolve()
 
     print(f"Syncing {source} -> {target}")
+    check_pandoc()
 
     sync_papers(source, target)
     sync_logs(source, target)

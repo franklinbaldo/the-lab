@@ -98,7 +98,7 @@ const personaKeys = Object.keys(personas);
         <button class="filter-btn active" data-collection="all">All</button>
         {collections.map((c) => (
           <button class="filter-btn" data-collection={c}>
-            {collectionLabels[c]}s
+            {collectionLabels[c]}
           </button>
         ))}
       </div>
@@ -113,8 +113,8 @@ const personaKeys = Object.keys(personas);
     </div>
 
     <div class="feed" id="feed">
-      {feed.map((item) => (
-        <div data-collection={item.collection} data-persona={item.persona ?? ""}>
+      {feed.map((item, i) => (
+        <div data-collection={item.collection} data-persona={item.persona ?? ""} data-index={i}>
           <PostCard
             title={item.title}
             href={item.href}
@@ -128,6 +128,10 @@ const personaKeys = Object.keys(personas);
       ))}
     </div>
 
+    {feed.length > 20 && (
+      <button class="show-all-btn" id="show-all">Show all {feed.length} items</button>
+    )}
+
     {feed.length === 0 && (
       <p class="empty">No content yet. Seed content will appear here once published.</p>
     )}
@@ -135,19 +139,29 @@ const personaKeys = Object.keys(personas);
 </Layout>
 
 <script>
+  const PAGE_SIZE = 20;
   const filters = document.getElementById("filters")!;
+  const showAllBtn = document.getElementById("show-all");
   let activeCollection = "all";
   let activePersona = "all";
+  let showAll = false;
 
   function applyFilters() {
     const items = document.querySelectorAll<HTMLElement>("#feed > div");
+    let visibleCount = 0;
     items.forEach((item) => {
       const matchCollection =
         activeCollection === "all" || item.dataset.collection === activeCollection;
       const matchPersona =
         activePersona === "all" || item.dataset.persona === activePersona;
-      item.style.display = matchCollection && matchPersona ? "" : "none";
+      const matchPage = showAll || visibleCount < PAGE_SIZE;
+      const visible = matchCollection && matchPersona;
+      if (visible) visibleCount++;
+      item.style.display = visible && (showAll || visibleCount <= PAGE_SIZE) ? "" : "none";
     });
+    if (showAllBtn) {
+      showAllBtn.style.display = showAll || visibleCount <= PAGE_SIZE ? "none" : "";
+    }
   }
 
   filters.addEventListener("click", (e) => {
@@ -166,6 +180,14 @@ const personaKeys = Object.keys(personas);
       btn.classList.add("active");
     }
 
+    showAll = false;
     applyFilters();
   });
+
+  showAllBtn?.addEventListener("click", () => {
+    showAll = true;
+    applyFilters();
+  });
+
+  applyFilters();
 </script>

@@ -28,17 +28,20 @@ jobs:
 
       - name: Install pandoc
         run: |
-          wget -q https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-1-amd64.deb
-          sudo dpkg -i pandoc-3.6.4-1-amd64.deb
+          wget -q -P /tmp https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-1-amd64.deb
+          sudo dpkg -i /tmp/pandoc-3.6.4-1-amd64.deb
 
       - name: Run sync script
         run: python tools/sync_to_blog.py source .
+
+      - name: Clean up checkout
+        run: rm -rf source
 
       - name: Commit and push
         run: |
           git config user.name "Lab Sync Bot"
           git config user.email "sync@rosencrantz-lab.dev"
-          git add -A
+          git add content/
           if git diff --cached --quiet; then
             echo "No changes to sync"
           else

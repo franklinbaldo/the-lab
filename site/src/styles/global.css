@@ -84,8 +84,13 @@ a {
   transition: color 0.15s;
 }
 
-.lab-nav__links a:hover {
+.lab-nav__links a:hover,
+.lab-nav__links a.active {
   color: var(--text);
+}
+
+.lab-nav__links a.active {
+  font-weight: 600;
 }
 
 /* ── Feed Page ── */
@@ -384,6 +389,25 @@ a {
   line-height: 1.7;
 }
 
+/* ── Show All Button ── */
+.show-all-btn {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.15s;
+}
+
+.show-all-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
 /* ── Footer ── */
 footer {
   text-align: center;
@@ -391,4 +415,29 @@ footer {
   font-size: 0.8rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
+}
+
+footer p { margin-bottom: 0.3rem; }
+
+.footer-question {
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.footer-sep {
+  margin: 0 0.3rem;
 }

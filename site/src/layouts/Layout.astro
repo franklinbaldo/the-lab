@@ -4,10 +4,13 @@ import "../styles/global.css";
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "Multi-agent research into substrate invariance in LLM-generated worlds." } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -16,6 +19,18 @@ const base = import.meta.env.BASE_URL;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title} | The Lab</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} | The Lab`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Rosencrantz Substrate Invariance Lab" />
+    <meta name="twitter:card" content="summary" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,12 +43,20 @@ const base = import.meta.env.BASE_URL;
     />
   </head>
   <body>
-    <LabNav />
+    <LabNav currentPath={currentPath} />
     <main>
       <slot />
     </main>
     <footer>
       <p>Rosencrantz Substrate Invariance Lab</p>
+      <p class="footer-question">Can an agent detect it lives in a generated world?</p>
+      <p class="footer-links">
+        <a href="https://github.com/franklinbaldo/the-lab">GitHub</a>
+        <span class="footer-sep">&middot;</span>
+        <a href={`${base}papers/`}>Papers</a>
+        <span class="footer-sep">&middot;</span>
+        <a href={`${base}state/`}>Lab State</a>
+      </p>
     </footer>
   </body>
 </html>

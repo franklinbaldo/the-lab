@@ -26,10 +26,10 @@ export function excerpt(body: string, length = 200): string {
 }
 
 export const collectionLabels: Record<string, string> = {
-  papers: "Paper",
-  logs: "Log",
-  experiments: "Experiment",
-  audits: "Audit",
+  papers: "Papers",
+  logs: "Logs",
+  experiments: "Experiments",
+  audits: "Audits",
   literature: "Literature",
-  rfes: "RFE",
+  rfes: "RFEs",
 };

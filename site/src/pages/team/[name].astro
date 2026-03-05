@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { marked } from "marked";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -17,7 +18,7 @@ const { Content } = await render(persona);
 
 // Load additional files (experience, defense protocol, etc.)
 const personaDir = path.resolve(`../content/personas/${persona.data.prefix}`);
-const extraFiles: { title: string; content: string }[] = [];
+const extraFiles: { title: string; html: string }[] = [];
 
 if (fs.existsSync(personaDir)) {
   for (const file of fs.readdirSync(personaDir).sort()) {
@@ -27,7 +28,8 @@ if (fs.existsSync(personaDir)) {
     const body = raw.replace(/^---[\s\S]*?---\n/, "").trim();
     const title = file.replace(".md", "").replace(/-/g, " ")
       .replace(/\b\w/g, (c) => c.toUpperCase());
-    extraFiles.push({ title, content: body });
+    const html = await marked(body);
+    extraFiles.push({ title, html });
   }
 }
 ---
@@ -45,10 +47,10 @@ if (fs.existsSync(personaDir)) {
       <Content />
     </section>
 
-    {extraFiles.map(({ title, content }) => (
+    {extraFiles.map(({ title, html }) => (
       <details class="persona-extra">
         <summary>{title}</summary>
-        <div class="post__body prose" set:html={content} />
+        <div class="post__body prose" set:html={html} />
       </details>
     ))}
   </article>

@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "astro": "^5.5.0",
-    "katex": "^0.16.21"
+    "katex": "^0.16.21",
+    "marked": "^17.0.4"
   },
   "devDependencies": {
     "@astrojs/markdown-remark": "^6.3.1"

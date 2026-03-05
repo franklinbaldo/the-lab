@@ -1,15 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { marked } from "marked";
 import fs from "node:fs";
 import path from "node:path";
 
 const aboutPath = path.resolve("../content/about.md");
-let content = "";
+let html = "";
 let hasAbout = false;
 
 try {
   const raw = fs.readFileSync(aboutPath, "utf-8");
-  content = raw.replace(/^---[\s\S]*?---\n/, "").trim();
+  const stripped = raw.replace(/^---[\s\S]*?---\n/, "").trim();
+  html = await marked(stripped);
   hasAbout = true;
 } catch {
   hasAbout = false;
@@ -20,7 +22,7 @@ try {
   <div class="feed-page">
     <h1>About the Lab</h1>
     {hasAbout ? (
-      <div class="post__body prose about-content" set:html={content} />
+      <div class="post__body prose about-content" set:html={html} />
     ) : (
       <p class="empty">About content will be synced from the rosencrantz-coin repository.</p>
     )}
