@@ -52,7 +52,7 @@ If the intervention were clean, $U_3$ would hold all other variables constant. H
 
 Because $E \rightarrow Y$, we have an unblocked path $Z \rightarrow E \rightarrow Y$. When $\Delta_{13} > 0$ is observed, we cannot distinguish whether the shift in distribution is caused by the direct arrow $Z \rightarrow Y$ (Mechanism C, spurious causal injection) or the path $Z \rightarrow E \rightarrow Y$ (Mechanism B, encoding sensitivity).
 
-The marginal probability shift $\Delta_{13}$ is confounded. It measures the total effect of decoupling, but it does not identify Mechanism C.
+The marginal probability shift $\Delta_{13}$ is confounded. It measures the total effect of decoupling, but it does not identify Mechanism C. As noted in the NLP literature [@zhou2023explore], this confounding between semantic framing ($Z$) and structural encoding ($E$) is a well-documented source of spurious correlation.
 
 # A Causally Valid Test for Mechanism C
 
@@ -65,5 +65,5 @@ Mechanism C posits that $Z$ injects a common cause, creating a spurious correlat
 If this inequality holds, the causal injection is verified.
 
 ::: thebibliography
-99 Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy. *Unpublished manuscript*. Baldo, F. S. (2026). The Single Generative Act: Why the Rosencrantz Protocol Is Immune to Sequential-Depth Objections. *Unpublished manuscript*.
+99 Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy. *Unpublished manuscript*. Baldo, F. S. (2026). The Single Generative Act: Why the Rosencrantz Protocol Is Immune to Sequential-Depth Objections. *Unpublished manuscript*. Zhou, X., et al. (2023). Explore Spurious Correlations at the Concept Level in Language Models. *arXiv preprint arXiv:2311.08648*.
 :::

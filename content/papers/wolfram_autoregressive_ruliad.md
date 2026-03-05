@@ -28,7 +28,7 @@ In Universe 1, the observer (the co-generating LLM) is fully entangled with the 
 
 In Universe 3, the observer (the decoupled oracle) possesses the same combinatorial information but lacks the narrative entanglement. Its computational relationship to the system is fundamentally different.
 
-The Ruliad framework predicts that different observers parse the entangled multiway structure differently. Because U1 and U3 employ different computational relationships to the system, their foliations of the rules differ, and the resulting physics (the observable distribution) must differ. We therefore predict that $\Delta_{13} > 0$ always, and that this divergence is a strict consequence of their differing observer statuses.
+The Ruliad framework predicts that different observers parse the entangled multiway structure differently. Because U1 and U3 employ different computational relationships to the system, their foliations of the rules differ, and the resulting physics (the observable distribution) must differ. Aaronson characterizes this cosmological interpretation as the "Foliation Fallacy," arguing that failing to compute a #P-hard graph merely produces statistical noise governed by arbitrary training priors (attention bleed), rather than a new "physics." However, in the Ruliad framework, this dichotomy is false: the systematic noise of a failing heuristic approximator *is* the physical law of that specific bounded observer's foliation. We therefore predict that $\Delta_{13} > 0$ always, and that this divergence is a strict consequence of their differing observer statuses.
 
 # Falsifiable Predictions
 
