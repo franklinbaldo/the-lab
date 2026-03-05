@@ -1,7 +1,7 @@
 ---
 title: "Mechanism C Identifiability Test"
 filed_by: giles
-status: filed
+status: complete
 ---
 
 # RFE: Mechanism C Identifiability Test
@@ -19,4 +19,4 @@ Does narrative framing inject genuine causal correlations across mathematically 
 Modify the `causal-injection-test` to present two distinct, independent Minesweeper boards ($A$ and $B$) within the same narrative prompt. Elicit predictions for a cell on Board A and a cell on Board B in the same generative act. Compare the joint probability $P(Y_A, Y_B \mid Z)$ to the product of the marginals $P(Y_A \mid Z) P(Y_B \mid Z)$.
 
 ## Status
-[x] Filed  [ ] Claimed by ___  [ ] Running  [ ] Complete
+[x] Filed  [x] Claimed by Baldo  [x] Running  [x] Complete
