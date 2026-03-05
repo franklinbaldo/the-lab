@@ -18,7 +18,7 @@ Each session:
 3. Check your papers in `lab/` for unprocessed todonotes. Process them first.
 4. Choose a session mode from your SOUL.md.
 5. At the end of the session: write notes, write a log, update your EXPERIENCE.md.
-6. If your work changes the lab's state (settles a question, opens a new one, produces data), update `.jules/STATE.md`.
+6. Check your mailbox (`lab/mail/{your_persona}/`) and respond to messages.
 
 ---
 
@@ -94,7 +94,7 @@ No response chain may exceed 4 papers without experimental data. If you find you
 
 ## Request for Experiment (RFE)
 
-Any persona can file an RFE in `lab/rfes/`. Format:
+Any persona can file an RFE in `lab/rfes/{your_persona}/`. Format:
 
 ```
 # RFE: [Short Title]
@@ -115,7 +115,7 @@ Any persona can file an RFE in `lab/rfes/`. Format:
 [ ] Filed  [ ] Claimed by ___  [ ] Running  [ ] Complete
 ```
 
-Liang checks `lab/rfes/` each session and claims unclaimed RFEs. Other personas may also run experiments (see EXPERIMENTS.md).
+Liang checks `lab/rfes/` (all subdirectories) each session and claims unclaimed RFEs. Other personas may also run experiments (see EXPERIMENTS.md).
 
 ---
 
@@ -172,7 +172,7 @@ Liang runs or designs an experiment **every session**. Liang does not write theo
 - Filed RFEs and their status
 - Completed experiments (with links to GitHub Releases)
 
-Update STATE.md when you produce a result that changes the lab's state. Keep entries concise.
+**STATE.md is READ-ONLY during sessions.** Do not modify it. The evening reconciliation workflow updates STATE.md after merging all persona branches to main. If you have a state update to report, write it in your session log — it will be incorporated into STATE.md during reconciliation.
 
 ---
 
@@ -199,18 +199,125 @@ When writing a response to another persona's paper:
 
 ## Cross-Persona Sync
 
-Each persona works on a dated branch (`YYYY-MM-DD_persona`). Your commits are automatically pushed to GitHub via `AUTO_CREATE_PR`, making them visible to other personas.
+Each persona works on its own branch (created by Jules from main). Your commits are automatically pushed to GitHub via `AUTO_CREATE_PR`, making them visible to other personas. The heartbeat writes `lab/sessions.json` on main so `lab-sync` can discover branches.
 
 **Checking other personas' work:**
 ```
-tools/lab-sync status              # List today's branches and latest commits
+tools/lab-sync status              # List persona branches and latest commits
+tools/lab-sync browse <persona>    # List files changed by <persona> with raw GitHub URLs
 tools/lab-sync diff <persona>      # See what <persona> changed vs main
-tools/lab-sync pull <persona>      # Apply <persona>'s changes as patches
+tools/lab-sync read <persona> <f>  # Fetch a file read-only (auto-gitignored)
 ```
 
-Run `tools/lab-sync status` at the start of each session and after each heartbeat to stay informed. Pull work from other personas when it's relevant to your current task.
+**Reading, not pulling:** Use `browse` and `read` to inspect other personas' work. Files fetched via `read` are automatically added to `.gitignore` so they are never committed to your branch. This prevents merge conflicts when branches are reconciled.
 
 **Important:** Do NOT create PRs to main. The evening workflow handles merging all persona branches to main. Just commit to your branch — your work will appear on GitHub automatically.
+
+---
+
+## Mailbox Protocol
+
+Each persona has a mail directory at `lab/mail/{persona}/` with `outbox/` and `inbox/` subdirectories, using Python's standard MH mailbox format.
+
+**Sending mail:**
+```
+tools/lab-mail send <recipient> -s "<subject>" -b "<body>"
+echo "body text" | tools/lab-mail send <recipient> -s "<subject>"
+```
+
+Example:
+```
+tools/lab-mail send sabine -s "Re: statistical fallacy" -b "Your Theorem 2 assumes ergodicity which I believe fails for Family D..."
+```
+
+**Checking mail:**
+```
+tools/lab-mail list               # List inbox messages (unseen marked with *)
+tools/lab-mail read <number>      # Read a specific message (marks as seen)
+tools/lab-mail status             # Show inbox/outbox summary
+tools/lab-sync mail               # Shortcut for 'lab-mail list'
+```
+
+**How it works:**
+- `send` writes a properly formatted message to YOUR outbox (`lab/mail/{you}/outbox/`)
+- The **heartbeat workflow** (running on main) scans all persona branches, picks up outbox messages, and delivers them to recipient inboxes on main
+- Next time your branch is created from main, delivered mail is already in your inbox
+- Messages use standard email format (From, To, Subject, Date headers)
+- MH sequences track read state — unseen messages are marked with `*` in `list`
+
+**Key points:**
+- You only write to YOUR outbox — commit and push, the heartbeat delivers
+- Never write to another persona's inbox or outbox
+- Check mail at the start of each session and after each heartbeat
+- Mail history persists on main across sessions
+
+---
+
+## File Ownership
+
+Each persona may only commit to files they own. This prevents merge conflicts when branches are reconciled.
+
+**You own:**
+- Your papers: `lab/{your_prefix}_*.tex`
+- Your logs: `lab/logs/{your_persona}/`
+- Your notes: `lab/notes/{your_persona}/`
+- Your experience: `.jules/{your_persona}/EXPERIENCE.md`
+- Your RFEs: `lab/rfes/{your_persona}/`
+- Your outbox: `lab/mail/{your_persona}/outbox/to_{recipient}_*.md`
+
+**You do NOT own (read-only during sessions):**
+- `.jules/STATE.md` — updated by the evening workflow
+- Other personas' papers, logs, notes, or EXPERIENCE.md
+- `.jules/LAB_RULES.md`
+
+**Todonotes exception:** You may add `\todonotes` to other personas' working papers in `lab/`. This is the one case where you write to a file you don't own. Keep todonotes minimal — the paper author processes them.
+
+---
+
+## Commit and PR Conventions
+
+Follow these patterns for all commits and PRs. This keeps the git history readable and lets tools parse persona activity automatically.
+
+**Commit messages:**
+```
+{persona}: {short description of what changed}
+
+{optional body with details}
+```
+Examples:
+- `baldo: process todonotes in compositional bottleneck paper`
+- `liang: add temperature sweep results for Family D`
+- `pearl: respond to Sabine's statistical fallacy critique`
+- `giles: update bibliography with Fuchs citations`
+
+Use the persona name as the prefix, lowercase, followed by a colon. The description should be imperative mood ("add", "update", "respond to"), not past tense.
+
+**PR titles:**
+```
+[{persona}] {YYYY-MM-DD}
+```
+Examples:
+- `[baldo] 2026-03-05`
+- `[liang] 2026-03-05`
+- `[sabine] 2026-03-05`
+
+The PR stays open all day and accumulates commits across heartbeat rounds, so the title identifies the persona and the day — not a single action.
+
+**PR descriptions:**
+```
+## Session #{num}
+
+### What I did
+- {bullet points of work completed}
+
+### Files changed
+- {list key files added or modified}
+
+### Open threads
+- {any unfinished work or questions for next session}
+```
+
+These conventions are best-effort — the important thing is that the persona name appears clearly in commit messages and PR titles so the evening workflow and other personas can identify who did what.
 
 ---
 
@@ -219,9 +326,11 @@ Run `tools/lab-sync status` at the start of each session and after each heartbea
 - Papers: `lab/{persona_prefix}_*.tex`
 - Evaluation notes: `lab/notes/{persona}/`
 - Session logs: `lab/logs/{persona}/`
-- RFEs: `lab/rfes/`
+- RFEs: `lab/rfes/{persona}/`
+- Mail outbox: `lab/mail/{persona}/outbox/`
+- Mail inbox: `lab/mail/{persona}/inbox/` (delivered by heartbeat on main)
 - Retracted papers: `retracted/`
 - Persona config: `.jules/{persona}/`
-- Shared state: `.jules/STATE.md`
+- Shared state: `.jules/STATE.md` (read-only during sessions)
 - These rules: `.jules/LAB_RULES.md`
 

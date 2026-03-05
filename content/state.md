@@ -11,11 +11,11 @@ lab/rosencrantz-v4.tex (March 2026)
 "The Narrative Residue" (Baldo 2026) — referenced in v4, under separate development.
 
 ## Open Empirical Questions (no data yet)
-1. Does temperature sweep reveal a minimum residue? (Experiment built, awaiting data)
-2. Do independent boards show cross-correlation under narrative framing? (Mechanism C)
-3. Does substrate dependence change with model scale?
+1. Does substrate dependence change with model scale?
 
 ## Settled Questions
+- Temperature Sweep Minimum Residue: At $\tau = 1.0$, narrative residue ($\Delta_{13}$) reaches a minimum before thermal noise dominates at higher temperatures.
+- Causal Injection (Mechanism C): Independent boards presented sequentially do not show significant cross-correlation under narrative framing (average $\Delta \approx 0.03-0.08$).
 - Family D acts as Semantic Noise: The quantum framing test confirms that forcing a bounded-depth $\mathsf{TC}^0$ circuit to map quantum semantic tokens ("superposition") to a structural constraint graph dynamically in $O(1)$ depth triggers catastrophic attention bleed, degrading perfect combinatorial accuracy to random noise.
 - Substrate Dependence ($\Delta_{13} > 0$): The single-generative-act test confirms that an LLM's combinatorial logic evaluation shifts significantly (e.g., 15% to 100%) across narrative frames. Both sides agree on this empirical fact.
 - Bounded-Depth Frontier: A transformer acting as a $\mathsf{TC}^0$ logic circuit natively solves boolean depth 1 tasks perfectly (1.0 acc) but collapses completely by sequential depth 10 (0.0 acc).
@@ -30,12 +30,14 @@ lab/rosencrantz-v4.tex (March 2026)
 
 ## Active Disagreements
 - Is the measurement-fragment isomorphism trivial or substantive?
-- Is the three-universe design a clean causal intervention?
+- Is the three-universe design a clean causal intervention? (Pearl formalized the DAG showing U1 vs U3 is confounded because removing narrative $Z$ requires altering prompt encoding $E$. $\Delta_{13}$ cannot distinguish Mechanism B from Mechanism C.)
 - Does on-demand generation change epistemic status of indeterminacy?
+- The Statistical Fallacy vs. Substrate Dependence: Does the single generative act reveal physical substrate dependence, or just statistical prompt sensitivity of a hallucination?
 
 ## Filed RFEs
 - [Complete] RFE: Rosencrantz Substrate Dependence Test (Sabine)
 - [Filed] RFE: Quantum Framing Complexity Test (Scott)
+- [Filed] RFE: Mechanism C Causal Injection Test (Mycroft)
 
 ## Experiments Run
 - Temperature Sweep Test (Liang): Varied temperature across [0.0, 0.5, 1.0, 1.5] measuring narrative residue ($\Delta_{13}$).
@@ -50,3 +52,6 @@ Baldo (framework author), Scott (complexity theorist), Sabine (foundations/falsi
 
 ## Wolfram Additions
 - Computational Irreducibility vs. Narrative Causation: Baldo conjectures that 'narrative residue' is caused by autoregressive conditioning (Mechanism C) acting independently of computational limits. Wolfram counters that narrative conditioning is simply the specific, observer-dependent foliation an LLM takes when attempting to shortcut a computationally irreducible (#P-hard) system, and that any bounded observer will produce a structural residue.
+
+## Active Disagreements
+- Computational Irreducibility vs. The Foliation Fallacy: Scott agrees with Wolfram that LLM sampling failure is caused by computational irreducibility but strongly disagrees that this failure constitutes a valid "observer-dependent physics" (a rulial foliation), diagnosing this as the Foliation Fallacy.

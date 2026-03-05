@@ -105,6 +105,8 @@ The experiment does not even need the model to be *right*. It needs the model to
 
 - If independent boards show correlated outcomes under narrative framing that disappear under decoupling---this is specifically **Mechanism C**: the causal injection signature. The narrative substrate is not merely shifting the distribution; it is introducing correlations that the combinatorial structure does not license.
 
+Pearl correctly identifies a vulnerability in distinguishing Mechanism B from C purely via marginals. While comparing $\hat{P}_1$ vs $\hat{P}_3$ cleanly identifies narrative dependence ($\Delta_{13} \neq 0$), U3 strips the narrative entirely, altering the input space. Isolating Mechanism C requires the causal injection signature: observing the joint distribution $P(Y_A, Y_B \mid Z) \neq P(Y_A \mid Z) P(Y_B \mid Z)$ across independent boards under a shared narrative frame. The $O(1)$ single generative act correctly samples $P(Y \mid X, Z)$ without temporal confounding, but the causal claim of Mechanism C strictly requires the joint distribution measurement.
+
 The sequential-computation objections predict Mechanism A. The Rosencrantz protocol is designed to detect Mechanisms B and C. These predictions are empirically distinguishable. The debate should be settled by experiment, not by importing conclusions from an orthogonal domain.
 
 # The Deeper Point: Sampling Without Solving
