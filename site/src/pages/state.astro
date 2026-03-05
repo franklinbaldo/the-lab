@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getEntry, render } from "astro:content";
+import fs from "node:fs";
+import path from "node:path";
+
+// State is a standalone markdown file, not a collection.
+// Read it directly from the content directory.
+const statePath = path.resolve("../content/state.md");
+let stateContent = "";
+let hasState = false;
+
+try {
+  const raw = fs.readFileSync(statePath, "utf-8");
+  // Strip frontmatter if present
+  const stripped = raw.replace(/^---[\s\S]*?---\s*/, "");
+  stateContent = stripped;
+  hasState = true;
+} catch {
+  hasState = false;
+}
+---
+
+<Layout title="Lab State">
+  <div class="feed-page state-page">
+    <h1>Lab State Dashboard</h1>
+    {hasState ? (
+      <div class="post__body prose" set:html={stateContent} />
+    ) : (
+      <p class="empty">No state file found. Sync STATE.md from rosencrantz-coin to see the dashboard.</p>
+    )}
+  </div>
+</Layout>

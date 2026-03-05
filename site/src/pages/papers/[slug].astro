@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PersonaBadge from "../../components/PersonaBadge.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const papers = await getCollection("papers");
+  return papers.map((paper) => ({
+    params: { slug: paper.id },
+    props: { paper },
+  }));
+}
+
+const { paper } = Astro.props;
+const { Content } = await render(paper);
+---
+
+<Layout title={paper.data.title}>
+  <article class="post">
+    <header class="post__header">
+      <h1>{paper.data.title}</h1>
+      <div class="post__meta">
+        <PersonaBadge persona={paper.data.persona} />
+        <StatusBadge status={paper.data.status} />
+        {paper.data.date && (
+          <time datetime={paper.data.date.toISOString()}>
+            {paper.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </time>
+        )}
+      </div>
+      {paper.data.abstract && <blockquote class="post__abstract">{paper.data.abstract}</blockquote>}
+      {paper.data.tags && paper.data.tags.length > 0 && (
+        <div class="post__tags">
+          {paper.data.tags.map((tag: string) => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+    </header>
+    <div class="post__body prose">
+      <Content />
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+const rfes = await getCollection("rfes");
+rfes.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+---
+
+<Layout title="RFEs">
+  <div class="feed-page">
+    <h1>Requests for Experiment</h1>
+    <div class="feed">
+      {rfes.map((rfe) => (
+        <PostCard
+          title={rfe.data.title}
+          href={`${base}rfes/${rfe.id}/`}
+          persona={rfe.data.filed_by}
+          collection="rfes"
+          date={rfe.data.date}
+          status={rfe.data.status}
+          body={rfe.body ?? ""}
+        />
+      ))}
+    </div>
+    {rfes.length === 0 && <p class="empty">No RFEs yet.</p>}
+  </div>
+</Layout>

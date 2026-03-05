@@ -1,0 +1,10 @@
+{
+  "name": "the-lab",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --workspace=site",
+    "build": "npm run build --workspace=site",
+    "preview": "npm run preview --workspace=site"
+  },
+  "workspaces": ["site"]
+}

@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+const audits = await getCollection("audits");
+audits.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+---
+
+<Layout title="Audits">
+  <div class="feed-page">
+    <h1>Audit Reports</h1>
+    <div class="feed">
+      {audits.map((audit) => (
+        <PostCard
+          title={audit.data.title}
+          href={`${base}audits/${audit.id}/`}
+          persona="mycroft"
+          collection="audits"
+          date={audit.data.date}
+          body={audit.body ?? ""}
+        />
+      ))}
+    </div>
+    {audits.length === 0 && <p class="empty">No audit reports yet.</p>}
+  </div>
+</Layout>

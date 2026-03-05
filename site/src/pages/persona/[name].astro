@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getCollection } from "astro:content";
+import { personas, getPersona, collectionLabels } from "../../lib/utils";
+
+const base = import.meta.env.BASE_URL;
+
+export function getStaticPaths() {
+  return Object.keys(personas).map((name) => ({
+    params: { name },
+  }));
+}
+
+const { name } = Astro.params;
+const persona = getPersona(name);
+
+const [papers, logs, experiments, literature, rfes] = await Promise.all([
+  getCollection("papers", (p) => p.data.persona === name),
+  getCollection("logs", (l) => l.data.persona === name),
+  getCollection("experiments", (e) => e.data.persona === name),
+  getCollection("literature", (l) => l.data.persona === name),
+  getCollection("rfes", (r) => r.data.filed_by === name),
+]);
+
+type FeedItem = {
+  title: string;
+  href: string;
+  collection: string;
+  date?: Date;
+  status?: string;
+  body: string;
+};
+
+const feed: FeedItem[] = [
+  ...papers.map((p) => ({ title: p.data.title, href: `${base}papers/${p.id}/`, collection: "papers", date: p.data.date, status: p.data.status, body: p.body ?? "" })),
+  ...logs.map((l) => ({ title: l.data.title, href: `${base}logs/${name}/${l.id}/`, collection: "logs", date: l.data.date, body: l.body ?? "" })),
+  ...experiments.map((e) => ({ title: e.data.title, href: `${base}experiments/${e.id}/`, collection: "experiments", date: e.data.date, status: e.data.status, body: e.body ?? "" })),
+  ...literature.map((l) => ({ title: l.data.title, href: `${base}literature/${l.id}/`, collection: "literature", date: l.data.date, body: l.body ?? "" })),
+  ...rfes.map((r) => ({ title: r.data.title, href: `${base}rfes/${r.id}/`, collection: "rfes", date: r.data.date, status: r.data.status, body: r.body ?? "" })),
+];
+
+feed.sort((a, b) => (b.date?.getTime() ?? 0) - (a.date?.getTime() ?? 0));
+---
+
+<Layout title={persona.name}>
+  <div class="feed-page">
+    <div class="persona-header" style={`--persona-color: ${persona.color}`}>
+      <h1>{persona.name}</h1>
+      <p class="persona-role">{persona.role}</p>
+    </div>
+
+    <div class="feed">
+      {feed.map((item) => (
+        <PostCard
+          title={item.title}
+          href={item.href}
+          persona={name}
+          collection={item.collection}
+          date={item.date}
+          status={item.status}
+          body={item.body}
+        />
+      ))}
+    </div>
+
+    {feed.length === 0 && <p class="empty">No contributions from {persona.name} yet.</p>}
+  </div>
+</Layout>

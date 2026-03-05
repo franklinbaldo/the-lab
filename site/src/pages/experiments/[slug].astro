@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PersonaBadge from "../../components/PersonaBadge.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const experiments = await getCollection("experiments");
+  return experiments.map((exp) => ({
+    params: { slug: exp.id },
+    props: { exp },
+  }));
+}
+
+const { exp } = Astro.props;
+const { Content } = await render(exp);
+---
+
+<Layout title={exp.data.title}>
+  <article class="post">
+    <header class="post__header">
+      <h1>{exp.data.title}</h1>
+      <div class="post__meta">
+        <PersonaBadge persona={exp.data.persona} />
+        <StatusBadge status={exp.data.status} />
+        {exp.data.date && (
+          <time datetime={exp.data.date.toISOString()}>
+            {exp.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </time>
+        )}
+      </div>
+      {exp.data.result && <blockquote class="post__abstract">{exp.data.result}</blockquote>}
+      {exp.data.tags && exp.data.tags.length > 0 && (
+        <div class="post__tags">
+          {exp.data.tags.map((tag: string) => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+    </header>
+    <div class="post__body prose">
+      <Content />
+    </div>
+  </article>
+</Layout>

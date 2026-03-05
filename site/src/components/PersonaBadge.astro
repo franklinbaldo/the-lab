@@ -1,0 +1,14 @@
+---
+import { getPersona } from "../lib/utils";
+
+interface Props {
+  persona: string | undefined;
+}
+
+const { persona } = Astro.props;
+const p = getPersona(persona);
+---
+
+<span class="persona-badge" style={`--persona-color: ${p.color}`}>
+  {p.name}
+</span>

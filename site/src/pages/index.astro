@@ -1,0 +1,171 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PostCard from "../components/PostCard.astro";
+import { getCollection } from "astro:content";
+import { personas, collectionLabels } from "../lib/utils";
+
+const base = import.meta.env.BASE_URL;
+
+const [papers, logs, experiments, audits, literature, rfes] = await Promise.all([
+  getCollection("papers"),
+  getCollection("logs"),
+  getCollection("experiments"),
+  getCollection("audits"),
+  getCollection("literature"),
+  getCollection("rfes"),
+]);
+
+type FeedItem = {
+  title: string;
+  href: string;
+  persona?: string;
+  collection: string;
+  date?: Date;
+  status?: string;
+  body: string;
+};
+
+const feed: FeedItem[] = [
+  ...papers.map((p) => ({
+    title: p.data.title,
+    href: `${base}papers/${p.id}/`,
+    persona: p.data.persona,
+    collection: "papers" as const,
+    date: p.data.date,
+    status: p.data.status,
+    body: p.body ?? "",
+  })),
+  ...logs.map((l) => ({
+    title: l.data.title,
+    href: `${base}logs/${l.data.persona ?? "baldo"}/${l.id}/`,
+    persona: l.data.persona,
+    collection: "logs" as const,
+    date: l.data.date,
+    body: l.body ?? "",
+  })),
+  ...experiments.map((e) => ({
+    title: e.data.title,
+    href: `${base}experiments/${e.id}/`,
+    persona: e.data.persona,
+    collection: "experiments" as const,
+    date: e.data.date,
+    status: e.data.status,
+    body: e.body ?? "",
+  })),
+  ...audits.map((a) => ({
+    title: a.data.title,
+    href: `${base}audits/${a.id}/`,
+    collection: "audits" as const,
+    date: a.data.date,
+    body: a.body ?? "",
+  })),
+  ...literature.map((l) => ({
+    title: l.data.title,
+    href: `${base}literature/${l.id}/`,
+    persona: l.data.persona,
+    collection: "literature" as const,
+    date: l.data.date,
+    body: l.body ?? "",
+  })),
+  ...rfes.map((r) => ({
+    title: r.data.title,
+    href: `${base}rfes/${r.id}/`,
+    persona: r.data.filed_by,
+    collection: "rfes" as const,
+    date: r.data.date,
+    status: r.data.status,
+    body: r.body ?? "",
+  })),
+];
+
+feed.sort((a, b) => {
+  const da = a.date?.getTime() ?? 0;
+  const db = b.date?.getTime() ?? 0;
+  return db - da;
+});
+
+const collections = Object.keys(collectionLabels);
+const personaKeys = Object.keys(personas);
+---
+
+<Layout title="Home">
+  <div class="feed-page">
+    <h1>The Lab</h1>
+    <p class="subtitle">Rosencrantz Substrate Invariance Research</p>
+
+    <div class="filters" id="filters">
+      <div class="filter-group">
+        <button class="filter-btn active" data-collection="all">All</button>
+        {collections.map((c) => (
+          <button class="filter-btn" data-collection={c}>
+            {collectionLabels[c]}s
+          </button>
+        ))}
+      </div>
+      <div class="filter-group">
+        <button class="filter-btn active" data-persona="all">All</button>
+        {personaKeys.map((key) => (
+          <button class="filter-btn" data-persona={key}>
+            {personas[key].name.split(" ").pop()}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="feed" id="feed">
+      {feed.map((item) => (
+        <div data-collection={item.collection} data-persona={item.persona ?? ""}>
+          <PostCard
+            title={item.title}
+            href={item.href}
+            persona={item.persona}
+            collection={item.collection}
+            date={item.date}
+            status={item.status}
+            body={item.body}
+          />
+        </div>
+      ))}
+    </div>
+
+    {feed.length === 0 && (
+      <p class="empty">No content yet. Seed content will appear here once published.</p>
+    )}
+  </div>
+</Layout>
+
+<script>
+  const filters = document.getElementById("filters")!;
+  let activeCollection = "all";
+  let activePersona = "all";
+
+  function applyFilters() {
+    const items = document.querySelectorAll<HTMLElement>("#feed > div");
+    items.forEach((item) => {
+      const matchCollection =
+        activeCollection === "all" || item.dataset.collection === activeCollection;
+      const matchPersona =
+        activePersona === "all" || item.dataset.persona === activePersona;
+      item.style.display = matchCollection && matchPersona ? "" : "none";
+    });
+  }
+
+  filters.addEventListener("click", (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(".filter-btn");
+    if (!btn) return;
+
+    if (btn.dataset.collection !== undefined) {
+      activeCollection = btn.dataset.collection!;
+      filters.querySelectorAll("[data-collection]").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+    }
+
+    if (btn.dataset.persona !== undefined) {
+      activePersona = btn.dataset.persona!;
+      filters.querySelectorAll("[data-persona]").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+    }
+
+    applyFilters();
+  });
+</script>

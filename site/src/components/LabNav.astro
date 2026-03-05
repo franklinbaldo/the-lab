@@ -1,0 +1,24 @@
+---
+const base = import.meta.env.BASE_URL;
+const navItems = [
+  { label: "Home", href: base },
+  { label: "Papers", href: `${base}papers/` },
+  { label: "Logs", href: `${base}logs/` },
+  { label: "Experiments", href: `${base}experiments/` },
+  { label: "Audits", href: `${base}audits/` },
+  { label: "Literature", href: `${base}literature/` },
+  { label: "RFEs", href: `${base}rfes/` },
+  { label: "Lab State", href: `${base}state/` },
+];
+---
+
+<nav class="lab-nav">
+  <a href={base} class="lab-nav__title">The Lab</a>
+  <ul class="lab-nav__links">
+    {navItems.map((item) => (
+      <li>
+        <a href={item.href}>{item.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

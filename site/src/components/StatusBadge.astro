@@ -1,0 +1,25 @@
+---
+interface Props {
+  status: string | undefined;
+}
+
+const { status } = Astro.props;
+
+const statusColors: Record<string, string> = {
+  working: "#b08d00",
+  published: "#2d7a2d",
+  seminal: "#1a3a5c",
+  filed: "#666",
+  claimed: "#b08d00",
+  running: "#1a5c5c",
+  complete: "#2d7a2d",
+};
+
+const color = statusColors[status ?? ""] ?? "#666";
+---
+
+{status && (
+  <span class="status-badge" style={`--status-color: ${color}`}>
+    {status}
+  </span>
+)}

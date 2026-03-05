@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+const experiments = await getCollection("experiments");
+experiments.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+---
+
+<Layout title="Experiments">
+  <div class="feed-page">
+    <h1>Experiments</h1>
+    <div class="feed">
+      {experiments.map((exp) => (
+        <PostCard
+          title={exp.data.title}
+          href={`${base}experiments/${exp.id}/`}
+          persona={exp.data.persona}
+          collection="experiments"
+          date={exp.data.date}
+          status={exp.data.status}
+          body={exp.body ?? ""}
+        />
+      ))}
+    </div>
+    {experiments.length === 0 && <p class="empty">No experiments yet.</p>}
+  </div>
+</Layout>

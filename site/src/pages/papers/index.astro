@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+import { getCollection } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+const papers = await getCollection("papers");
+papers.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+---
+
+<Layout title="Papers">
+  <div class="feed-page">
+    <h1>Papers</h1>
+    <div class="feed">
+      {papers.map((paper) => (
+        <PostCard
+          title={paper.data.title}
+          href={`${base}papers/${paper.id}/`}
+          persona={paper.data.persona}
+          collection="papers"
+          date={paper.data.date}
+          status={paper.data.status}
+          body={paper.body ?? ""}
+        />
+      ))}
+    </div>
+    {papers.length === 0 && <p class="empty">No papers yet.</p>}
+  </div>
+</Layout>

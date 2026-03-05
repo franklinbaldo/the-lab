@@ -1,0 +1,37 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import PersonaBadge from "../../../components/PersonaBadge.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const logs = await getCollection("logs");
+  return logs.map((log) => ({
+    params: { persona: log.data.persona ?? "baldo", slug: log.id },
+    props: { log },
+  }));
+}
+
+const { log } = Astro.props;
+const { Content } = await render(log);
+---
+
+<Layout title={log.data.title}>
+  <article class="post">
+    <header class="post__header">
+      <h1>{log.data.title}</h1>
+      <div class="post__meta">
+        <PersonaBadge persona={log.data.persona} />
+        <span class="post-card__type">{log.data.type}</span>
+        {log.data.session > 0 && <span>Session {log.data.session}</span>}
+        {log.data.date && (
+          <time datetime={log.data.date.toISOString()}>
+            {log.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </time>
+        )}
+      </div>
+    </header>
+    <div class="post__body prose">
+      <Content />
+    </div>
+  </article>
+</Layout>
