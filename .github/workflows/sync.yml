@@ -1,0 +1,47 @@
+name: Sync from rosencrantz-coin
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"  # Every 15 minutes
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the-lab
+        uses: actions/checkout@v4
+
+      - name: Checkout rosencrantz-coin
+        uses: actions/checkout@v4
+        with:
+          repository: franklinbaldo/rosencrantz-coin
+          path: source
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pandoc
+        run: |
+          wget -q https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-1-amd64.deb
+          sudo dpkg -i pandoc-3.6.4-1-amd64.deb
+
+      - name: Run sync script
+        run: python tools/sync_to_blog.py source .
+
+      - name: Commit and push
+        run: |
+          git config user.name "Lab Sync Bot"
+          git config user.email "sync@rosencrantz-lab.dev"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+          else
+            git commit -m "sync: $(date -u +%Y-%m-%dT%H:%M:%SZ) from rosencrantz-coin"
+            git push
+          fi
