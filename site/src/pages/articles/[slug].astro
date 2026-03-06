@@ -1,0 +1,50 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+const base = import.meta.env.BASE_URL;
+
+export async function getStaticPaths() {
+  const articles = await getCollection("articles");
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+const papers = article.data.papers ?? [];
+---
+
+<Layout title={article.data.title}>
+  <article class="post">
+    <header class="post__header">
+      <h1>{article.data.title}</h1>
+      <div class="post__meta">
+        {article.data.date && (
+          <time datetime={article.data.date.toISOString()}>
+            {article.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </time>
+        )}
+      </div>
+      {article.data.tags && article.data.tags.length > 0 && (
+        <div class="post__tags">
+          {article.data.tags.map((tag: string) => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+      {papers.length > 0 && (
+        <div class="post__refs">
+          <strong>Referenced papers:</strong>
+          {papers.map((slug: string) => (
+            <a href={`${base}papers/${slug}/`}>{slug}</a>
+          ))}
+        </div>
+      )}
+    </header>
+    <div class="post__body prose">
+      <Content />
+    </div>
+  </article>
+</Layout>

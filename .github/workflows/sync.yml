@@ -38,12 +38,34 @@ jobs:
       - name: Clean up checkout
         run: rm -rf source
 
+      - name: Deliver journalist GitHub Issues
+        if: hashFiles('journalist/gh/outbox/*.json') != ''
+        env:
+          GH_TOKEN: ${{ secrets.CROSS_REPO_TOKEN }}
+        run: |
+          TARGET_REPO="franklinbaldo/rosencrantz-coin"
+          for f in journalist/gh/outbox/*.json; do
+            [ -f "$f" ] || continue
+            ACTION=$(python3 -c "import json,sys; print(json.load(open('$f'))['action'])")
+            if [ "$ACTION" = "issue_create" ]; then
+              TITLE=$(python3 -c "import json; d=json.load(open('$f')); print(d['title'])")
+              BODY=$(python3 -c "import json; d=json.load(open('$f')); print(d.get('body',''))")
+              LABELS=$(python3 -c "import json; d=json.load(open('$f')); print(','.join(d.get('labels',[])))")
+              gh issue create --repo "$TARGET_REPO" --title "$TITLE" --body "$BODY" --label "$LABELS" && rm "$f"
+            elif [ "$ACTION" = "issue_comment" ]; then
+              NUM=$(python3 -c "import json; d=json.load(open('$f')); print(d['issue_number'])")
+              BODY=$(python3 -c "import json; d=json.load(open('$f')); print(d.get('body',''))")
+              gh issue comment "$NUM" --repo "$TARGET_REPO" --body "$BODY" && rm "$f"
+            fi
+          done
+
       - name: Commit and push
         id: commit
         run: |
           git config user.name "Lab Sync Bot"
           git config user.email "sync@rosencrantz-lab.dev"
           git add content/
+          git add journalist/gh/outbox/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to sync"
             echo "changed=false" >> $GITHUB_OUTPUT

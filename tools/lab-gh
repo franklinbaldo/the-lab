@@ -1,0 +1,157 @@
+#!/usr/bin/env python3
+"""lab-gh — GitHub Issues outbox for the-lab journalist (Ed Yong).
+
+Same outbox pattern as rosencrantz-coin/tools/lab-gh but targets
+the rosencrantz-coin repo for cross-repo communication.
+
+Usage (journalist commands):
+    tools/lab gh issue create --title "..." --label "to:pearl" --body "..."
+    tools/lab gh issue comment 42 --body "Follow-up..."
+    tools/lab gh issue list
+"""
+
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+import subprocess
+
+TARGET_REPO = "franklinbaldo/rosencrantz-coin"
+JOURNALIST = "yong"
+
+
+def now_iso():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def outbox_dir():
+    d = Path("journalist/gh/outbox")
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def cmd_issue_create(args):
+    title = None
+    body = ""
+    labels = ["journalist"]
+    i = 0
+    while i < len(args):
+        if args[i] == "--title" and i + 1 < len(args):
+            title = args[i + 1]; i += 2
+        elif args[i] == "--body" and i + 1 < len(args):
+            body = args[i + 1]; i += 2
+        elif args[i] == "--label" and i + 1 < len(args):
+            labels.append(args[i + 1]); i += 2
+        else:
+            i += 1
+
+    if not title:
+        print("ERROR: --title is required")
+        sys.exit(1)
+
+    payload = {
+        "action": "issue_create",
+        "title": title,
+        "body": body,
+        "labels": labels,
+        "created_by": JOURNALIST,
+        "timestamp": now_iso(),
+        "target_repo": TARGET_REPO,
+    }
+
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    filepath = outbox_dir() / f"issue_{ts}.json"
+    filepath.write_text(json.dumps(payload, indent=2))
+    print(f"Issue draft saved: {filepath}")
+    print(f"  Title: {title}")
+    print(f"  Labels: {', '.join(labels)}")
+    print("  (will be delivered by next sync)")
+
+
+def cmd_issue_comment(args):
+    if not args:
+        print("Usage: tools/lab gh issue comment <number> --body '...'")
+        sys.exit(1)
+
+    try:
+        issue_number = int(args[0])
+    except ValueError:
+        print(f"ERROR: '{args[0]}' is not a valid issue number")
+        sys.exit(1)
+
+    body = ""
+    i = 1
+    while i < len(args):
+        if args[i] == "--body" and i + 1 < len(args):
+            body = args[i + 1]; i += 2
+        else:
+            i += 1
+
+    if not body:
+        print("ERROR: --body is required")
+        sys.exit(1)
+
+    payload = {
+        "action": "issue_comment",
+        "issue_number": issue_number,
+        "body": body,
+        "created_by": JOURNALIST,
+        "timestamp": now_iso(),
+        "target_repo": TARGET_REPO,
+    }
+
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    filepath = outbox_dir() / f"comment_{issue_number}_{ts}.json"
+    filepath.write_text(json.dumps(payload, indent=2))
+    print(f"Comment draft saved: {filepath}")
+    print(f"  Issue: #{issue_number}")
+    print("  (will be delivered by next sync)")
+
+
+def cmd_issue_list(args):
+    result = subprocess.run(
+        ["gh", "issue", "list", "--repo", TARGET_REPO, "--state", "open",
+         "--label", "journalist", "--json", "number,title,labels,state,createdAt"],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        cache = Path("journalist/gh/issues_cache.json")
+        if cache.exists():
+            issues = json.loads(cache.read_text())
+            print("=== Issues (cached) ===\n")
+            for iss in issues:
+                print(f"  #{iss['number']}  {iss['title']}")
+            return
+        print("Could not list issues (gh CLI unavailable and no cache)")
+        return
+
+    issues = json.loads(result.stdout) if result.stdout.strip() else []
+    print(f"=== Open issues tagged 'journalist' ({len(issues)}) ===\n")
+    for iss in issues:
+        labels = ", ".join(l["name"] for l in iss.get("labels", []))
+        print(f"  #{iss['number']}  {iss['title']}  [{labels}]")
+    if not issues:
+        print("  (none)")
+
+
+def main():
+    if len(sys.argv) < 3 or sys.argv[1] != "issue":
+        print("Usage: tools/lab gh issue [create|comment|list]")
+        sys.exit(1)
+
+    subcmd = sys.argv[2]
+    rest = sys.argv[3:]
+
+    if subcmd == "create":
+        cmd_issue_create(rest)
+    elif subcmd == "comment":
+        cmd_issue_comment(rest)
+    elif subcmd == "list":
+        cmd_issue_list(rest)
+    else:
+        print(f"Unknown subcommand: {subcmd}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

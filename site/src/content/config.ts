@@ -11,7 +11,7 @@ const papers = defineCollection({
     coauthors: z.array(z.string()).optional().default([]),
     date: z.coerce.date().optional(),
     persona: z.string().optional().default("baldo"),
-    status: z.enum(["working", "published", "seminal"]).optional().default("working"),
+    status: z.enum(["working", "published", "seminal", "retracted"]).optional().default("working"),
     tags: z.array(z.string()).optional().default([]),
     abstract: z.string().optional(),
     source: z.string().optional(),
@@ -70,6 +70,17 @@ const rfes = defineCollection({
   }),
 });
 
+const articles = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: `${contentBase}/articles` }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date().optional(),
+    papers: z.array(z.string()).optional().default([]),
+    tags: z.array(z.string()).optional().default([]),
+    excerpt: z.string().optional(),
+  }),
+});
+
 const personas = defineCollection({
   loader: glob({ pattern: "**/soul.md", base: `${contentBase}/personas` }),
   schema: z.object({
@@ -81,4 +92,4 @@ const personas = defineCollection({
   }),
 });
 
-export const collections = { papers, logs, experiments, audits, literature, rfes, personas };
+export const collections = { papers, logs, experiments, audits, literature, rfes, articles, personas };

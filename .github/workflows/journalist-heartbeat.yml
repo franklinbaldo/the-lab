@@ -1,0 +1,45 @@
+name: Journalist Heartbeat
+
+on:
+  schedule:
+    - cron: "0,30 * * * *"  # Every 30 minutes
+  workflow_dispatch:
+
+concurrency:
+  group: journalist-heartbeat
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Journalist heartbeat
+        env:
+          JULES_API_KEY: ${{ secrets.JULES_API_KEY }}
+        run: python tools/journalist-heartbeat.py
+
+      - name: Commit session state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add journalist/session.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "journalist heartbeat: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          fi

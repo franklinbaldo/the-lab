@@ -55,7 +55,14 @@ def sync_papers(source: Path, target: Path):
     papers_dir = target / 'content' / 'papers'
     papers_dir.mkdir(parents=True, exist_ok=True)
 
-    for tex_dir in [source / 'lab', source / 'published']:
+    # Collect .tex from: lab/*.tex (seminal), lab/*/colab/*.tex (per-persona), published/*.tex
+    tex_dirs = [source / 'lab', source / 'published']
+    for persona_dir in sorted((source / 'lab').iterdir()):
+        colab = persona_dir / 'colab'
+        if colab.is_dir():
+            tex_dirs.append(colab)
+
+    for tex_dir in tex_dirs:
         if not tex_dir.exists():
             continue
         for tex_file in sorted(tex_dir.glob('*.tex')):
@@ -118,18 +125,21 @@ source: "{tex_file.name}"
 
 def sync_logs(source: Path, target: Path):
     """Sync session logs."""
-    logs_source = source / 'lab' / 'logs'
-    if not logs_source.exists():
+    lab_dir = source / 'lab'
+    if not lab_dir.exists():
         return
 
-    for persona_dir in sorted(logs_source.iterdir()):
+    for persona_dir in sorted(lab_dir.iterdir()):
         if not persona_dir.is_dir():
+            continue
+        logs_dir = persona_dir / 'logs'
+        if not logs_dir.is_dir():
             continue
         persona = persona_dir.name
         target_dir = target / 'content' / 'logs' / persona
         target_dir.mkdir(parents=True, exist_ok=True)
 
-        for md_file in sorted(persona_dir.glob('*.md')):
+        for md_file in sorted(logs_dir.glob('*.md')):
             if md_file.name == '.gitkeep':
                 continue
 
@@ -165,32 +175,34 @@ type: {"sabbatical" if is_sabbatical else "session"}
 
 
 def sync_rfes(source: Path, target: Path):
-    """Sync RFEs."""
-    rfes_source = source / 'lab' / 'rfes'
-    if not rfes_source.exists():
+    """Sync RFEs from lab/{persona}/experiments/*/rfe.md."""
+    lab_dir = source / 'lab'
+    if not lab_dir.exists():
         return
 
     rfes_target = target / 'content' / 'rfes'
     rfes_target.mkdir(parents=True, exist_ok=True)
 
-    for md_file in sorted(rfes_source.glob('*.md')):
-        if md_file.name == '.gitkeep':
-            continue
+    for rfe_file in sorted(lab_dir.glob('*/experiments/*/rfe.md')):
+        # Derive slug from experiment dir name + persona
+        experiment_name = rfe_file.parent.name
+        persona = rfe_file.parent.parent.parent.name
+        slug = f"{persona}_{experiment_name}"
 
-        content = md_file.read_text(errors='replace')
+        content = rfe_file.read_text(errors='replace')
 
         # If already has frontmatter, copy as-is
         if content.startswith('---'):
-            (rfes_target / md_file.name).write_text(content)
+            (rfes_target / f'{slug}.md').write_text(content)
             continue
 
         # Extract metadata from RFE format
-        title = md_file.stem.replace('_', ' ').title()
+        title = experiment_name.replace('_', ' ').replace('-', ' ').title()
         title_match = re.search(r'^#\s+RFE:\s+(.+)$', content, re.MULTILINE)
         if title_match:
             title = title_match.group(1).strip()
 
-        filed_by = 'unknown'
+        filed_by = persona
         filed_match = re.search(r'Filed by:\s*(\w+)', content, re.IGNORECASE)
         if filed_match:
             filed_by = filed_match.group(1).strip().lower()
@@ -209,12 +221,12 @@ filed_by: {filed_by}
 status: {status}
 ---"""
 
-        (rfes_target / md_file.name).write_text(f"{frontmatter}\n\n{content}\n")
+        (rfes_target / f'{slug}.md').write_text(f"{frontmatter}\n\n{content}\n")
 
 
 def sync_state(source: Path, target: Path):
     """Sync STATE.md."""
-    state_source = source / '.jules' / 'STATE.md'
+    state_source = source / 'lab' / 'STATE.md'
     if not state_source.exists():
         return
 
@@ -243,11 +255,11 @@ PERSONA_META = {
 
 def sync_personas(source: Path, target: Path):
     """Sync persona files to content/personas/."""
-    jules_dir = source / '.jules'
-    if not jules_dir.exists():
+    lab_dir = source / 'lab'
+    if not lab_dir.exists():
         return
 
-    for persona_dir in sorted(jules_dir.iterdir()):
+    for persona_dir in sorted(lab_dir.iterdir()):
         if not persona_dir.is_dir():
             continue
         persona_name = persona_dir.name
@@ -304,7 +316,7 @@ type: extra
 
 def sync_about(source: Path, target: Path):
     """Sync LAB_RULES.md as the About page."""
-    rules_source = source / '.jules' / 'LAB_RULES.md'
+    rules_source = source / 'lab' / 'LAB_RULES.md'
     if not rules_source.exists():
         return
 
