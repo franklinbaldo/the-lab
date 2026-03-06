@@ -24,13 +24,46 @@ function isActive(href: string): boolean {
 }
 ---
 
-<nav class="lab-nav">
+<nav class="lab-nav" aria-label="Main navigation">
   <a href={base} class="lab-nav__title">The Lab</a>
-  <ul class="lab-nav__links">
+  <button
+    class="lab-nav__toggle"
+    aria-expanded="false"
+    aria-controls="nav-menu"
+    aria-label="Toggle navigation menu"
+  >
+    <span class="lab-nav__hamburger" aria-hidden="true"></span>
+  </button>
+  <ul class="lab-nav__links" id="nav-menu">
     {navItems.map((item) => (
       <li>
-        <a href={item.href} class:list={[{ active: isActive(item.href) }]}>{item.label}</a>
+        <a
+          href={item.href}
+          class:list={[{ active: isActive(item.href) }]}
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
       </li>
     ))}
   </ul>
 </nav>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".lab-nav__toggle");
+  const menu = document.getElementById("nav-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      menu.classList.toggle("open");
+    });
+    // Close menu when a link is clicked (mobile)
+    menu.addEventListener("click", (e) => {
+      if ((e.target as HTMLElement).tagName === "A") {
+        toggle.setAttribute("aria-expanded", "false");
+        menu.classList.remove("open");
+      }
+    });
+  }
+</script>

@@ -43,11 +43,12 @@ const currentPath = Astro.url.pathname;
     />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <LabNav currentPath={currentPath} />
-    <main>
+    <main id="main-content" role="main">
       <slot />
     </main>
-    <footer>
+    <footer role="contentinfo">
       <p>Rosencrantz Substrate Invariance Lab</p>
       <p class="footer-question">Can an agent detect it lives in a generated world?</p>
       <p class="footer-links">
