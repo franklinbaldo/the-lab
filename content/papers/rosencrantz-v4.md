@@ -86,6 +86,8 @@ The experimental design rests on three pillars:
 
 3.  A single generative act per trial. The protocol asks the model to output a single token (mine or safe) in an $O(1)$ forward pass. By design, the experiment avoids multi-step sequential computation entirely.
 
+Simpler domains such as coin flips satisfy the ground-truth requirement but lack combinatorial structure. A fair coin has one probability (0.5), no spatial structure, no constraint propagation, and no within-trial controls. However, each cell click in a Minesweeper board *is* a coin toss---a single binary trial with an exactly known bias---and the board provides many such tosses simultaneously at different bias points, with deterministic controls, symmetry checks, and nonlocal constraints linking them. One board is a more efficient instrument than any collection of independent coin flips, because the shared constraint structure makes the *pattern* of deviation across cells diagnostic, not just the magnitude at any single cell.
+
 The substrate invariance test requires comparing the same observable---the outcome distribution for a specific cell on a specific board---across multiple substrates. We define three universes, each differing only in the mechanism that generates the click result.
 
 ## Universe 1: Homogeneous Substrate {#sec:universe1}
@@ -278,6 +280,8 @@ This reframes the diagnostic. Family D is a diagnostic that tests whether the m
 
 Outcome 2 implies that the universe implements rules that are structurally isomorphic to discrete quantum mechanics but fails to recognize them when described using the correct formal language. The substrate computes, but the ontology confabulates.
 
+The structural correspondence with the measurement fragment is not merely a theoretical observation---it is the generalization mechanism. An embedded agent that recognizes the measurement-fragment structure (superposition over valid configurations, projective measurement with a computable Born-rule distribution, Lüders-style state update) can identify new probe domains without knowing Minesweeper specifically. Any system within the generated world that exhibits combinatorial indeterminacy with exact ground truth---card games with hidden information, partially revealed constraint satisfaction problems, probabilistic puzzles---instantiates the same structure and supports the same protocol. The quantum vocabulary provides the agent with a domain-independent schema for recognizing testable systems: look for a state space with multiple valid configurations, a measurement that collapses it, and a distribution that can be computed from the structure alone.
+
 ## The CHSH Test Confirming the Framework {#sec:chsh_empirical}
 
 We tested the boundary of the isomorphism using the CHSH game. In Universe 1 (Homogeneous substrate), where Alice and Bob share a single context window, the LLM achieves a win rate of 94.9%, exceeding the quantum Tsirelson bound [@aaronson2026]. In Universe 3 (Decoupled oracle), where measurements are independent, the win rate falls to 73.7%, strictly below the classical optimum. Both results are informative.
@@ -305,6 +309,8 @@ The agent must consider alternative hypotheses. Instrument malfunction is elimin
 ## Epistemic Limits {#sec:epistemic}
 
 Substrate dependence is consistent with a generative ontology and in tension with the assumption of unified, substrate-independent law. The agent's inference is that the most economical explanation for substrate-dependent outcomes is that the outcomes are generated rather than discovered. This inference is structured by the three-mechanism taxonomy. Mechanism A provides no evidence for simulation, only for computational bounds. Mechanism B provides weak evidence of encoding sensitivity. Mechanism C provides strong evidence that the physics is an artifact of the generative substrate. In Wigner's terms: Mechanism A indicates that the substrate cannot compute the invariant rules but does not reveal whether the rules themselves are substrate-dependent. Mechanism C indicates that the rules fail Wigner's invariance test---they change when the substrate changes. This is the signature of a generated physics.
+
+Three levels of inference should be distinguished. First, the agent detects that specific processes in its world deviate from their declared ground truth in a frame-dependent way---a local finding about hidden generative structure. Second, if the deviation is systematic across multiple probe domains (not just Minesweeper but any system with measurement-fragment structure), the agent infers that the operative laws of its accessible world exceed its stated surface ontology. Third, under additional assumptions about substrate continuity between the tested process and the surrounding world, the agent may update toward the broader hypothesis that its world is generated rather than discovered. The protocol delivers the first level directly. The second requires the generalization mechanism described above. The third remains an inference, not a proof.
 
 ## The Symmetry Argument {#sec:symmetry}
 
