@@ -78,9 +78,15 @@ def sync_papers(source: Path, target: Path):
                 status = 'working'
 
             # Full conversion via pandoc
+            # Use gfm (GitHub-Flavored Markdown) for Astro compatibility:
+            #   - Pipe tables instead of Pandoc simple tables
+            #   - Standard link syntax
+            # The Lua filter handles ::: divs, cross-refs, and environments.
+            lua_filter = str(Path(__file__).parent / 'astro-compat.lua')
             result = subprocess.run(
                 ['pandoc', str(tex_file), '-f', 'latex', '-t',
-                 'markdown', '--wrap=none', '--standalone', '--katex'],
+                 'gfm+tex_math_dollars', '--wrap=none', '--standalone',
+                 '--katex', '--lua-filter', lua_filter],
                 capture_output=True, text=True
             )
 
