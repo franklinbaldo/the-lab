@@ -4,7 +4,9 @@
 Usage: python sync_to_blog.py <source_repo_path> <target_repo_path>
 
 Transforms lab content into blog-ready markdown with frontmatter.
-Uses pandoc for LaTeX-to-markdown conversion (full papers, not just abstracts).
+Uses LaTeXML for LaTeX-to-HTML conversion — all LaTeX environments (tables,
+theorems, bibliographies, equations, cross-references) are handled natively.
+Math is rendered as MathML (supported by all modern browsers, no JS needed).
 """
 
 import os
@@ -21,13 +23,13 @@ def yaml_escape(s: str) -> str:
     return s.replace('\\', '\\\\').replace('"', '\\"')
 
 
-def check_pandoc():
-    """Verify pandoc is available."""
-    result = subprocess.run(['pandoc', '--version'], capture_output=True)
+def check_latexml():
+    """Verify latexml is available."""
+    result = subprocess.run(['latexml', '--VERSION'], capture_output=True)
     if result.returncode != 0:
-        print("ERROR: pandoc not found. Install with: apt-get install pandoc")
+        print("ERROR: latexml not found. Install with: apt-get install latexml")
         sys.exit(1)
-    version = result.stdout.decode().split('\n')[0]
+    version = result.stderr.decode().split('\n')[0] if result.stderr else 'latexml'
     print(f"Using {version}")
 
 
@@ -50,8 +52,97 @@ def infer_persona(filename: str) -> str:
     return 'baldo'
 
 
+def extract_tex_metadata(tex_content: str) -> dict:
+    """Extract title and author from LaTeX source."""
+    meta = {'title': '', 'author': ''}
+    # Match \title{...} handling nested braces and line breaks
+    title_match = re.search(r'\\title\{((?:[^{}]|\{[^{}]*\})*)\}', tex_content, re.DOTALL)
+    if title_match:
+        title = title_match.group(1)
+        # Clean up LaTeX formatting
+        title = re.sub(r'\\\\', ' ', title)
+        title = re.sub(r'\\[a-zA-Z]+\{([^}]*)\}', r'\1', title)
+        title = re.sub(r'[\\*]', '', title)
+        title = re.sub(r'\s+', ' ', title).strip()
+        meta['title'] = title
+
+    author_match = re.search(r'\\author\{((?:[^{}]|\{[^{}]*\})*)\}', tex_content, re.DOTALL)
+    if author_match:
+        author = author_match.group(1)
+        author = re.sub(r'\\\\', ', ', author)
+        author = re.sub(r'\\[a-zA-Z]+\{([^}]*)\}', r'\1', author)
+        author = re.sub(r'[\\*`]', '', author)
+        author = re.sub(r'\s+', ' ', author).strip()
+        # Take just the first name if there's contact info
+        if ',' in author:
+            author = author.split(',')[0].strip()
+        meta['author'] = author
+
+    return meta
+
+
+def tex_to_html_body(tex_file: Path) -> tuple:
+    """Convert .tex to HTML body using LaTeXML.
+
+    Returns (html_body, metadata_dict) or (None, None) on failure.
+    LaTeXML natively handles all LaTeX environments (tables, theorems,
+    bibliographies, cross-references) without needing custom filters.
+    """
+    import tempfile
+
+    # Read source for metadata extraction
+    tex_content = tex_file.read_text(errors='replace')
+    meta = extract_tex_metadata(tex_content)
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        xml_path = Path(tmpdir) / 'output.xml'
+        html_path = Path(tmpdir) / 'output.html'
+
+        # Step 1: LaTeX -> XML
+        result = subprocess.run(
+            ['latexml', '--quiet', '--nocomments',
+             str(tex_file), f'--destination={xml_path}'],
+            capture_output=True, text=True
+        )
+        if result.returncode != 0 or not xml_path.exists():
+            print(f"  WARN: latexml failed on {tex_file.name}: {result.stderr[:200]}")
+            return None, None
+
+        # Step 2: XML -> HTML5 with presentation MathML
+        result = subprocess.run(
+            ['latexmlpost', str(xml_path), f'--destination={html_path}',
+             '--format=html5', '--pmml', '--novalidate', '--nopictureimages'],
+            capture_output=True, text=True
+        )
+        if result.returncode != 0 or not html_path.exists():
+            print(f"  WARN: latexmlpost failed on {tex_file.name}: {result.stderr[:200]}")
+            return None, None
+
+        html = html_path.read_text()
+
+    # Extract <article> body, strip title/author (rendered by Astro)
+    article_match = re.search(r'<article[^>]*>(.*?)</article>', html, re.DOTALL)
+    if not article_match:
+        print(f"  WARN: no <article> found in {tex_file.name}")
+        return None, None
+
+    body = article_match.group(0)
+    # Remove the h1 title and author block (Astro renders these from frontmatter)
+    body = re.sub(r'<h1[^>]*>.*?</h1>', '', body, flags=re.DOTALL)
+    body = re.sub(r'<div class="ltx_authors">.*?</div>\s*', '', body, flags=re.DOTALL)
+    # Remove LaTeXML page footer/logo if present
+    body = re.sub(r'<footer[^>]*>.*?</footer>', '', body, flags=re.DOTALL)
+
+    return body, meta
+
+
 def sync_papers(source: Path, target: Path):
-    """Sync .tex papers as full markdown via pandoc."""
+    """Sync .tex papers as HTML-in-markdown via LaTeXML.
+
+    LaTeXML converts LaTeX to semantic HTML with proper handling of all
+    environments (tables, theorems, bibliographies, cross-references, math).
+    The HTML is embedded directly in .md files for Astro content collections.
+    """
     papers_dir = target / 'content' / 'papers'
     papers_dir.mkdir(parents=True, exist_ok=True)
 
@@ -77,45 +168,12 @@ def sync_papers(source: Path, target: Path):
             else:
                 status = 'working'
 
-            # Full conversion via pandoc
-            # Use gfm (GitHub-Flavored Markdown) for Astro compatibility:
-            #   - Pipe tables instead of Pandoc simple tables
-            #   - Standard link syntax
-            # The Lua filter handles ::: divs, cross-refs, and environments.
-            lua_filter = str(Path(__file__).parent / 'astro-compat.lua')
-            result = subprocess.run(
-                ['pandoc', str(tex_file), '-f', 'latex', '-t',
-                 'gfm+tex_math_dollars', '--wrap=none', '--standalone',
-                 '--katex', '--lua-filter', lua_filter],
-                capture_output=True, text=True
-            )
-
-            if result.returncode != 0:
-                print(f"  WARN: pandoc failed on {tex_file.name}: {result.stderr[:200]}")
+            body, meta = tex_to_html_body(tex_file)
+            if body is None:
                 continue
 
-            body = result.stdout
-
-            # Pandoc --standalone produces its own YAML frontmatter from \title, \author, etc.
-            # Extract it, then replace with our enriched frontmatter.
-            title = slug.replace('_', ' ').replace('-', ' ').title()
-            author = 'Unknown'
-
-            if body.startswith('---'):
-                try:
-                    end = body.index('---', 3)
-                    meta_block = body[3:end]
-                    body = body[end + 3:].strip()
-                    for line in meta_block.strip().split('\n'):
-                        if ':' in line:
-                            k, v = line.split(':', 1)
-                            k, v = k.strip(), v.strip().strip('"\'')
-                            if k == 'title':
-                                title = v
-                            elif k == 'author':
-                                author = v
-                except ValueError:
-                    pass
+            title = meta.get('title') or slug.replace('_', ' ').replace('-', ' ').title()
+            author = meta.get('author') or 'Unknown'
 
             frontmatter = f'''---
 title: "{yaml_escape(title)}"
@@ -357,7 +415,7 @@ def main():
     target = Path(sys.argv[2]).resolve()
 
     print(f"Syncing {source} -> {target}")
-    check_pandoc()
+    check_latexml()
 
     sync_papers(source, target)
     sync_logs(source, target)

@@ -1,0 +1,135 @@
+/*
+ * LaTeXML CSS — scoped to .post__body for paper rendering.
+ * Adapted from LaTeXML.css and ltx-article.css.
+ * Provides native styling for all LaTeX environments converted by LaTeXML:
+ * sections, theorems, tables, equations, bibliographies, cross-references.
+ * Math is rendered via native MathML (no JS required).
+ */
+
+/* === Document structure === */
+.post__body .ltx_section,
+.post__body .ltx_subsection,
+.post__body .ltx_subsubsection { margin-top: 1.5em; }
+.post__body .ltx_paragraph,
+.post__body .ltx_subparagraph { margin-top: 1em; }
+
+.post__body .ltx_title_section { font-size: 140%; font-weight: bold; margin-bottom: 1em; }
+.post__body .ltx_title_subsection { font-size: 120%; font-weight: bold; margin-bottom: 1em; }
+.post__body .ltx_title_subsubsection { font-size: 100%; font-weight: bold; margin-bottom: 1em; }
+.post__body .ltx_title_bibliography { font-size: 140%; font-weight: bold; margin-bottom: 1em; }
+
+/* === Paragraphs and blocks === */
+.post__body .ltx_p,
+.post__body .ltx_para,
+.post__body .ltx_block,
+.post__body .ltx_logical-block { display: block; }
+.post__body .ltx_para { margin-bottom: 0.75em; }
+
+/* === Alignment === */
+.post__body .ltx_align_left { text-align: left; }
+.post__body .ltx_align_right { text-align: right; }
+.post__body .ltx_align_center { text-align: center; }
+.post__body .ltx_centering { display: block; margin: auto; text-align: center; }
+
+/* === Run-in titles (Definition 1. / Conjecture 1.) === */
+.post__body .ltx_runin { display: inline; }
+.post__body .ltx_runin:after { content: " "; }
+.post__body .ltx_runin + .ltx_para,
+.post__body .ltx_runin + .ltx_para p:first-child { display: inline; }
+
+/* === Theorems === */
+.post__body .ltx_theorem {
+  margin: 1.25em 0;
+  padding: 0.75em 1em;
+  border-left: 3px solid var(--accent, #4a7c59);
+  background: var(--surface-alt, #f8f9fa);
+  border-radius: 0 4px 4px 0;
+}
+.post__body .ltx_title_theorem { font-size: 100%; margin-bottom: 0.1em; }
+
+/* === Equations === */
+.post__body .ltx_eqn_table { display: table; width: 100%; border-collapse: collapse; margin: 1em 0; }
+.post__body .ltx_eqn_row { display: table-row; }
+.post__body .ltx_eqn_cell { display: table-cell; vertical-align: middle; }
+.post__body .ltx_eqn_center_padleft,
+.post__body .ltx_eqn_center_padright { width: 50%; min-width: 2em; }
+
+/* === Tables === */
+.post__body .ltx_tabular { display: inline-table; border-collapse: collapse; }
+.post__body .ltx_tabular.ltx_centering { display: table; }
+.post__body .ltx_thead,
+.post__body .ltx_tfoot,
+.post__body .ltx_tbody { display: table-row-group; }
+.post__body .ltx_tr { display: table-row; }
+.post__body .ltx_td,
+.post__body .ltx_th { display: table-cell; padding: 0.25em 0.75em; }
+
+/* Table borders */
+.post__body .ltx_border_t { border-top: 1px solid currentColor; }
+.post__body .ltx_border_b { border-bottom: 1px solid currentColor; }
+.post__body .ltx_border_l { border-left: 1px solid currentColor; }
+.post__body .ltx_border_r { border-right: 1px solid currentColor; }
+.post__body .ltx_border_tt { border-top: 3px double currentColor; }
+.post__body .ltx_border_bb { border-bottom: 3px double currentColor; }
+
+/* Figures and table floats */
+.post__body .ltx_table,
+.post__body .ltx_figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5em 0;
+}
+.post__body .ltx_caption,
+.post__body figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  color: var(--text-muted, #666);
+}
+.post__body .ltx_tag_table,
+.post__body .ltx_tag_figure { font-weight: bold; }
+
+/* === Bibliography === */
+.post__body .ltx_biblist { list-style-type: none; padding-left: 0; }
+.post__body .ltx_bibitem { margin-bottom: 0.5em; padding-left: 2.5em; text-indent: -2.5em; }
+.post__body .ltx_bibitem .ltx_tag { font-weight: bold; }
+.post__body .ltx_bib_title { font-style: italic; }
+.post__body .ltx_bib_journal { font-style: italic; }
+
+/* === Font styles === */
+.post__body .ltx_font_bold { font-weight: bold; }
+.post__body .ltx_font_italic { font-style: italic; }
+.post__body .ltx_font_smallcaps { font-variant: small-caps; }
+.post__body .ltx_font_typewriter { font-family: monospace; }
+
+/* === Cross-references === */
+.post__body a.ltx_ref { text-decoration: none; color: var(--accent, #4a7c59); }
+.post__body a.ltx_ref:hover { text-decoration: underline; }
+
+/* === Lists === */
+.post__body .ltx_itemize,
+.post__body .ltx_enumerate { margin-left: 1em; }
+
+/* === Notes/footnotes === */
+.post__body .ltx_note { display: inline-block; }
+.post__body .ltx_note_mark { color: var(--accent, #4a7c59); cursor: pointer; }
+.post__body .ltx_note_content { display: none; }
+.post__body .ltx_note:hover .ltx_note_content {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  max-width: 70%;
+  font-size: 0.9em;
+  background: var(--surface, white);
+  padding: 0.5em 1em;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === Misc === */
+.post__body .ltx_ERROR { color: red; }
+.post__body .ltx_page_footer { display: none; }
+.post__body .ltx_page_logo { display: none; }
+.post__body .ltx_dates { text-align: center; margin: 0.5em 0; }
