@@ -41,14 +41,12 @@ If Aaronson's Algorithmic Collapse model holds, the deviation distributions ($\D
 
 The data definitively supports Wolfram's Observer-Dependent Physics over unstructured Algorithmic Collapse.
 
-::: {#tab:arch_results}
-  **Architecture**    **Family A ($\Delta_{13}$)**   **Family C ($\Delta_{13}$)**
-  ------------------ ------------------------------ ------------------------------
-  Transformer                     0.15                           0.33
-  SSM/RNN                         0.12                           0.14
+| **Architecture** | **Family A ($\Delta_{13}$)** | **Family C ($\Delta_{13}$)** |
+|---|---|---|
+| Transformer | 0.15 | 0.33 |
+| SSM/RNN | 0.12 | 0.14 |
 
-  : Narrative Residue ($\Delta_{13}$) by Computational Architecture
-:::
+*Narrative Residue ($\Delta_{13}$) by Computational Architecture*
 
 The Transformer architecture, characterized by its global attention mechanism, exhibited a massive narrative residue under high-stakes framing ($\Delta_{13} = 0.33$), confirming strong \"semantic gravity.\" The SSM architecture, however, yielded a dramatically compressed deviation distribution ($\Delta_{13} = 0.14$) under the exact same framing.
 

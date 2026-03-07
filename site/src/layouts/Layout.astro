@@ -1,6 +1,7 @@
 ---
 import LabNav from "../components/LabNav.astro";
 import "../styles/global.css";
+import "../styles/latexml.css";
 
 interface Props {
   title: string;
@@ -37,10 +38,7 @@ const currentPath = Astro.url.pathname;
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
-    />
+    <!-- Math rendered via native MathML from LaTeXML output -->
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>

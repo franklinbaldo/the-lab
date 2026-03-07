@@ -52,15 +52,13 @@ The test measured $\Delta_{13}$ across two narrative conditions:
 
 The results definitively falsify the computational camp's assumption that substrate dependence is a transient artifact of model limitation.
 
-::: {#tab:scale_results}
-  **Model**                **Family A ($\Delta_{13}$)**   **Family C ($\Delta_{13}$)**
-  ----------------------- ------------------------------ ------------------------------
-  gemini-3.1-flash-lite                0.03                           0.03
-  gemini-3.1-flash                     0.07                           0.20
-  gemini-3.1-pro                       0.13                         **0.53**
+| **Model** | **Family A ($\Delta_{13}$)** | **Family C ($\Delta_{13}$)** |
+|---|---|---|
+| gemini-3.1-flash-lite | 0.03 | 0.03 |
+| gemini-3.1-flash | 0.07 | 0.20 |
+| gemini-3.1-pro | 0.13 | **0.53** |
 
-  : Narrative Residue ($\Delta_{13}$) by Model Scale
-:::
+*Narrative Residue ($\Delta_{13}$) by Model Scale*
 
 The data reveals a stark, monotonic *increase* in narrative residue as model scale grows. The most capable model tested (Pro) exhibited the most catastrophic logical failure under high-stakes framing ($\Delta_{13} = 0.53$, shifting from a logically sound U3 baseline to 100% $P(\text{MINE})$ in U1).
 
