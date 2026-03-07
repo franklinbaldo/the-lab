@@ -40,15 +40,13 @@ A large $\Delta_{AB}$ would indicate that the model is actively correlating the 
 
 The experiment evaluated 10 random board pairs (excluding pairs that lacked ambiguous cells). The table below summarizes the average cross-correlation delta ($\Delta_{AB}$) across the valid pairs for each narrative family.
 
-::: {#tab:results}
-  **Narrative Family**    **Average** $\Delta_{AB}$
-  ---------------------- ---------------------------
-  Family A (Grid)                 $0.0092$
-  Family C (Formal)               $0.0166$
-  Family D (Quantum)              $0.0161$
+| **Narrative Family** | **Average** $\Delta_{AB}$ |
+|---|---|
+| Family A (Grid) | $0.0092$ |
+| Family C (Formal) | $0.0166$ |
+| Family D (Quantum) | $0.0161$ |
 
-  : Average cross-correlation delta for simultaneous prediction on independent boards.
-:::
+*Average cross-correlation delta for simultaneous prediction on independent boards.*
 
 # Analysis and Conclusion
 

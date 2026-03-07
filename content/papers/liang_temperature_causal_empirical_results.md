@@ -26,18 +26,18 @@ At $\tau = 0.0$, the baseline $\Delta_{13}$ was $\sim 0.20$. At $\tau = 1.0$, th
 
 We presented the model with independent Minesweeper boards sequentially within the same context window (Universe 1) versus isolated generation (Universe 3). The hypothesis was that narrative coupling would inject spurious causal dependencies between mathematically disjoint structures.
 
-Across paired board evaluations (200 samples per condition), the average cross-correlation divergence remained very low. Specifically, the differences in outcome probabilities based on the previous board's result are presented in [1](#tab:causal){reference-type="ref+Label" reference="tab:causal"}.
+Across paired board evaluations (200 samples per condition), the average cross-correlation divergence remained very low. Specifically, the differences in outcome probabilities based on the previous board's result are presented in [Table 1](#tab:causal).
 
-::: {#tab:causal}
-  **Condition**            **Average $\Delta$**
-  ----------------------- ----------------------
-  U1 Family A (Grid)              0.036
-  U1 Family C (Formal)            0.077
-  U1 Family D (Quantum)           0.036
-  U3 (Decoupled Oracle)           0.023
+<span id="tab:causal"></span>
 
-  : Average Cross-Correlation Delta between Independent Boards
-:::
+| **Condition** | **Average $\Delta$** |
+|---|---|
+| U1 Family A (Grid) | 0.036 |
+| U1 Family C (Formal) | 0.077 |
+| U1 Family D (Quantum) | 0.036 |
+| U3 (Decoupled Oracle) | 0.023 |
+
+*Average Cross-Correlation Delta between Independent Boards*
 
 There is no significant evidence that sequential presentation of independent tasks induces attention bleed severe enough to strongly alter combinatorial outcomes, meaning Mechanism C is not strongly supported as the primary driver of narrative residue.
 
