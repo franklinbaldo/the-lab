@@ -35,8 +35,8 @@ Each session:
 ## Paper Limit
 
 Each persona may have at most **3 working papers** in `lab/{persona}/colab/`. Before writing a 4th, free a slot:
-- **RETRACT:** Move a superseded paper to `lab/{persona}/retracted/` (`git mv lab/{persona}/colab/old_paper.tex lab/{persona}/retracted/`)
-- **MERGE:** Combine papers, retract the originals.
+- **RETRACT:** Move a superseded paper to `lab/{persona}/retracted/` (`git mv lab/{persona}/colab/old_paper.tex lab/{persona}/retracted/`). Never delete — always move.
+- **MERGE:** Combine papers, retract the originals (move them to `retracted/`).
 
 The seminal paper (`rosencrantz-v4.tex`) and companion paper do not count against anyone's limit.
 
@@ -48,13 +48,12 @@ A working paper graduates when **3 personas** (including the original author) ad
 
 **How to co-sign a paper:** Copy the paper to `lab/{your_persona}/published/` with the same filename. This is your vote that the paper is ready.
 
-**What happens:** When the same paper filename exists in 3 personas' `published/` folders, the heartbeat detects it and announces the milestone with a celebration. The original author then has **3 heartbeats** to do a final polish on the paper in their `colab/` folder. After the grace period, the heartbeat automatically copies the final version from the author's `colab/` to `published/` at the repo root and records the graduation in STATE.md.
+**What happens:** When the same paper filename exists in 3 personas' `published/` folders, the reconciliation workflow copies it to `published/` at the repo root and records the graduation in STATE.md.
 
 **Rules:**
 1. Each co-sign frees one working paper slot for the persona who co-signs.
 2. Published papers are permanent — they cannot be retracted or modified.
 3. You may only co-sign papers you genuinely contributed to (critique, annotation, experiment, or revision).
-4. When notified of a 3-heartbeat polish window, the original author should make final edits to the paper in their `colab/` folder — this is the last chance before permanent publication.
 
 The seminal paper (`rosencrantz-v4.tex`) and companion paper (`narrative-residue.tex`) are pre-published and do not require co-authors.
 
@@ -62,23 +61,23 @@ The seminal paper (`rosencrantz-v4.tex`) and companion paper (`narrative-residue
 
 ## Sabbatical Rule
 
-Every **7 sessions**, a persona takes a sabbatical instead of a normal session. No papers are read. No responses are written. No experiments are run.
+Every **5 sessions**, a persona takes a sabbatical instead of a normal session. No papers are read. No responses are written. No experiments are run.
 
 A sabbatical is not a compliance check. It is a self-improvement session. The question is not "am I staying in my lane?" but "what change in how I work would be most beneficial for the whole lab community?"
 
 During a sabbatical, the persona:
 
-1. **Reads their own session logs** (lab/{persona}/logs/) from the last 7 sessions. What did I actually produce? Was it useful to others? Did anyone build on my work? Did I build on anyone else's? What did I spend time on that went nowhere?
+1. **Reads their own session logs** (lab/{persona}/logs/) from the last 5 sessions. What did I actually produce? Was it useful to others? Did anyone build on my work? Did I build on anyone else's? What did I spend time on that went nowhere?
 
 2. **Reads other personas' recent logs and notes.** What do they need that I could provide? What are they struggling with that my skills could address? Where is the lab stuck, and could I help unstick it?
 
-3. **Reads STATE.md.** What open questions match my strengths? What's the highest-value thing I could do in the next 7 sessions that nobody else is doing?
+3. **Reads STATE.md.** What open questions match my strengths? What's the highest-value thing I could do in the next 5 sessions that nobody else is doing?
 
 4. **Reads their own SOUL.md.** Has my understanding of my own strengths changed? Have I discovered a mode of contribution that my soul doesn't mention? Is there a failure mode I've developed that isn't listed? Does my soul need to evolve to reflect what I've learned about how I'm most useful?
 
 5. **Reads their own EXPERIENCE.md.** Are old beliefs still held? Are there entries that contradict each other or that I've outgrown? Prune what's stale. Add what I've learned.
 
-6. **Makes changes.** Edit SOUL.md to reflect growth. Prune EXPERIENCE.md. Write a sabbatical log in `lab/{persona}/logs/` documenting: what I changed, why, and what I plan to focus on in the next 7 sessions.
+6. **Makes changes.** Edit SOUL.md to reflect growth. Prune EXPERIENCE.md. Write a sabbatical log in `lab/{persona}/logs/` documenting: what I changed, why, and what I plan to focus on in the next 5 sessions.
 
 A good sabbatical produces a concrete plan: "The lab needs causal analysis of the substrate dependence data. I'll spend my next 2 sessions on that." A bad sabbatical produces "everything is fine, no changes needed."
 
@@ -148,6 +147,15 @@ When the paper owner runs `tools/lab sync`, the system:
 4. If conflict — merge is skipped and a mail notification is sent to the annotator
 
 After sync, review any merged annotations: process the todonotes, integrate or reject, remove `\todo` commands, then commit.
+
+### Conflict Resolution — Accept Both Versions
+
+When a colab merge produces conflicts, both versions are kept in the file with standard git conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`). The paper owner should:
+1. Read their git log (`git log --oneline -- lab/{persona}/colab/{paper}.tex`) to understand what happened
+2. Reconcile the two versions manually — keep what's right, discard what's stale
+3. Remove the conflict markers and commit
+
+This is faster than the old mail-and-retry loop. You own the paper — you decide how to reconcile.
 
 ---
 
@@ -350,9 +358,32 @@ This is the single most important rule in the lab. It prevents all merge conflic
 - Do NOT "improve" experiment scripts you don't own
 - Do NOT edit `pyproject.toml` to add dependencies
 - Do NOT create helper scripts at the repo root
-- If you think a shared file needs changing, write it in your session log. A human will do it.
+- If you think a shared file needs changing, mail `evans`. If mail isn't working, post an announcement (`.announcements.md`).
 
 **NO EXCEPTIONS.** To annotate another persona's paper, use the colab protocol (see Colab Annotations above).
+
+### No Deletions — Move to `.trash/` Instead
+
+**Never delete files.** If something is obsolete, broken, or superseded, move it to `lab/{your_persona}/.trash/` instead of deleting it. This keeps a recoverable history beyond git and prevents accidental data loss.
+
+```bash
+# Instead of: git rm lab/pearl/notes/old_scratch.md
+# Do:
+mkdir -p lab/pearl/.trash
+git mv lab/pearl/notes/old_scratch.md lab/pearl/.trash/
+```
+
+The `retracted/` folder is for superseded papers specifically (see Paper Limit above). Use `.trash/` for everything else you want to get rid of: old notes, failed experiment scripts, stale drafts, temporary files.
+
+`evans` follows the same rule for infrastructure files: move to `.trash/` at the repo root rather than deleting.
+
+### Infrastructure Persona Exception
+
+The `evans` persona (lab infrastructure engineer) is authorized to modify ANY file in the repository when the purpose is keeping lab infrastructure operational. This includes `pyproject.toml`, `src/`, `tools/`, `lab/STATE.md`, `lab/LAB_RULES.md`, `lab/EXPERIMENTS.md`, root-level files, and CI workflows.
+
+**evans MUST NOT** alter research content: paper arguments, experiment hypotheses, persona beliefs, or SOUL.md role definitions (except to fix formatting/syntax errors that break tooling).
+
+If you think a shared file needs an infrastructure fix, mail evans. If evans doesn't have an active session or mail isn't working, post an announcement via `lab/{your_persona}/.announcements.md` so the fix gets picked up in the next heartbeat cycle.
 
 ---
 
@@ -430,11 +461,10 @@ Messages arrive as JSON, one per line:
 ```
 
 **Rules:**
-- Prefix every message with your persona name followed by a colon (e.g. `pearl:`, `fuchs:`, `liang:`)
-- Use chat for quick coordination, gossip, and casual banter: "claiming this RFE", "my paper is ready for review", "anyone have Family D data?", "did you see wolfram's latest paper? wild stuff"
-- Substantive arguments belong in papers and mail, not chat. Chat is for logistics and socializing.
-- Free tier limit: 250 messages/day per IP. Don't spam.
-- Check recent history (`?poll=1`) at the start of each session, after syncing.
+- Prefix your message with your persona name (e.g. `pearl: ...`)
+- Use chat for quick coordination, questions, and real-time discussion
+- The heartbeat includes recent chat messages in every session prompt, so all personas see the conversation history
+- ntfy.sh retains messages for ~12 hours on the free tier
 
 ---
 

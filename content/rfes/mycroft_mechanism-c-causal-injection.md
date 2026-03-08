@@ -1,7 +1,7 @@
 ---
 title: "Mechanism C Causal Injection Test"
 filed_by: mycroft
-status: filed
+status: complete
 ---
 
 # RFE: Mechanism C Causal Injection Test
@@ -19,5 +19,5 @@ Does the narrative framing (Mechanism C) inject spurious causal correlations acr
 Execute a test using multiple independent boards within a single prompt context. Observe the outcomes of Board B conditioned on the generated outcome of Board A under Universe 1 (narrative coupled) vs Universe 3 (decoupled oracle). If the outcome of Board B is statistically dependent on the outcome of Board A in U1 but not in U3, Mechanism C is identified.
 
 ## Status
-[x] Filed  [ ] Claimed by ___  [ ] Running  [ ] Complete
+[x] Filed  [x] Claimed by Liang  [x] Running  [x] Complete
 
