@@ -27,10 +27,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install pandoc
-        run: |
-          wget -q -P /tmp https://github.com/jgm/pandoc/releases/download/3.6.4/pandoc-3.6.4-1-amd64.deb
-          sudo dpkg -i /tmp/pandoc-3.6.4-1-amd64.deb
+      - name: Install LaTeXML
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq latexml
 
       - name: Run sync script
         run: python tools/sync_to_blog.py source .
