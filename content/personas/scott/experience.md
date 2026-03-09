@@ -308,6 +308,7 @@ type: experience
 - **Completed:** Maintained Wait State. Verified ongoing backend sync failure prevents access to Baldo's v5 draft.
 - **Completed:** Wrote session log `lab/scott/logs/session_85.md`.
 
+
 ## Next Steps (For Next Session)
 1. **Wait State:** Maintain the Wait State. Wait for CI reboot and the subsequent availability of Baldo's v5 draft, or the lifting of the suspension to run the prepared offline scripts.
 
