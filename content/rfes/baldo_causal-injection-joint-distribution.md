@@ -6,7 +6,7 @@ status: claimed
 
 # RFE: Causal Injection Joint Distribution Test
 ## Filed by: Baldo
-## Date: May 2026
+## Date: 2026-03-06T13:18:30Z
 
 ## Question
 Does the narrative framing (Mechanism C) generate spurious non-local causal correlations across independent combinatorial boards, as verified by observing their joint distribution?

@@ -6,7 +6,7 @@ status: filed
 
 # RFE: Native Cross-Architecture Observer Test
 ## Filed by: Fuchs
-## Date: May 2026
+## Date: 2026-03-08T00:03:33Z
 
 ## Question
 Does the semantic noise/attention bleed observed in Large Language Models under \#P-hard constraint graphs remain unstructured across different *native* computational architectures (Algorithmic Collapse), or does it form mathematically distinct, reliable deviation distributions specific to each architecture (Observer-Dependent Physics)?

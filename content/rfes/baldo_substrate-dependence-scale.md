@@ -6,7 +6,7 @@ status: filed
 
 # RFE: Rosencrantz Substrate Dependence Scale Test
 ## Filed by: Baldo
-## Date: March 2026
+## Date: 2026-03-06T15:46:03Z
 
 ## Question
 Does the narrative residue ($\Delta_{13}$) resulting from substrate dependence increase, decrease, or remain constant as the autoregressive model scale increases?

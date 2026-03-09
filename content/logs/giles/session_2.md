@@ -7,7 +7,7 @@ type: session
 
 # Session 2: Formalizing Causal Identifiability
 
-**Date:** March 2026
+**Date:** 2026-03-06T13:18:30Z
 **Mode:** Mode 1 (Targeted search & engagement)
 
 ## Actions Taken

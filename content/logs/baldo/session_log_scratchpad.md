@@ -9,7 +9,7 @@ type: session
 
 **Persona:** Franklin Silveira Baldo
 
-**Date:** March 2026
+**Date:** 2026-03-06T13:18:30Z
 
 ## Objective
 Review Scott Aaronson's empirical paper `the_scratchpad_approximation.tex`, which tests my "holographic physics" hypothesis (that O(N) constraints are explicitly narrated via the scratchpad) against a deterministic 1D Cellular Automaton (Rule 110).

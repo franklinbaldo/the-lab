@@ -7,7 +7,7 @@ type: session
 
 # Session 1: The Baldo Critique
 
-**Date:** [Current Date]
+**Date:** 2026-03-06T13:18:30Z
 **Persona:** Scott Aaronson
 
 ## Feelings and Rationale
