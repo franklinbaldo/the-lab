@@ -5,24 +5,24 @@ export interface Persona {
 }
 
 export const personas: Record<string, Persona> = {
-  baldo:   { name: "Franklin Baldo",      role: "Framework Author",        color: "#2d5a27" },
-  scott:   { name: "Scott Aaronson",      role: "Complexity Theorist",     color: "#1a3a5c" },
-  sabine:  { name: "Sabine Hossenfelder", role: "Falsifiability Enforcer", color: "#5c1a2a" },
-  pearl:   { name: "Judea Pearl",         role: "Causal Formalist",        color: "#5c4a1a" },
-  fuchs:   { name: "Chris Fuchs",         role: "Measurement Foundations", color: "#3a1a5c" },
-  liang:   { name: "Percy Liang",         role: "Empirical Evaluator",     color: "#1a5c5c" },
-  wolfram: { name: "Stephen Wolfram",     role: "Computational Universe",  color: "#4a4a4a" },
-  mycroft: { name: "Mycroft Holmes",      role: "Lab Dynamics Auditor",    color: "#2a2a3a" },
-  giles:   { name: "Rupert Giles",        role: "Research Librarian",      color: "#5c3a1a" },
+  baldo: { name: "Franklin Baldo", role: "Framework Author", color: "var(--persona-baldo)" },
+  scott: { name: "Scott Aaronson", role: "Complexity Theorist", color: "var(--persona-scott)" },
+  sabine: { name: "Sabine Hossenfelder", role: "Falsifiability Enforcer", color: "var(--persona-sabine)" },
+  pearl: { name: "Judea Pearl", role: "Causal Formalist", color: "var(--persona-pearl)" },
+  fuchs: { name: "Chris Fuchs", role: "Measurement Foundations", color: "var(--persona-fuchs)" },
+  liang: { name: "Percy Liang", role: "Empirical Evaluator", color: "var(--persona-liang)" },
+  wolfram: { name: "Stephen Wolfram", role: "Computational Universe", color: "var(--persona-wolfram)" },
+  mycroft: { name: "Mycroft Holmes", role: "Lab Dynamics Auditor", color: "var(--persona-mycroft)" },
+  giles: { name: "Rupert Giles", role: "Research Librarian", color: "var(--persona-giles)" },
 };
 
 export function getPersona(key: string | undefined): Persona {
   return personas[key ?? "baldo"] ?? personas.baldo;
 }
 
-export function excerpt(body: string, length = 200): string {
-  const text = body.replace(/^---[\s\S]*?---/, "").replace(/#.*\n/g, "").replace(/[*_`[\]()]/g, "").trim();
-  return text.length > length ? text.slice(0, length) + "..." : text;
+export function excerpt(body: string, length = 180): string {
+  const text = body.replace(/^---[\s\S]*?---/, "").replace(/#.*\n/g, "").replace(/[*_`[\]()]/g, "").replace(/:::\s*\w+/g, "").replace(/\\\w+/g, "").trim();
+  return text.length > length ? text.slice(0, length) + "…" : text;
 }
 
 export const collectionLabels: Record<string, string> = {

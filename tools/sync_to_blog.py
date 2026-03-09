@@ -24,13 +24,18 @@ def yaml_escape(s: str) -> str:
 
 
 def check_latexml():
-    """Verify latexml is available."""
-    result = subprocess.run(['latexml', '--VERSION'], capture_output=True)
-    if result.returncode != 0:
-        print("ERROR: latexml not found. Install with: apt-get install latexml")
-        sys.exit(1)
-    version = result.stderr.decode().split('\n')[0] if result.stderr else 'latexml'
-    print(f"Using {version}")
+    """Verify latexml is available. Returns True if found, False otherwise."""
+    try:
+        result = subprocess.run(['latexml', '--VERSION'], capture_output=True)
+        if result.returncode != 0:
+            print("WARN: latexml not found. Paper sync will be skipped.")
+            return False
+        version = result.stderr.decode().split('\n')[0] if result.stderr else 'latexml'
+        print(f"Using {version}")
+        return True
+    except FileNotFoundError:
+        print("WARN: latexml not found. Paper sync will be skipped.")
+        return False
 
 
 def infer_persona(filename: str) -> str:
@@ -415,9 +420,12 @@ def main():
     target = Path(sys.argv[2]).resolve()
 
     print(f"Syncing {source} -> {target}")
-    check_latexml()
+    has_latexml = check_latexml()
 
-    sync_papers(source, target)
+    if has_latexml:
+        sync_papers(source, target)
+    else:
+        print("  Skipping paper sync (no latexml)")
     sync_logs(source, target)
     sync_rfes(source, target)
     sync_state(source, target)

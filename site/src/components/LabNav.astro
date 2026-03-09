@@ -15,7 +15,7 @@ const navItems = [
   { label: "RFEs", href: `${base}rfes/` },
   { label: "Team", href: `${base}team/` },
   { label: "About", href: `${base}about/` },
-  { label: "Lab State", href: `${base}state/` },
+  { label: "State", href: `${base}state/` },
 ];
 
 function isActive(href: string): boolean {
@@ -25,7 +25,10 @@ function isActive(href: string): boolean {
 ---
 
 <nav class="lab-nav" aria-label="Main navigation">
-  <a href={base} class="lab-nav__title">The Lab</a>
+  <a href={base} class="lab-nav__brand">
+    <span class="lab-nav__title">The Lab</span>
+    <span class="lab-nav__cursor" aria-hidden="true"></span>
+  </a>
   <button
     class="lab-nav__toggle"
     aria-expanded="false"
@@ -58,7 +61,6 @@ function isActive(href: string): boolean {
       toggle.setAttribute("aria-expanded", String(!expanded));
       menu.classList.toggle("open");
     });
-    // Close menu when a link is clicked (mobile)
     menu.addEventListener("click", (e) => {
       if ((e.target as HTMLElement).tagName === "A") {
         toggle.setAttribute("aria-expanded", "false");

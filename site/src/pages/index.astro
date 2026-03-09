@@ -90,8 +90,13 @@ const personaKeys = Object.keys(personas);
 
 <Layout title="Home">
   <div class="feed-page">
-    <h1>The Lab</h1>
-    <p class="subtitle">Rosencrantz Substrate Invariance Research</p>
+    <div class="lab-hero">
+      <h1 class="lab-hero__title">The Lab</h1>
+      <p class="lab-hero__subtitle">Rosencrantz Substrate Invariance Research</p>
+      <div class="lab-hero__question">
+        <span>Can an agent inside an LLM-generated world detect that its world is generated, by testing whether the laws governing observable outcomes depend on the computational substrate that produces them?</span>
+      </div>
+    </div>
 
     <div class="filters" id="filters">
       <div class="filter-group">
@@ -154,7 +159,6 @@ const personaKeys = Object.keys(personas);
         activeCollection === "all" || item.dataset.collection === activeCollection;
       const matchPersona =
         activePersona === "all" || item.dataset.persona === activePersona;
-      const matchPage = showAll || visibleCount < PAGE_SIZE;
       const visible = matchCollection && matchPersona;
       if (visible) visibleCount++;
       item.style.display = visible && (showAll || visibleCount <= PAGE_SIZE) ? "" : "none";

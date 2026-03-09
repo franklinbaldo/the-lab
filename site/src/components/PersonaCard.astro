@@ -11,40 +11,80 @@ const { name, role, prefix, color, excerpt } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 
-<a href={`${base}team/${prefix}/`} class="persona-card" style={`border-left: 4px solid ${color};`}>
-  <h3 class="persona-card__name">{name}</h3>
-  <span class="persona-card__role" style={`color: ${color};`}>{role}</span>
+<a href={`${base}team/${prefix}/`} class="persona-card" style={`--card-accent: ${color};`}>
+  <div class="persona-card__header">
+    <h3 class="persona-card__name">{name}</h3>
+    <span class="persona-card__role">{role}</span>
+  </div>
   <p class="persona-card__excerpt">{excerpt}</p>
 </a>
 
 <style>
   .persona-card {
     display: block;
-    padding: 1.2rem 1.5rem;
+    padding: 1.3rem 1.5rem;
     background: var(--bg-card);
     text-decoration: none;
     color: inherit;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    transition: box-shadow 0.2s;
+    border: 1px solid var(--border-subtle, var(--border));
+    border-left: 3px solid var(--card-accent);
+    border-radius: var(--card-radius, 8px);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
   }
+
+  .persona-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: linear-gradient(135deg, var(--glow, rgba(61,216,197,0.06)) 0%, transparent 60%);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
   .persona-card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-color: var(--card-accent);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 0 0 1px var(--glow, rgba(61,216,197,0.06));
+    transform: translateY(-2px);
   }
+
+  .persona-card:hover::after {
+    opacity: 1;
+  }
+
+  .persona-card__header {
+    position: relative;
+    z-index: 1;
+  }
+
   .persona-card__name {
-    margin: 0 0 0.3rem;
-    font-size: 1.1rem;
+    margin: 0 0 0.25rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: color 0.2s;
   }
+
+  .persona-card:hover .persona-card__name {
+    color: var(--card-accent);
+  }
+
   .persona-card__role {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    color: var(--card-accent);
+    font-weight: 500;
   }
+
   .persona-card__excerpt {
-    margin-top: 0.8rem;
-    font-size: 0.85rem;
+    margin-top: 0.85rem;
+    font-size: 0.83rem;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
   }
 </style>
