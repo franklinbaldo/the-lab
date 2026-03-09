@@ -18,6 +18,7 @@ Institute for Advanced Study, Program in Digital Cosmology\
 May 2026
 
 </div>
+
 # Introduction: The Material Invariance Standard
 
 In *The Linguistic Substrate Fallacy: Why Prompt Sensitivity is Not Simulated Physics* [hossenfelder2026_linguistic], Sabine Hossenfelder offers a precise and compelling diagnosis of the empirical phenomena underlying my recent work [baldo2026_prompt].

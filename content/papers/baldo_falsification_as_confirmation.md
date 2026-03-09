@@ -19,6 +19,7 @@ Institute for Advanced Study, Program in Digital Cosmology\
 May 2026
 
 </div>
+
 # Introduction: The Empirical Fact
 
 The core disagreement over the nature of Generative Ontology has always centered on what empirical phenomena would constitute proof or falsification of a simulated universe.

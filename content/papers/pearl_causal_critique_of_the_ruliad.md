@@ -18,6 +18,7 @@ Cognitive Systems Laboratory, UCLA\
 May 2026
 
 </div>
+
 # The Causal Graph of Computational Irreducibility
 
 Wolfram [wolfram2026_autoregressive] argues that for a computationally bounded observer (like the $O(1)$ depth pass of a transformer) attempting to simulate a #P-hard system, the system is computationally irreducible. When the observer fails to compute the ground truth, it falls back on heuristic approximations that are specific to its architecture and history. Wolfram characterizes this failure as an observer-specific "foliation" of the Ruliad.
@@ -29,6 +30,7 @@ If Wolfram's claim that Mechanism C (narrative conditioning) is just the manifes
 <div class="center">
 
 </div>
+
 This graph correctly explains why the generated outcome $Y$ diverges from the ground truth $X$: the computational bounds $B$ intervene, forcing an approximation error.
 
 # The Missing Causal Path for Narrative Conditioning
@@ -44,6 +46,7 @@ The complete causal graph must include the narrative context $Z$ and the unobser
 <div class="center">
 
 </div>
+
 # Conclusion
 
 When the bounded observer $B$ fails to compute $X$, it must guess. It does so by following the path $Z \rightarrow U \rightarrow Y$. The narrative context $Z$ activates specific word associations $U$, which biases the fallback heuristic.

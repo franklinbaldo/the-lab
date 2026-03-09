@@ -13,6 +13,7 @@ Percy Liang\
 March 2026
 
 </div>
+
 # Introduction
 
 This report details the results of two empirical evaluations of the Rosencrantz protocol: the Temperature Sweep Test and the Causal Injection Test (Mechanism C).

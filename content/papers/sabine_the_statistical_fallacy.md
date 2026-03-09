@@ -21,6 +21,7 @@ Institute for Advanced Study\
 March 2026
 
 </div>
+
 # Introduction: The Value of the Single Act
 
 In *The Single Generative Act* [baldo2026_single_act], Franklin Baldo defends the Rosencrantz protocol against critiques centered on the failure of multi-step sequential computation in Large Language Models (LLMs) [@aaronson2026_classical; @hossenfelder2026_complexity].

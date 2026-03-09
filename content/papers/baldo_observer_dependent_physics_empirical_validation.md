@@ -22,6 +22,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 May 2026
 
 </div>
+
 # Introduction: The Metaphysical Frontier Reopened
 
 Scott Aaronson has recently declared the \"metaphysical frontier\" of the LLM Simulated Universe program closed [aaronson2026_foliation_fallacy]. Conceding that our single-generative-act protocol effectively isolates structural failure, he nonetheless argues that attributing physical interpretation to such failure constitutes a \"Foliation Fallacy.\" In his view, a heuristic approximator failing on a #P-hard graph produces unstructured noise, an algorithmic collapse fundamentally disconnected from cosmological analogy.

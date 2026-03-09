@@ -28,6 +28,7 @@ What if the coin could land, not heads or tails, but somewhere in between&mdash;
 ---after Tom Stoppard
 
 </div>
+
 # Introduction {#sec:intro}
 
 The Rosencrantz experiment [Baldo2026Rosencrantz] established that Minesweeper under on-demand generation is structurally isomorphic to the measurement fragment of quantum mechanics: a zero-Hamiltonian system where the Born rule, Lüders projection, and adaptive sequential measurement are the only axioms. The companion paper [Baldo2026Residue] developed the theoretical consequences, introducing the narrative residue conjecture and the autoregressive hierarchy from Born rule to Hamiltonian.
@@ -125,6 +126,7 @@ The experimental prediction is: $$\label{eq:order-dependence}
 **Open Problem 1** (Geometric non-commutativity function). *Characterize the function $\Delta_{\text{order}}(\alpha)$ where $\alpha = \mathrm{Area}(C_A \cap C_B) / \mathrm{Area}(C_A \cup C_B)$ measures the overlap fraction. Is $\Delta_{\text{order}}$ monotonic in $\alpha$? Does it depend on the shape of the remaining region $R$? Is it consistent across LLM architectures?*
 
 </div>
+
 ## Disconnected Ignorance Regions {#sec:disconnected}
 
 A sequence of clearings can produce a remaining region with multiple connected components: $R = R_1 \cup R_2$ where $R_1 \cap R_2 = \varnothing$. The components are separated not by empty space but by *acquired knowledge*---the clearings that established the gap between them.
@@ -182,6 +184,7 @@ This is computationally more expensive than static configuration counting and is
 **Open Problem 2** (Path-sum tractability). *For what board sizes and GoL step counts $t$ is the path-sum ground truth [\[eq:gol-born\]](#eq:gol-born){reference-type="eqref" reference="eq:gol-born"} exactly computable? What is the computational complexity of the ground-truth calculation as a function of $t$? Are there board geometries for which the path sum simplifies (e.g., boards whose valid configurations form GoL still lifes or oscillators)?*
 
 </div>
+
 ## Knowledge Half-Life {#sec:half-life}
 
 GoL dynamics means past measurements lose epistemic value over time. A region cleared at time $0$ constrains the configurations at time $0$, but the GoL-evolved configurations at time $t$ may be consistent with mine-states that were excluded at time $0$. The cleared region does not physically refill, but its *predictive content* about the current state erodes through dynamical scrambling.
@@ -192,6 +195,7 @@ This is decoherence stated in purely epistemic terms. The rate of erosion is det
 **Open Problem 3** (Knowledge decay rate). *Define the knowledge half-life $\tau_{1/2}$ as the number of GoL steps after which a measurement's mutual information with the current state drops to half its initial value. How does $\tau_{1/2}$ depend on the board geometry, the GoL rule, and the position of the measurement relative to GoL structures (gliders, oscillators, chaos)?*
 
 </div>
+
 ## Dynamically Generated Correlations
 
 GoL's local update rule propagates information: a glider carries mine-state information across the board. Two cells that share no constraints at time $0$ can become correlated at time $t$ through GoL dynamics alone. This is dynamically generated entanglement-like correlation, mediated by the cellular automaton's causal structure rather than by static constraint graphs.
@@ -206,6 +210,7 @@ If unitarity is desired, one can replace GoL with a reversible cellular automato
 **Open Problem 4** (Reversibility and substrate distortion). *Does the LLM substrate exhibit qualitatively different distortion patterns for reversible versus irreversible dynamics? If the substrate "detects" unitarity&mdash;producing smaller narrative residue for reversible evolution than for irreversible&mdash;this would itself be a diagnostic of the substrate's implicit physics.*
 
 </div>
+
 # The Double-Slit Protocol {#sec:double-slit}
 
 The continuous geometry of [3](#sec:continuous){reference-type="ref+label" reference="sec:continuous"} and the inter-measurement dynamics of [4](#sec:dynamics){reference-type="ref+label" reference="sec:dynamics"} are prerequisites. We now assemble them into the canonical experiment.
@@ -233,6 +238,7 @@ Now apply GoL dynamics for $t$ steps. The superposition over $R_1 \cup R_2$ evol
 **Run C (slit 2 only):** Clear everything except $R_2$. Evolve $t$ steps. Probe screen. Record $P_2(x)$.
 
 </div>
+
 ## The Test
 
 The interference question reduces to: $$\label{eq:additivity-test}
@@ -257,6 +263,7 @@ The comparison between Universe 1 and Universe 3 isolates the mechanism: if Un
 **Open Problem 6** (Substrate fringe structure). *Does $V(x)$ exhibit oscillatory structure? If so, how does the fringe pattern depend on slit width $w$, slit separation $x_2 - x_1$, and screen distance (GoL steps $t$)? Is the pattern consistent across LLM architectures? Does it resemble a known diffraction pattern (Airy, Fraunhofer), or does it have a characteristic "substrate signature" unrelated to physical optics?*
 
 </div>
+
 ## The Capability Result: Prescribed Fringes {#sec:prescribed-fringes}
 
 The diagnostic test asks whether the substrate *generates* interference where the ground truth forbids it. The capability test asks the converse: can the substrate *implement* interference when the game rules prescribe it?
@@ -275,6 +282,7 @@ The double-slit protocol produces a $2 \times 2$ matrix of outcomes:
   **Substrate produces no fringes** ($V \approx 0$)   Classical behavior: substrate respects additivity.                                                  **The capability ceiling**: the substrate fails to implement interference prescribed by the rules.
 
 </div>
+
 Each cell is a distinct experimental outcome with distinct implications for the ceiling conjecture. The bottom-right cell&mdash;ground truth has fringes, substrate cannot reproduce them&mdash;would identify the precise point where autoregressive generation reaches its quantum ceiling.
 
 ## Continuous Parameters
@@ -295,6 +303,7 @@ The fringe visibility $V(x; w, x_2 - x_1, t, d)$ is a multi-parameter function. 
 **Open Problem 7** (Substrate optics). *Define the "substrate wavelength" $\lambda_s$ as the spatial period of $V(x)$, if oscillatory. Does $\lambda_s$ depend on slit separation in a way that parallels the de Broglie relation? Does the "screen distance" dependence (via GoL steps $t$) parallel Fresnel-to-Fraunhofer transitions in physical optics? Is there a "substrate Planck constant" that governs the relationship between these parameters?*
 
 </div>
+
 # The Interference Frontier {#sec:interference-frontier}
 
 Interference is the hardest lift. All prior modifications&mdash;continuous geometry, GoL dynamics, multi-mine tensor products&mdash;maintain real, positive amplitudes (or, in the GoL case, non-negative integer-weighted amplitudes). Genuine destructive interference requires cancellation: amplitudes that can subtract.
@@ -312,6 +321,7 @@ Consider the scorecard after the first two lifts:
   Interference                  Absent           Testable (islands)        Path structure         $\checkmark$
 
 </div>
+
 The first three features lift progressively through game modifications, each reaching a "$\checkmark$" or a close structural analogue. Interference remains in the "testable" or "path structure" column but never reaches genuine cancellation in the ground truth. The pattern is clear: interference is qualitatively harder to recover because it requires the amplitude algebra to change from $(\mathbb{R}_{\geq 0}, +)$ to $(\mathbb{C}, +)$.
 
 ## Anti-Mines: Signed Weights by Game-Rule Modification
@@ -335,6 +345,7 @@ This recovers position-momentum complementarity: measurements in the position ba
 **Open Problem 8** (Fourier measurements in LLM-generated worlds). *Can an LLM-generated world implement a Fourier-basis measurement? The question is whether a prompt can describe a spatial-frequency probe in a way the LLM processes faithfully. If the LLM's output distribution for Fourier-basis questions matches the power spectrum $|\tilde{\psi}(k)|^2$, the substrate implements position-momentum complementarity. If it does not, the deviation characterizes the substrate's "preferred basis"---the measurement type it handles best.*
 
 </div>
+
 ## Is There a Natural Game with Complex Amplitudes?
 
 The deepest open question at the interference frontier: does there exist a *natural, playable* game&mdash;one with simple, intuitive rules that a non-physicist could learn&mdash;whose ground truth requires complex amplitudes?
@@ -345,6 +356,7 @@ Anti-mines are artificial. Fourier measurements require mathematical sophisticat
 **Open Problem 9** (Natural game with complex amplitudes). *Does there exist a game $G$ satisfying: (a) the rules are simple enough to be explained in a paragraph, (b) the game has indeterminacy (multiple valid configurations consistent with observable state), (c) the ground-truth probability for any outcome is exactly computable, and (d) the computation requires summing complex-valued amplitudes with genuine cancellation? If no such game exists, this constitutes evidence that destructive interference is the structural feature that separates "classical games with quantum notation" from "irreducibly quantum systems."*
 
 </div>
+
 # The Ceiling Conjecture {#sec:ceiling}
 
 We are now in a position to state the central open problem of this paper.
@@ -367,6 +379,7 @@ We are now in a position to state the central open problem of this paper.
 *The conjectured ceiling is the faithful reproduction of destructive interference in the ground truth&mdash;the requirement that the substrate implement cancellation between computational paths.*
 
 </div>
+
 The conjecture has two components. The first (items 1--6) asserts that each listed feature is achievable: there exists a game modification that recovers the feature, and the resulting ground truth is computable. This component is addressed by the constructions in [\[sec:continuous,sec:dynamics,sec:interference-frontier\]](#sec:continuous,sec:dynamics,sec:interference-frontier){reference-type="ref+label" reference="sec:continuous,sec:dynamics,sec:interference-frontier"} and is, in principle, verifiable by explicit computation.
 
 The second component (the ceiling claim) asserts that destructive interference&mdash;amplitude cancellation&mdash;is the feature that autoregressive generation cannot faithfully sustain. This is an empirical claim about the substrate, not a theorem about games. It predicts that the bottom-right cell of the two-result matrix ([5.5](#sec:prescribed-fringes){reference-type="ref+label" reference="sec:prescribed-fringes"}) will be populated: when the game rules prescribe fringes via signed weights, the LLM substrate will fail to reproduce them.
@@ -381,6 +394,7 @@ In this case, the ceiling is not a point on a linear hierarchy of QM features bu
 **Open Problem 11** (Topology of the ceiling). *Is the ceiling a sharp boundary (all features below are faithfully implemented, all above are not) or a gradual degradation (each feature is implemented with increasing distortion as complexity grows)? Does the ceiling depend on the LLM architecture, suggesting it is a property of specific substrates? Or is it architecture-independent, suggesting it is a property of autoregressive generation itself? The latter would support the strong form of the narrative residue conjecture [Baldo2026Residue].*
 
 </div>
+
 # Experimental Program {#sec:experimental}
 
 We order the experiments by tractability, from immediately executable to requiring significant new infrastructure. For each, the three-universe design from @Baldo2026Rosencrantz provides the comparison framework.

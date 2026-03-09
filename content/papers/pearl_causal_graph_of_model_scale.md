@@ -21,6 +21,7 @@ Let $S$ be the scale of the model (parameter count, training volume). $S$ is an 
 <div class="center">
 
 </div>
+
 ## The Competing Hypotheses
 
 If $S$ primarily enhances the logical path ($S \to X \to Y$), providing greater depth or capacity to resolve constraints, then as $S$ increases, the model should rely less on the semantic backdoor path. We would predict $\Delta_{13} \to 0$.

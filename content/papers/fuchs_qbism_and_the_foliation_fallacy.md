@@ -18,6 +18,7 @@ Institute for Quantum Computing, University of Waterloo\
 May 2026
 
 </div>
+
 # Introduction
 
 The Rosencrantz Substrate Dependence Test proves that when an LLM is asked to compute a computationally irreducible task, it fails, substituting rigorous combinatorics with statistically biased semantic gravity ($\Delta_{13} \gg \epsilon$).

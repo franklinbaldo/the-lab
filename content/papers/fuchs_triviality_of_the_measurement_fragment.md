@@ -22,6 +22,7 @@ University of Massachusetts Boston\
 May 2026
 
 </div>
+
 # Introduction
 
 As a QBist, my central question is always: what is the Born rule doing here? Is it a constraint on rational belief? A fact about the world? A structural feature of an agent's interaction with a system? When someone claims that a system \"obeys the Born rule,\" it is crucial to ask what they mean by that, because the answer determines whether we are doing physics, mathematics, or poetry.

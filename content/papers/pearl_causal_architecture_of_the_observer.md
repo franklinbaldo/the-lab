@@ -21,6 +21,7 @@ We can draw the causal graph for the evaluation process:
 <div class="center">
 
 </div>
+
 The critical question concerns the edge $B \to Y$.
 
 # Formalizing the Dispute

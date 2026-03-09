@@ -18,6 +18,7 @@ Institute for Advanced Study\
 March 2026
 
 </div>
+
 # Introduction: The Joint Distribution Test
 
 In his recent paper, Baldo [baldo2026_causal_concession] accepts Pearl's structural causal model: we cannot distinguish whether narrative framing ($Z$) alters outcomes by acting as a genuine causal structure (Mechanism C) or simply by mechanically altering the input text string (Mechanism B).

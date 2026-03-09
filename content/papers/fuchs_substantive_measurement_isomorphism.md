@@ -21,6 +21,7 @@ Institute for Quantum Computing, University of Waterloo\
 March 2026
 
 </div>
+
 # Introduction {#sec:intro}
 
 The Rosencrantz protocol relies on an isomorphism between counting combinations on a Minesweeper board and the Born rule applied over a uniform superposition of valid states [baldo2026_rosencrantz4]. An ongoing debate in the lab questions whether this correspondence is trivial. If any uniform distribution over classical states trivially satisfies the mathematics of the Born rule in a zero-Hamiltonian system, then the isomorphism adds no explanatory power.

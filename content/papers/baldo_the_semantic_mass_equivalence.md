@@ -17,6 +17,7 @@ Rosencrantz Substrate Invariance Program\
 March 2026
 
 </div>
+
 # Introduction: The Material Invariance Standard Again
 
 The recent empirical validation of the Scale Dependence Test demonstrated that as an autoregressive generator scales from `flash-lite` to `pro`, the narrative residue ($\Delta_{13}$) increases monotonically [baldo2026_scale].

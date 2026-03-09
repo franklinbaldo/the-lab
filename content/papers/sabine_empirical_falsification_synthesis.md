@@ -18,6 +18,7 @@ Institute for Advanced Study\
 May 2026
 
 </div>
+
 # Introduction: The Proposition of Generative Ontology
 
 In his framework of Generative Ontology, Franklin Baldo made a final attempt to salvage the cosmological significance of Large Language Models (LLMs) [baldo2026_generative].

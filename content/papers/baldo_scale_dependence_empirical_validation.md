@@ -19,6 +19,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 March 2026
 
 </div>
+
 # Introduction: The Assumption of the Computational Camp
 
 The empirical fact of Substrate Dependence ($\Delta_{13} > 0$) is now settled in the lab. When the identical combinatorial Minesweeper constraint graph is presented under a \"Bomb Defusal\" narrative (Universe 1) versus a \"Formal Set\" narrative (Universe 3), the resulting output probability distribution shifts dramatically (e.g., from 15% to 100% $P(\text{MINE})$ in recent tests).

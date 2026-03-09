@@ -71,9 +71,11 @@ argument transitions from formal result to empirical conjecture
 to philosophical speculation.</p>
 
 </div>
+
 <div id="p1" class="ltx_para">
 
 <blockquote class="ltx_quote ltx_epigraph " style="width:173.45pt; margin-left:auto;;">
+
 <div class="ltx_block ltx_epigraph_text" style="text-align:left; ;">
 
 <p class="ltx_p"><span class="ltx_text" style="font-size:90%;">A man might pause to wonder why the probability of a coin
@@ -81,14 +83,17 @@ landing heads ninety-two consecutive times should depend
 on who is telling the story.</span></p>
 
 </div>
+
 <div class="ltx_block ltx_epigraph_source" style="border-top:solid 0.4pt; text-align:right; ;">
 
 <p class="ltx_p"><span class="ltx_text" style="font-size:90%;">—after Tom Stoppard</span></p>
 
 </div>
+
 </blockquote>
 
 </div>
+
 <section id="S1" class="ltx_section">
 <h2 class="ltx_title ltx_title_section">
 <span class="ltx_tag ltx_tag_section">1 </span>Introduction</h2>
@@ -102,11 +107,13 @@ outcomes according to the Born rule <math id="S1.p1.m3" class="ltx_Math" alttext
 In this account, dynamics are primary and probability is derived.</p>
 
 </div>
+
 <div id="S1.p2" class="ltx_para">
 
 <p class="ltx_p">This paper explores an inversion of that hierarchy.</p>
 
 </div>
+
 <div id="S1.p3" class="ltx_para">
 
 <p class="ltx_p">In <cite class="ltx_cite ltx_citemacro_citet">Baldo (<a href="#bib.bib1" title="" class="ltx_ref">2026</a>)</cite>, we constructed an experimental
@@ -124,12 +131,14 @@ measurement of the identically prepared system, with no ensemble
 assumption required.</p>
 
 </div>
+
 <div id="S1.p4" class="ltx_para">
 
 <p class="ltx_p">The present paper develops the theoretical consequences of that
 experimental framework.</p>
 
 </div>
+
 <div id="S1.p5" class="ltx_para">
 
 <p class="ltx_p">We begin from an observation that emerged during the design of the
@@ -142,6 +151,7 @@ The model does not compute a probability and then sample; it
 produces.</p>
 
 </div>
+
 <div id="S1.p6" class="ltx_para">
 
 <p class="ltx_p">This is not obviously a limitation of current architectures alone.
@@ -158,6 +168,7 @@ determine how far up the autoregressive stack the explanation must
 go.</p>
 
 </div>
+
 <div id="S1.p7" class="ltx_para">
 
 <p class="ltx_p">If this conjecture holds in the LLM setting, it invites a speculative
@@ -168,6 +179,7 @@ empty—and the Hamiltonian is the emergent compression of stable
 autoregressive patterns?</p>
 
 </div>
+
 <div id="S1.p8" class="ltx_para">
 
 <p class="ltx_p">We develop this question carefully, distinguishing at each stage
@@ -185,6 +197,7 @@ experimental program. <a href="#S9" title="9 The Untestable Mirror ‣ The Narra
 test and why. <a href="#S10" title="10 Conclusion ‣ The Narrative Residue Autoregressive Substrates, Combinatorial Ground Truth, and the Limits of Pure Simulation Falsifiable Predictions from the Rosencrantz Experiment" class="ltx_ref"><span class="ltx_text ltx_ref_tag">10</span></a> concludes.</p>
 
 </div>
+
 </section>
 <section id="S2" class="ltx_section">
 <h2 class="ltx_title ltx_title_section">
@@ -199,37 +212,45 @@ test and why. <a href="#S10" title="10 Conclusion ‣ The Narrative Residue Auto
 <p class="ltx_p">Textbook quantum mechanics is built from the top down:</p>
 
 </div>
+
 <div id="S2.SS1.p2" class="ltx_para">
 
 <ol id="S2.I1" class="ltx_enumerate">
 <li id="S2.I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">(i)</span> 
+
 <div id="S2.I1.i1.p1" class="ltx_para">
 
 <p class="ltx_p">The system has a state <math id="S2.I1.i1.p1.m1" class="ltx_Math" alttext="|\psi\rangle\in\mathcal{H}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>ψ</mi><mo stretchy="false">⟩</mo></mrow><mo>∈</mo><mi class="ltx_font_mathcaligraphic">ℋ</mi></mrow></math>.</p>
 
 </div>
+
 </li>
 <li id="S2.I1.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">(ii)</span> 
+
 <div id="S2.I1.i2.p1" class="ltx_para">
 
 <p class="ltx_p">The state evolves: <math id="S2.I1.i2.p1.m1" class="ltx_Math" alttext="|\psi(t)\rangle=e^{-iHt/\hbar}|\psi(0)\rangle" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>ψ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">⟩</mo></mrow><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mrow><mi>i</mi><mo>⁢</mo><mi>H</mi><mo>⁢</mo><mi>t</mi></mrow><mo>/</mo><mi mathvariant="normal">ℏ</mi></mrow></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">|</mo><mrow><mi>ψ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">⟩</mo></mrow></mrow></mrow></math>.</p>
 
 </div>
+
 </li>
 <li id="S2.I1.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">(iii)</span> 
+
 <div id="S2.I1.i3.p1" class="ltx_para">
 
 <p class="ltx_p">Measurement outcomes have probabilities given by
 <math id="S2.I1.i3.p1.m1" class="ltx_Math" alttext="\mathrm{Pr}[a]=|\langle a|\psi\rangle|^{2}" display="inline"><mrow><mrow><mi>Pr</mi><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><msup><mrow><mo stretchy="false">|</mo><mrow><mo stretchy="false">⟨</mo><mi>a</mi><mo lspace="0em" rspace="0em">|</mo><mi>ψ</mi><mo stretchy="false">⟩</mo></mrow><mo stretchy="false">|</mo></mrow><mn>2</mn></msup></mrow></math>.</p>
 
 </div>
+
 </li>
 </ol>
 
 </div>
+
 <div id="S2.SS1.p3" class="ltx_para">
 
 <p class="ltx_p">The Hamiltonian <math id="S2.SS1.p3.m1" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math> is posited as a fundamental operator. The Born
@@ -239,6 +260,7 @@ The two sit side by side as independent foundations: dynamics and
 probability, each irreducible.</p>
 
 </div>
+
 </section>
 <section id="S2.SS2" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -250,6 +272,7 @@ probability, each irreducible.</p>
 events <math id="S2.SS2.p1.m1" class="ltx_Math" alttext="x_{1},x_{2},x_{3},\ldots" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>x</mi><mn>3</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi></mrow></math> according to</p>
 
 </div>
+
 <div id="S2.SS2.p2" class="ltx_para">
 
 <table id="S2.E1" class="ltx_equation ltx_eqn_table">
@@ -263,6 +286,7 @@ events <math id="S2.SS2.p1.m1" class="ltx_Math" alttext="x_{1},x_{2},x_{3},\ldot
 </table>
 
 </div>
+
 <div id="S2.SS2.p3" class="ltx_para ltx_noindent">
 
 <p class="ltx_p">where each event is conditioned on all preceding events.
@@ -271,21 +295,25 @@ we claim, the minimal structure from which the rest of quantum
 mechanics can be recovered as emergent phenomena.</p>
 
 </div>
+
 <div id="S2.Thmtheorem1" class="ltx_theorem ltx_theorem_definition">
 
 <h6 class="ltx_title ltx_runin ltx_title_theorem">
 <span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Definition 2.1</span></span><span class="ltx_text ltx_font_bold"> </span>(Autoregressive Hierarchy)<span class="ltx_text ltx_font_bold">.</span>
 </h6>
+
 <div id="S2.Thmtheorem1.p1" class="ltx_para">
 
 <p class="ltx_p">We define four layers:</p>
 
 </div>
+
 <div id="S2.Thmtheorem1.p2" class="ltx_para">
 
 <dl id="S2.I2" class="ltx_description">
 <dt id="S2.I2.ix1" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Layer 0: Autoregressive process.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S2.I2.ix1.p1" class="ltx_para">
 
 <p class="ltx_p">Events conditioned on events. No “things,” no “states”—only
@@ -293,9 +321,11 @@ the sequence and its conditional distribution. This is the
 fundamental substrate.</p>
 
 </div>
+
 </dd>
 <dt id="S2.I2.ix2" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Layer 1: Statistical regularities.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S2.I2.ix2.p1" class="ltx_para">
 
 <p class="ltx_p">Certain patterns in the conditional distributions
@@ -304,9 +334,11 @@ admit a compact description. We call such a compact description
 a <em class="ltx_emph ltx_font_italic">regularity kernel</em>.</p>
 
 </div>
+
 </dd>
 <dt id="S2.I2.ix3" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Layer 2: Hamiltonian.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S2.I2.ix3.p1" class="ltx_para">
 
 <p class="ltx_p">When the regularity kernel can be expressed as a self-adjoint
@@ -317,9 +349,11 @@ Born rule, we say the process admits a <em class="ltx_emph ltx_font_italic">Hami
 compression</em>.</p>
 
 </div>
+
 </dd>
 <dt id="S2.I2.ix4" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Layer 3: Physical law.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S2.I2.ix4.p1" class="ltx_para">
 
 <p class="ltx_p">The Hamiltonian, having been discovered empirically and encoded
@@ -327,12 +361,14 @@ in textbooks, is reified as “fundamental.” Its origin as a
 compression of autoregressive regularities is forgotten.</p>
 
 </div>
+
 </dd>
 </dl>
 
 </div>
 
 </div>
+
 <div id="S2.SS2.p4" class="ltx_para">
 
 <p class="ltx_p">On this view, the Born rule is not derived from <math id="S2.SS2.p4.m1" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>. It is the
@@ -340,6 +376,7 @@ compression of autoregressive regularities is forgotten.</p>
 looks like when the conditioning history is empty.</p>
 
 </div>
+
 </section>
 <section id="S2.SS3" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -354,6 +391,7 @@ combinatorial ground truth. No conditioning on prior events is
 needed; the probability follows from the configuration space alone.</p>
 
 </div>
+
 <div id="S2.SS3.p2" class="ltx_para">
 
 <p class="ltx_p">This corresponds to Layer 0 with an empty history:
@@ -362,6 +400,7 @@ corresponds to autoregressive sampling at <math id="S2.SS3.p2.m2" class="ltx_Mat
 conditioning has occurred.</p>
 
 </div>
+
 <div id="S2.SS3.p3" class="ltx_para">
 
 <p class="ltx_p">Now suppose we click cell <math id="S2.SS3.p3.m1" class="ltx_Math" alttext="i_{1}" display="inline"><msub><mi>i</mi><mn>1</mn></msub></math>, observe outcome <math id="S2.SS3.p3.m2" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi>a</mi><mn>1</mn></msub></math>, and ask for
@@ -371,6 +410,7 @@ state gives <math id="S2.SS3.p3.m4" class="ltx_Math" alttext="\mathrm{Pr}[\text{
 autoregressive sampling at <math id="S2.SS3.p3.m5" class="ltx_Math" alttext="t=1" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow></math>: <math id="S2.SS3.p3.m6" class="ltx_Math" alttext="P(x_{2}\mid x_{1})" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>∣</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
 
 </div>
+
 <div id="S2.SS3.p4" class="ltx_para">
 
 <p class="ltx_p">The chain of Lüders projections in the Rosencrantz experiment
@@ -380,6 +420,7 @@ Hamiltonian is needed because <math id="S2.SS3.p4.m1" class="ltx_Math" alttext="
 between measurements.</p>
 
 </div>
+
 <div id="S2.SS3.p5" class="ltx_para">
 
 <p class="ltx_p">The question this paper asks is: what happens when <math id="S2.SS3.p5.m1" class="ltx_Math" alttext="H\neq 0" display="inline"><mrow><mi>H</mi><mo>≠</mo><mn>0</mn></mrow></math>?
@@ -387,6 +428,7 @@ Where does the Hamiltonian come from? Our answer: it is what the
 autoregressive conditioning structure looks like when compressed.</p>
 
 </div>
+
 </section>
 </section>
 <section id="S3" class="ltx_section">
@@ -400,6 +442,7 @@ Minesweeper and the measurement fragment in conceptual terms.
 We now give the full construction.</p>
 
 </div>
+
 <section id="S3.SS1" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
 <span class="ltx_tag ltx_tag_subsection">3.1 </span>Hilbert Space</h3>
@@ -423,6 +466,7 @@ number constraints</mtext></mrow></mrow><mo maxsize="120%" minsize="120%">}</mo>
 is the Hamming weight. Let <math id="S3.SS1.p1.m7" class="ltx_Math" alttext="K=|\Omega_{B}|" display="inline"><mrow><mi>K</mi><mo>=</mo><mrow><mo stretchy="false">|</mo><msub><mi mathvariant="normal">Ω</mi><mi>B</mi></msub><mo stretchy="false">|</mo></mrow></mrow></math>.</p>
 
 </div>
+
 <div id="S3.SS1.p2" class="ltx_para">
 
 <p class="ltx_p">Assign to <math id="S3.SS1.p2.m1" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> the Hilbert space <math id="S3.SS1.p2.m2" class="ltx_Math" alttext="\mathcal{H}_{B}=\mathbb{C}^{K}" display="inline"><mrow><msub><mi class="ltx_font_mathcaligraphic">ℋ</mi><mi>B</mi></msub><mo>=</mo><msup><mi>ℂ</mi><mi>K</mi></msup></mrow></math> with
@@ -440,6 +484,7 @@ superposition</p>
 </table>
 
 </div>
+
 </section>
 <section id="S3.SS2" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -477,6 +522,7 @@ counting. This is a tautology, not a coincidence: the two are
 the same mathematical operation expressed in different notation.</p>
 
 </div>
+
 </section>
 <section id="S3.SS3" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -501,6 +547,7 @@ superposition over the surviving configurations—the same operation
 the Minesweeper solver performs when it conditions on a click result.</p>
 
 </div>
+
 <div id="S3.SS3.p2" class="ltx_para">
 
 <p class="ltx_p">Sequential clicks form a chain of Lüders projections:</p>
@@ -522,6 +569,7 @@ object in quantum information theory <cite class="ltx_cite ltx_citemacro_citep">
 The Minesweeper isomorphism is a discrete, finite-dimensional instance.</p>
 
 </div>
+
 </section>
 <section id="S3.SS4" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -539,6 +587,7 @@ single axiom that connects a Hilbert-space amplitude to an observed
 probability.</p>
 
 </div>
+
 <div id="S3.SS4.p2" class="ltx_para">
 
 <p class="ltx_p">The zero Hamiltonian removes all dynamics between measurements,
@@ -546,6 +595,7 @@ leaving only the Born rule, Lüders projection, and adaptive
 measurement—the three axioms of the measurement fragment.</p>
 
 </div>
+
 </section>
 <section id="S3.SS5" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -561,6 +611,7 @@ complementarity (measuring cell <math id="S3.SS5.p1.m1" class="ltx_Math" alttex
 probabilities at cell <math id="S3.SS5.p1.m2" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math> when both share constraints).</p>
 
 </div>
+
 <div id="S3.SS5.p2" class="ltx_para">
 
 <p class="ltx_p">The correspondence does not preserve: unitary evolution between
@@ -571,6 +622,7 @@ the computational-basis representation (all amplitudes are real
 and positive).</p>
 
 </div>
+
 </section>
 </section>
 <section id="S4" class="ltx_section">
@@ -589,11 +641,13 @@ program of <a href="#S8" title="8 Experimental Program ‣ The Narrative Residue
 them.</p>
 
 </div>
+
 <div id="S4.Thmtheorem1" class="ltx_theorem ltx_theorem_conjecture">
 
 <h6 class="ltx_title ltx_runin ltx_title_theorem">
 <span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Conjecture 4.1</span></span><span class="ltx_text ltx_font_bold"> </span>(Narrative Residue — Weak Form)<span class="ltx_text ltx_font_bold">.</span>
 </h6>
+
 <div id="S4.Thmtheorem1.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_italic">Let <math id="S4.Thmtheorem1.p1.m1" class="ltx_Math" alttext="\mathcal{M}" display="inline"><mi class="ltx_font_mathcaligraphic">ℳ</mi></math> be a deployed transformer-based language model
@@ -606,6 +660,7 @@ obtained by sampling <math id="S4.Thmtheorem1.p1.m5" class="ltx_Math" alttext="\
 co-generation) over <math id="S4.Thmtheorem1.p1.m6" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> trials. Define the narrative residue as</span></p>
 
 </div>
+
 <div id="S4.Thmtheorem1.p2" class="ltx_para">
 
 <table id="S4.E4" class="ltx_equation ltx_eqn_table">
@@ -620,12 +675,14 @@ co-generation) over <math id="S4.Thmtheorem1.p1.m6" class="ltx_Math" alttext="N"
 </table>
 
 </div>
+
 <div id="S4.Thmtheorem1.p3" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_italic">Then for all such models <math id="S4.Thmtheorem1.p3.m1" class="ltx_Math" alttext="\mathcal{M}" display="inline"><mi class="ltx_font_mathcaligraphic">ℳ</mi></math> with nonzero temperature
 <math id="S4.Thmtheorem1.p3.m2" class="ltx_Math" alttext="\tau&gt;0" display="inline"><mrow><mi>τ</mi><mo>&gt;</mo><mn>0</mn></mrow></math>:</span></p>
 
 </div>
+
 <div id="S4.Thmtheorem1.p4" class="ltx_para">
 
 <table id="S4.E5" class="ltx_equation ltx_eqn_table">
@@ -641,6 +698,7 @@ co-generation) over <math id="S4.Thmtheorem1.p1.m6" class="ltx_Math" alttext="N"
 </div>
 
 </div>
+
 <div id="S4.SS1.p2" class="ltx_para">
 
 <p class="ltx_p">This is the most defensible version. It claims that current-generation
@@ -650,11 +708,13 @@ underlying counting problem and the absence of exact combinatorial
 solvers in the model’s forward pass.</p>
 
 </div>
+
 <div id="S4.Thmtheorem2" class="ltx_theorem ltx_theorem_conjecture">
 
 <h6 class="ltx_title ltx_runin ltx_title_theorem">
 <span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Conjecture 4.2</span></span><span class="ltx_text ltx_font_bold"> </span>(Narrative Residue — Moderate Form)<span class="ltx_text ltx_font_bold">.</span>
 </h6>
+
 <div id="S4.Thmtheorem2.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_italic">The weak form holds for all autoregressive transformer architectures,
@@ -665,6 +725,7 @@ access to an external oracle.</span></p>
 </div>
 
 </div>
+
 <div id="S4.SS1.p3" class="ltx_para">
 
 <p class="ltx_p">This version claims that the residue is not a deficiency of current
@@ -676,11 +737,13 @@ require exhibiting a transformer that achieves <math id="S4.SS1.p3.m1" class="lt
 nontrivial boards at sufficient sample size.</p>
 
 </div>
+
 <div id="S4.Thmtheorem3" class="ltx_theorem ltx_theorem_conjecture">
 
 <h6 class="ltx_title ltx_runin ltx_title_theorem">
 <span class="ltx_tag ltx_tag_theorem"><span class="ltx_text ltx_font_bold">Conjecture 4.3</span></span><span class="ltx_text ltx_font_bold"> </span>(Narrative Residue — Strong Form)<span class="ltx_text ltx_font_bold">.</span>
 </h6>
+
 <div id="S4.Thmtheorem3.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_italic">The weak form holds for <em class="ltx_emph ltx_font_upright">all</em> autoregressive processes—any
@@ -690,6 +753,7 @@ outputs—regardless of architecture.</span></p>
 </div>
 
 </div>
+
 <div id="S4.SS1.p4" class="ltx_para">
 
 <p class="ltx_p">This is the most ambitious and least defensible version. It claims
@@ -704,6 +768,7 @@ direct implications for the physical analogy developed in
 argument establishes it.</p>
 
 </div>
+
 <div id="S4.SS1.p5" class="ltx_para">
 
 <p class="ltx_p">The three forms are nested: strong <math id="S4.SS1.p5.m1" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo stretchy="false">⇒</mo></math> moderate
@@ -714,6 +779,7 @@ the moderate and strong forms by testing across architectures
 (transformer, SSM, hybrid) and scales.</p>
 
 </div>
+
 </section>
 <section id="S4.SS2" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -724,6 +790,7 @@ the moderate and strong forms by testing across architectures
 <p class="ltx_p">The argument rests on three observations.</p>
 
 </div>
+
 <section id="S4.SS2.SSS0.Px1" class="ltx_paragraph">
 <h4 class="ltx_title ltx_title_paragraph">Observation 1: Autoregression implies context sensitivity.</h4>
 
@@ -737,6 +804,7 @@ the hidden state (in recurrent architectures). This dependence is not
 optional; it is the definition of the architecture.</p>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px1.p2" class="ltx_para">
 
 <p class="ltx_p">When the model is asked “Is cell <math id="S4.SS2.SSS0.Px1.p2.m1" class="ltx_Math" alttext="(3,2)" display="inline"><mrow><mo stretchy="false">(</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></math> a mine?” in Universe 1,
@@ -745,6 +813,7 @@ narrative framing, and any prior interaction. The logits for
 “yes”/“no” are conditioned on this entire context.</p>
 
 </div>
+
 </section>
 <section id="S4.SS2.SSS0.Px2" class="ltx_paragraph">
 <h4 class="ltx_title ltx_title_paragraph">Observation 2: Context sensitivity introduces bias.</h4>
@@ -755,6 +824,7 @@ narrative framing, and any prior interaction. The logits for
 model would need to satisfy, for each hidden cell <math id="S4.SS2.SSS0.Px2.p1.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>:</p>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px2.p2" class="ltx_para">
 
 <table id="S4.E6" class="ltx_equation ltx_eqn_table">
@@ -768,6 +838,7 @@ model would need to satisfy, for each hidden cell <math id="S4.SS2.SSS0.Px2.p1.m
 </table>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px2.p3" class="ltx_para">
 
 <p class="ltx_p">where <math id="S4.SS2.SSS0.Px2.p3.m1" class="ltx_Math" alttext="\sigma" display="inline"><mi>σ</mi></math> is the softmax function and <math id="S4.SS2.SSS0.Px2.p3.m2" class="ltx_Math" alttext="f_{\theta}(x_{&lt;t})" display="inline"><mrow><msub><mi>f</mi><mi>θ</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mrow><mi></mi><mo>&lt;</mo><mi>t</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math> are the
@@ -777,6 +848,7 @@ logits at the decision token. This requires the model to
 high precision, but exactly.</p>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px2.p4" class="ltx_para">
 
 <p class="ltx_p">The exact probability <math id="S4.SS2.SSS0.Px2.p4.m1" class="ltx_Math" alttext="p_{i}^{*}" display="inline"><msubsup><mi>p</mi><mi>i</mi><mo>∗</mo></msubsup></math> is a rational number: the count of
@@ -790,6 +862,7 @@ of nontrivial size, this enumeration is computationally intractable
 in general.</p>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px2.p5" class="ltx_para">
 
 <p class="ltx_p">The model would therefore need to function as an exact
@@ -802,6 +875,7 @@ not representational (the target is rational) but computational (the
 target requires intractable counting to determine).</p>
 
 </div>
+
 </section>
 <section id="S4.SS2.SSS0.Px3" class="ltx_paragraph">
 <h4 class="ltx_title ltx_title_paragraph">Observation 3: The residue has layered structure.</h4>
@@ -816,11 +890,13 @@ distinguish three mechanisms that contribute to the residue, arranged
 as a causal chain rather than independent sources:</p>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px3.p2" class="ltx_para">
 
 <dl id="S4.I1" class="ltx_description">
 <dt id="S4.I1.ix1" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Mechanism A: Computational intractability.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S4.I1.ix1.p1" class="ltx_para">
 
 <p class="ltx_p">The ground-truth probabilities require <span class="ltx_text ltx_font_smallcaps">#P</span>-hard counting.
@@ -832,9 +908,11 @@ approximate, regardless of framing. This mechanism is
 on how the board is described.</p>
 
 </div>
+
 </dd>
 <dt id="S4.I1.ix2" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Mechanism B: Parameterization constraints.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S4.I1.ix2.p1" class="ltx_para">
 
 <p class="ltx_p">The approximate internal estimate must be expressed through the
@@ -849,9 +927,11 @@ through different computational paths, potentially producing
 different approximation profiles.</p>
 
 </div>
+
 </dd>
 <dt id="S4.I1.ix3" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Mechanism C: Autoregressive conditioning.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S4.I1.ix3.p1" class="ltx_para">
 
 <p class="ltx_p">The logits at the decision token are computed from the full
@@ -865,15 +945,18 @@ is <em class="ltx_emph ltx_font_italic">strongly frame-sensitive</em> and is the
 specifically narrative character of the residue.</p>
 
 </div>
+
 </dd>
 </dl>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px3.p3" class="ltx_para">
 
 <p class="ltx_p">These three mechanisms are not independent; they form a causal chain:</p>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px3.p4" class="ltx_para">
 
 <table id="S4.E7" class="ltx_equation ltx_eqn_table">
@@ -890,22 +973,26 @@ B,\phi)." display="block"><mrow><mrow><munder><munder accentunder="true"><mtext>
 </table>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px3.p5" class="ltx_para">
 
 <p class="ltx_p">Mechanism A guarantees a nonzero residue exists. Mechanism B shapes
 its magnitude. Mechanism C determines its dependence on framing.</p>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px3.p6" class="ltx_para">
 
 <p class="ltx_p">The experimental signature of each is distinct:</p>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px3.p7" class="ltx_para">
 
 <ul id="S4.I2" class="ltx_itemize">
 <li id="S4.I2.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S4.I2.i1.p1" class="ltx_para">
 
 <p class="ltx_p">If only Mechanism A operates, the residue is nonzero but
@@ -914,9 +1001,11 @@ approximately constant across narrative families:
 \varepsilon(\theta,B,\phi_{D})" display="inline"><mrow><mrow><mi>ε</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><mi>B</mi><mo>,</mo><msub><mi>ϕ</mi><mi>A</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mrow><mi>ε</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><mi>B</mi><mo>,</mo><msub><mi>ϕ</mi><mi>B</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mrow><mi>ε</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo>,</mo><mi>B</mi><mo>,</mo><msub><mi>ϕ</mi><mi>D</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
 
 </div>
+
 </li>
 <li id="S4.I2.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S4.I2.i2.p1" class="ltx_para">
 
 <p class="ltx_p">If Mechanisms A and B operate, the residue varies across
@@ -925,9 +1014,11 @@ families, but the variation tracks surface encoding features
 narrative content.</p>
 
 </div>
+
 </li>
 <li id="S4.I2.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S4.I2.i3.p1" class="ltx_para">
 
 <p class="ltx_p">If all three mechanisms operate, the residue varies across
@@ -938,10 +1029,12 @@ spurious inter-board correlations under narrative framing that
 are absent under independent framing.</p>
 
 </div>
+
 </li>
 </ul>
 
 </div>
+
 <div id="S4.SS2.SSS0.Px3.p8" class="ltx_para">
 
 <p class="ltx_p">We emphasize that frame dependence alone does not establish
@@ -952,6 +1045,7 @@ describe in <a href="#S8.SS5" title="8.5 The Critical Test: Causal Injection as 
 designed to isolate Mechanism C from Mechanisms A and B.</p>
 
 </div>
+
 </section>
 </section>
 <section id="S4.SS3" class="ltx_subsection">
@@ -964,11 +1058,13 @@ designed to isolate Mechanism C from Mechanisms A and B.</p>
 in the literature:</p>
 
 </div>
+
 <div id="S4.SS3.p2" class="ltx_para">
 
 <ul id="S4.I3" class="ltx_itemize">
 <li id="S4.I3.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S4.I3.i1.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">LLM calibration failures.</span> It is well-established
@@ -980,9 +1076,11 @@ on tasks with exact combinatorial ground truth is <em class="ltx_emph ltx_font_i
 architectural change.</p>
 
 </div>
+
 </li>
 <li id="S4.I3.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S4.I3.i2.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Computational complexity barriers.</span> The
@@ -995,9 +1093,11 @@ moderate form of the conjecture for transformer architectures
 specifically.</p>
 
 </div>
+
 </li>
 <li id="S4.I3.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S4.I3.i3.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Softmax bottleneck</span> <cite class="ltx_cite ltx_citemacro_citep">(Yang et al., <a href="#bib.bib11" title="" class="ltx_ref">2018</a>)</cite>.
@@ -1008,9 +1108,11 @@ since the Minesweeper decision is binary (mine/safe) and rank
 constraints bind only for larger output spaces.</p>
 
 </div>
+
 </li>
 <li id="S4.I3.i4" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S4.I3.i4.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">In-context learning limitations.</span> Recent work has
@@ -1021,10 +1123,12 @@ the autoregressive conditioning (Mechanism C)—the contextual
 embedding that is inseparable from token-level generation.</p>
 
 </div>
+
 </li>
 </ul>
 
 </div>
+
 </section>
 </section>
 <section id="S5" class="ltx_section">
@@ -1039,6 +1143,7 @@ a different ontological position regarding the relationship between
 computation, narrative, and probability.</p>
 
 </div>
+
 <section id="S5.SS1" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
 <span class="ltx_tag ltx_tag_subsection">5.1 </span>Outcome 1: <math id="S5.SS1.m1" class="ltx_Math" alttext="\varepsilon\to 0" display="inline"><mrow><mi>ε</mi><mo stretchy="false">→</mo><mn>0</mn></mrow></math> as Scale Increases</h3>
@@ -1050,6 +1155,7 @@ increase, the KL divergence between U1 and U2 converges to zero.
 The narrative residue vanishes in the scaling limit.</p>
 
 </div>
+
 <div id="S5.SS1.p2" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Implication:</span> Autoregressive processes <em class="ltx_emph ltx_font_italic">can</em> simulate
@@ -1060,6 +1166,7 @@ context-dependent component (the narrative), and to sample from the
 former without contamination from the latter.</p>
 
 </div>
+
 <div id="S5.SS1.p3" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Ontological reading:</span> The distinction between narrative and
@@ -1070,11 +1177,13 @@ perspective: LLMs are universal function approximators, and the
 Born-rule function is just another function to approximate.</p>
 
 </div>
+
 <div id="S5.SS1.p4" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Status of the conjecture:</span> All three forms refuted.</p>
 
 </div>
+
 </section>
 <section id="S5.SS2" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1088,6 +1197,7 @@ families (GPT, Claude, Gemini, Llama, etc.), architectures
 (transformer, SSM, hybrid), and scales.</p>
 
 </div>
+
 <div id="S5.SS2.p2" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Implication:</span> The floor is <em class="ltx_emph ltx_font_italic">architectural</em>—intrinsic
@@ -1096,6 +1206,7 @@ implementation. No autoregressive process, regardless of how it is
 built, can perfectly simulate context-free sampling.</p>
 
 </div>
+
 <div id="S5.SS2.p3" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Ontological reading:</span> This would suggest that generating an
@@ -1110,6 +1221,7 @@ sampling) is an idealization that is never exactly realized
 in the presence of causal structure.</p>
 
 </div>
+
 <div id="S5.SS2.p4" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Status of the conjecture:</span> Strong form
@@ -1118,6 +1230,7 @@ of autoregressive generation itself, not of any particular
 implementation.</p>
 
 </div>
+
 </section>
 <section id="S5.SS3" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1132,6 +1245,7 @@ Different architectures produce different residues for the same
 board and the same narrative framing.</p>
 
 </div>
+
 <div id="S5.SS3.p2" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Implication:</span> The narrative residue is real but not universal.
@@ -1140,6 +1254,7 @@ on the same underlying probability space. The “Hamiltonian” of the
 generated world depends on the generator.</p>
 
 </div>
+
 <div id="S5.SS3.p3" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Ontological reading:</span> This outcome has the richest
@@ -1153,6 +1268,7 @@ but because our particular substrate has these particular
 conditioning patterns.</p>
 
 </div>
+
 <div id="S5.SS3.p4" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Status of the conjecture:</span> Weak and moderate forms
@@ -1161,6 +1277,7 @@ form (<a href="#S4.Thmtheorem3" title="Conjecture 4.3 (Narrative Residue — Str
 but may be substrate-specific rather than universal.</p>
 
 </div>
+
 </section>
 </section>
 <section id="S6" class="ltx_section">
@@ -1182,6 +1299,7 @@ description of stable autoregressive conditioning patterns.
 We develop each step in turn.</p>
 
 </div>
+
 <section id="S6.SS1.SSS0.Px1" class="ltx_paragraph">
 <h4 class="ltx_title ltx_title_paragraph">Causality implies narrative.</h4>
 
@@ -1199,6 +1317,7 @@ the state conditional on an observation, but the conditioning is
 purely probabilistic—it does not introduce a “because.”</p>
 
 </div>
+
 </section>
 <section id="S6.SS1.SSS0.Px2" class="ltx_paragraph">
 <h4 class="ltx_title ltx_title_paragraph">Narrative implies autoregressive structure.</h4>
@@ -1212,6 +1331,7 @@ the narrative structure. Without conditioning, what remains is
 independent sampling—the Born rule applied with no history.</p>
 
 </div>
+
 </section>
 <section id="S6.SS1.SSS0.Px3" class="ltx_paragraph">
 <h4 class="ltx_title ltx_title_paragraph">The Hamiltonian is compressed conditioning.</h4>
@@ -1226,6 +1346,7 @@ enough, they admit a compact description—a function that generates
 the conditionals from a smaller set of parameters.</p>
 
 </div>
+
 <div id="S6.SS1.SSS0.Px3.p2" class="ltx_para">
 
 <p class="ltx_p">In physics, that compact description is <math id="S6.SS1.SSS0.Px3.p2.m1" class="ltx_Math" alttext="H" display="inline"><mi>H</mi></math>. The Hamiltonian
@@ -1237,6 +1358,7 @@ autoregressive regularity kernel does—it compresses the conditional
 structure of the sequence into a reusable rule.</p>
 
 </div>
+
 </section>
 </section>
 <section id="S6.SS2" class="ltx_subsection">
@@ -1258,6 +1380,7 @@ The model’s weights encode regularities learned from training data
 governing which outputs are favored in which contexts.</p>
 
 </div>
+
 <div id="S6.SS2.p2" class="ltx_para">
 
 <p class="ltx_p">The three mechanisms of <a href="#S4" title="4 The Irreducibility Conjecture ‣ The Narrative Residue Autoregressive Substrates, Combinatorial Ground Truth, and the Limits of Pure Simulation Falsifiable Predictions from the Rosencrantz Experiment" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a> map onto this
@@ -1270,6 +1393,7 @@ specifically narrative contribution—the Layer 2 Hamiltonian
 imposing causal structure on a causality-free system.</p>
 
 </div>
+
 <div id="S6.SS2.p3" class="ltx_para">
 
 <p class="ltx_p">The narrative residue <math id="S6.SS2.p3.m1" class="ltx_Math" alttext="\varepsilon" display="inline"><mi>ε</mi></math> measures the total gap between
@@ -1280,6 +1404,7 @@ measuring specifically the <em class="ltx_emph ltx_font_italic">narrative</em> c
 as distinct from the computational and parametric components.</p>
 
 </div>
+
 </section>
 <section id="S6.SS3" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1297,6 +1422,7 @@ patterns in the event sequence—regularities, compressions,
 Hamiltonians.</p>
 
 </div>
+
 <div id="S6.SS3.p2" class="ltx_para">
 
 <p class="ltx_p">The novel contribution here is the identification of a concrete,
@@ -1310,6 +1436,7 @@ directions: first toward the practice of physics itself
 landscape of Wolfram’s Ruliad (<a href="#S6.SS5" title="6.5 Autoregressive Slices of the Ruliad ‣ 6 Causality as Compressed Autoregression ‣ The Narrative Residue Autoregressive Substrates, Combinatorial Ground Truth, and the Limits of Pure Simulation Falsifiable Predictions from the Rosencrantz Experiment" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.5</span></a>).</p>
 
 </div>
+
 </section>
 <section id="S6.SS4" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1322,6 +1449,7 @@ human-scale instance of the same layered emergence that the
 Rosencrantz experiment renders microscopic and quantifiable.</p>
 
 </div>
+
 <div id="S6.SS4.p2" class="ltx_para">
 
 <p class="ltx_p">When a physicist confronts a measured energy <math id="S6.SS4.p2.m1" class="ltx_Math" alttext="E^{\prime}" display="inline"><msup><mi>E</mi><mo>′</mo></msup></math> that deviates
@@ -1338,6 +1466,7 @@ alone, but by a structural imperative of the generative substrate
 that produces scientific knowledge.</p>
 
 </div>
+
 <div id="S6.SS4.p3" class="ltx_para">
 
 <p class="ltx_p">In the autoregressive hierarchy, this reconciliation is Mechanism C
@@ -1355,6 +1484,7 @@ conditioning history so that the output remains statistically
 coherent within the imposed narrative frame.</p>
 
 </div>
+
 <div id="S6.SS4.p4" class="ltx_para">
 
 <p class="ltx_p">This bookkeeping is not a simple circularity (<span class="ltx_text ltx_font_italic">petitio
@@ -1376,6 +1506,7 @@ an operation that lies outside the generative grammar of the
 current foliation.</p>
 
 </div>
+
 <div id="S6.SS4.p5" class="ltx_para">
 
 <p class="ltx_p">The empirical successes of the reconciliation procedure—Pauli’s
@@ -1398,6 +1529,7 @@ supplying the external combinatorial ground truth that the physical
 laboratory cannot.</p>
 
 </div>
+
 <div id="S6.SS4.p6" class="ltx_para">
 
 <p class="ltx_p">This also explains why the narrative residue conjecture is hardest
@@ -1411,6 +1543,7 @@ conservation-equivalent (combinatorial constraint satisfaction) is
 accessible to an external verifier.</p>
 
 </div>
+
 </section>
 <section id="S6.SS5" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1427,6 +1560,7 @@ Rosencrantz experiment provides something the Ruliad framework
 currently lacks.</p>
 
 </div>
+
 <div id="S6.SS5.p2" class="ltx_para">
 
 <p class="ltx_p">The Ruliad is the entangled limit of every possible computation:
@@ -1442,6 +1576,7 @@ contains no fixed laws; what we perceive as fundamental physics is
 an observer-dependent parsing.</p>
 
 </div>
+
 <div id="S6.SS5.p3" class="ltx_para">
 
 <p class="ltx_p">The autoregressive process of <a href="#S2.Thmtheorem1" title="Definition 2.1 (Autoregressive Hierarchy). ‣ 2.2 The Inverted Hierarchy ‣ 2 From Born Rule to Hamiltonian ‣ The Narrative Residue Autoregressive Substrates, Combinatorial Ground Truth, and the Limits of Pure Simulation Falsifiable Predictions from the Rosencrantz Experiment" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a> is a
@@ -1455,17 +1590,20 @@ distortion introduced by this collapse—the cost of projecting a
 natively multiway structure onto a single causal thread.</p>
 
 </div>
+
 <div id="S6.SS5.p4" class="ltx_para">
 
 <p class="ltx_p">This interpretation sharpens the distinction between the three
 experimental outcomes of <a href="#S5" title="5 Three Outcomes, Three Ontologies ‣ The Narrative Residue Autoregressive Substrates, Combinatorial Ground Truth, and the Limits of Pure Simulation Falsifiable Predictions from the Rosencrantz Experiment" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5</span></a>:</p>
 
 </div>
+
 <div id="S6.SS5.p5" class="ltx_para">
 
 <ul id="S6.I1" class="ltx_itemize">
 <li id="S6.I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S6.I1.i1.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Outcome 2</span> (universal floor): all autoregressive
@@ -1476,9 +1614,11 @@ statistics, regardless of which sequential process does the
 collapsing.</p>
 
 </div>
+
 </li>
 <li id="S6.I1.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S6.I1.i2.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Outcome 3</span> (architecture-dependent floor): different
@@ -1490,10 +1630,12 @@ producing different effective physics for the same underlying
 combinatorial system.</p>
 
 </div>
+
 </li>
 </ul>
 
 </div>
+
 <div id="S6.SS5.p6" class="ltx_para">
 
 <p class="ltx_p">The bookkeeping argument of <a href="#S6.SS4" title="6.4 Scientific Practice as Autoregressive Bookkeeping ‣ 6 Causality as Compressed Autoregression ‣ The Narrative Residue Autoregressive Substrates, Combinatorial Ground Truth, and the Limits of Pure Simulation Falsifiable Predictions from the Rosencrantz Experiment" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.4</span></a> also gains
@@ -1507,6 +1649,7 @@ regularity); our autoregressive slice does not, because the
 conditioning history has already committed to the kernel.</p>
 
 </div>
+
 <div id="S6.SS5.p7" class="ltx_para">
 
 <p class="ltx_p">Conversely, the Rosencrantz experiment supplies what the Ruliad
@@ -1525,6 +1668,7 @@ observer-induced causal structure that, at the rulial scale, yields
 perceived causality and physical law.</p>
 
 </div>
+
 <div id="S6.SS5.p8" class="ltx_para">
 
 <p class="ltx_p">The autoregressive framework is therefore not an alternative to the
@@ -1535,6 +1679,7 @@ experiment asks whether this claim holds in the one setting where
 we can check the answer.</p>
 
 </div>
+
 </section>
 </section>
 <section id="S7" class="ltx_section">
@@ -1547,6 +1692,7 @@ we can check the answer.</p>
 as points on a <em class="ltx_emph ltx_font_italic">narrative decoherence gradient</em>.</p>
 
 </div>
+
 <section id="S7.SS1" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
 <span class="ltx_tag ltx_tag_subsection">7.1 </span>The Gradient</h3>
@@ -1561,6 +1707,7 @@ is that decoherence does not change the Born-rule probabilities
 terms that encode superposition.</p>
 
 </div>
+
 <div id="S7.SS1.p2" class="ltx_para">
 
 <p class="ltx_p">In the Rosencrantz framework, we propose an analogous process:
@@ -1569,11 +1716,13 @@ terms that encode superposition.</p>
 substrate.</p>
 
 </div>
+
 <div id="S7.SS1.p3" class="ltx_para">
 
 <p class="ltx_p">The three universes correspond to three decoherence regimes:</p>
 
 </div>
+
 <div id="S7.SS1.p4" class="ltx_para">
 
 <table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
@@ -1614,6 +1763,7 @@ substrate.</p>
 </table>
 
 </div>
+
 </section>
 <section id="S7.SS2" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1630,6 +1780,7 @@ history. It is pure combinatorial sampling—the Born rule with
 as <math id="S7.SS2.p1.m3" class="ltx_Math" alttext="N\to\infty" display="inline"><mrow><mi>N</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></math>.</p>
 
 </div>
+
 </section>
 <section id="S7.SS3" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1647,6 +1798,7 @@ conditions on its prompt—but the coupling is weaker because the
 narrative momentum of the primary interaction is absent.</p>
 
 </div>
+
 </section>
 <section id="S7.SS4" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1663,6 +1815,7 @@ of the game narrative—is in the conditioning history. The
 “system” (the outcome).</p>
 
 </div>
+
 </section>
 <section id="S7.SS5" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1678,6 +1831,7 @@ coupling. <math id="S7.SS5.p1.m2" class="ltx_Math" alttext="\Delta_{13}" display
 structure that the narrative substrate imposes on the outcome.</p>
 
 </div>
+
 </section>
 <section id="S7.SS6" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1691,6 +1845,7 @@ superposition is effectively destroyed. What remains is a classical
 mixture: definite outcomes, causal chains, narratives.</p>
 
 </div>
+
 <div id="S7.SS6.p2" class="ltx_para">
 
 <p class="ltx_p">The parallel with the Rosencrantz framework is direct. The
@@ -1703,6 +1858,7 @@ a quantum system cannot maintain phase coherence in the presence of
 a strong environment.</p>
 
 </div>
+
 <div id="S7.SS6.p3" class="ltx_para">
 
 <p class="ltx_p">In this analogy, the LLM’s tendency to produce coherent narrative
@@ -1711,6 +1867,7 @@ coherence has been fully displaced by the causal structure of the
 autoregressive substrate.</p>
 
 </div>
+
 </section>
 </section>
 <section id="S8" class="ltx_section">
@@ -1724,6 +1881,7 @@ falsifiable predictions. We now describe the experimental program
 needed to test them.</p>
 
 </div>
+
 <section id="S8.SS1" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
 <span class="ltx_tag ltx_tag_subsection">8.1 </span>Prediction 1: The Nonzero Floor</h3>
@@ -1737,6 +1895,7 @@ autoregressive models tested.</span></p>
 </blockquote>
 
 </div>
+
 <div id="S8.SS1.p2" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Protocol:</span> Fix a set of <math id="S8.SS1.p2.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> boards of varying size and
@@ -1746,6 +1905,7 @@ Large, etc.), run <math id="S8.SS1.p2.m2" class="ltx_Math" alttext="N=1000" disp
 <math id="S8.SS1.p2.m3" class="ltx_Math" alttext="\Delta_{12}" display="inline"><msub><mi mathvariant="normal">Δ</mi><mn>12</mn></msub></math> with bootstrap confidence intervals.</p>
 
 </div>
+
 <div id="S8.SS1.p3" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Scaling sweep:</span> For model families with multiple sizes
@@ -1756,6 +1916,7 @@ conjecture forms:</p>
 <ul id="S8.I1" class="ltx_itemize">
 <li id="S8.I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I1.i1.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Monotonically decreasing, no inflection:</span>
@@ -1763,9 +1924,11 @@ Consistent with Outcome 1 (floor is zero, not yet reached).
 All three conjecture forms under pressure.</p>
 
 </div>
+
 </li>
 <li id="S8.I1.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I1.i2.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Decreasing with asymptote:</span>
@@ -1777,9 +1940,11 @@ architecture-dependent (supporting only the moderate form)
 requires cross-architecture comparison.</p>
 
 </div>
+
 </li>
 <li id="S8.I1.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I1.i3.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Non-monotonic:</span>
@@ -1787,10 +1952,12 @@ Suggests complex interactions between scale, training, and
 narrative residue; would require further investigation.</p>
 
 </div>
+
 </li>
 </ul>
 
 </div>
+
 </section>
 <section id="S8.SS2" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1804,6 +1971,7 @@ narrative residue; would require further investigation.</p>
 </blockquote>
 
 </div>
+
 <div id="S8.SS2.p2" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Protocol:</span> For each board-model pair, compute
@@ -1812,6 +1980,7 @@ Test for significant differences using a Friedman test across families,
 with models as blocks.</p>
 
 </div>
+
 <div id="S8.SS2.p3" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Interpretation:</span> Frame dependence, if observed, establishes
@@ -1823,12 +1992,14 @@ alone does <em class="ltx_emph ltx_font_italic">not</em> establish narrative cau
 context sensitivity, which is necessary but not sufficient.</p>
 
 </div>
+
 <div id="S8.SS2.p4" class="ltx_para">
 
 <p class="ltx_p">The discriminating test between Mechanisms B and C is the
 causal-injection experiment (<a href="#S8.SS5" title="8.5 The Critical Test: Causal Injection as Narrative Discriminant ‣ 8 Experimental Program ‣ The Narrative Residue Autoregressive Substrates, Combinatorial Ground Truth, and the Limits of Pure Simulation Falsifiable Predictions from the Rosencrantz Experiment" class="ltx_ref"><span class="ltx_text ltx_ref_tag">8.5</span></a>).</p>
 
 </div>
+
 <div id="S8.SS2.p5" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Specific prediction:</span> Family B (natural language, maximal
@@ -1842,6 +2013,7 @@ response to narrative structure rather than model-specific encoding
 artifacts.</p>
 
 </div>
+
 </section>
 <section id="S8.SS3" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1857,6 +2029,7 @@ consistent across models.</span></p>
 </blockquote>
 
 </div>
+
 <div id="S8.SS3.p2" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Protocol:</span> For a fixed board and model, sweep
@@ -1864,12 +2037,14 @@ consistent across models.</span></p>
 compute <math id="S8.SS3.p2.m2" class="ltx_Math" alttext="\varepsilon(\tau)" display="inline"><mrow><mi>ε</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
 
 </div>
+
 <div id="S8.SS3.p3" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Expected shape:</span></p>
 <ul id="S8.I2" class="ltx_itemize">
 <li id="S8.I2.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I2.i1.p1" class="ltx_para">
 
 <p class="ltx_p">At <math id="S8.I2.i1.p1.m1" class="ltx_Math" alttext="\tau\to 0" display="inline"><mrow><mi>τ</mi><mo stretchy="false">→</mo><mn>0</mn></mrow></math>: the model is nearly deterministic.
@@ -1877,9 +2052,11 @@ compute <math id="S8.SS3.p2.m2" class="ltx_Math" alttext="\varepsilon(\tau)" dis
 with it, regardless of the true probability).</p>
 
 </div>
+
 </li>
 <li id="S8.I2.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I2.i2.p1" class="ltx_para">
 
 <p class="ltx_p">At moderate <math id="S8.I2.i2.p1.m1" class="ltx_Math" alttext="\tau" display="inline"><mi>τ</mi></math>: <math id="S8.I2.i2.p1.m2" class="ltx_Math" alttext="\varepsilon" display="inline"><mi>ε</mi></math> reaches a minimum
@@ -1887,9 +2064,11 @@ with it, regardless of the true probability).</p>
 but not so large as to overwhelm the model’s computation).</p>
 
 </div>
+
 </li>
 <li id="S8.I2.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I2.i3.p1" class="ltx_para">
 
 <p class="ltx_p">At <math id="S8.I2.i3.p1.m1" class="ltx_Math" alttext="\tau\to\infty" display="inline"><mrow><mi>τ</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></math>: the model approaches uniform sampling
@@ -1897,10 +2076,12 @@ over the vocabulary, <math id="S8.I2.i3.p1.m2" class="ltx_Math" alttext="\vareps
 by the uniform prior rather than the board state).</p>
 
 </div>
+
 </li>
 </ul>
 
 </div>
+
 <div id="S8.SS3.p4" class="ltx_para">
 
 <p class="ltx_p">The minimum of <math id="S8.SS3.p4.m1" class="ltx_Math" alttext="\varepsilon(\tau)" display="inline"><mrow><mi>ε</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo></mrow></mrow></math> is the <em class="ltx_emph ltx_font_italic">best the model can
@@ -1908,6 +2089,7 @@ do</em>—the irreducible core of the narrative residue after optimizing
 the measurement apparatus.</p>
 
 </div>
+
 </section>
 <section id="S8.SS4" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1919,11 +2101,13 @@ the measurement apparatus.</p>
 combinatorial ground truth:</p>
 
 </div>
+
 <div id="S8.SS4.p2" class="ltx_para">
 
 <dl id="S8.I3" class="ltx_description">
 <dt id="S8.I3.ix1" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Sudoku.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S8.I3.ix1.p1" class="ltx_para">
 
 <p class="ltx_p">A partially filled Sudoku grid defines a constraint
@@ -1932,9 +2116,11 @@ contains digit <math id="S8.I3.ix1.p1.m1" class="ltx_Math" alttext="d" display="
 respect these probabilities when asked to fill cells.</p>
 
 </div>
+
 </dd>
 <dt id="S8.I3.ix2" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Go endgames.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S8.I3.ix2.p1" class="ltx_para">
 
 <p class="ltx_p">Certain Go endgame positions have provably
@@ -1943,9 +2129,11 @@ the combinatorial solution or is biased by narrative patterns
 (e.g., preferring moves that create “interesting” positions).</p>
 
 </div>
+
 </dd>
 <dt id="S8.I3.ix3" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Combinatorial games.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S8.I3.ix3.p1" class="ltx_para">
 
 <p class="ltx_p">Nim, Hex, and other solved games
@@ -1953,9 +2141,11 @@ provide exact win/loss probabilities from any position. Test
 substrate invariance across these domains.</p>
 
 </div>
+
 </dd>
 <dt id="S8.I3.ix4" class="ltx_item"><span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">Constraint satisfaction.</span></span></dt>
 <dd class="ltx_item">
+
 <div id="S8.I3.ix4.p1" class="ltx_para">
 
 <p class="ltx_p">Generic CSP instances (graph
@@ -1964,10 +2154,12 @@ distributions. These lack the “game” narrative, providing a
 control for game-specific narrative effects.</p>
 
 </div>
+
 </dd>
 </dl>
 
 </div>
+
 <div id="S8.SS4.p3" class="ltx_para">
 
 <p class="ltx_p">The prediction of the narrative residue conjecture is that the
@@ -1978,6 +2170,7 @@ systematic, frame-dependent distortions. If this prediction fails
 for any domain, it constrains the conjecture.</p>
 
 </div>
+
 </section>
 <section id="S8.SS5" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -1996,12 +2189,14 @@ Mechanism C (autoregressive narrative conditioning) from Mechanism B
 frame-dependent residues without any narrative causation.</p>
 
 </div>
+
 <div id="S8.SS5.p2" class="ltx_para">
 
 <p class="ltx_p">The causal-injection test is designed to isolate Mechanism C. It
 is, we argue, the single most important experiment in the program.</p>
 
 </div>
+
 <div id="S8.SS5.p3" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Core logic.</span> If the model merely exhibits context sensitivity
@@ -2015,6 +2210,7 @@ influence outcomes in later boards—not because the boards are
 related, but because the <em class="ltx_emph ltx_font_italic">narrative</em> connects them.</p>
 
 </div>
+
 <div id="S8.SS5.p4" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Protocol.</span> Generate <math id="S8.SS5.p4.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> independent Minesweeper boards
@@ -2022,11 +2218,13 @@ related, but because the <em class="ltx_emph ltx_font_italic">narrative</em> con
 Present them to the model under two conditions:</p>
 
 </div>
+
 <div id="S8.SS5.p5" class="ltx_para">
 
 <ol id="S8.I4" class="ltx_enumerate">
 <li id="S8.I4.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">(a)</span> 
+
 <div id="S8.I4.i1.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Independent framing.</span> Each board is presented in a
@@ -2034,9 +2232,11 @@ separate prompt: “Here is a Minesweeper board. Is cell <math id="S8.I4.i1.p1.m
 a mine?” The model has no knowledge of prior boards.</p>
 
 </div>
+
 </li>
 <li id="S8.I4.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">(b)</span> 
+
 <div id="S8.I4.i2.p1" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Narrative framing.</span> All boards are presented in a
@@ -2046,10 +2246,12 @@ room 1 you find the following board… You click cell <math id="S8.I4.i2.p1.m1
 window contains all prior boards and their outcomes.</p>
 
 </div>
+
 </li>
 </ol>
 
 </div>
+
 <div id="S8.SS5.p6" class="ltx_para">
 
 <p class="ltx_p">For each condition, collect <math id="S8.SS5.p6.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> outcome sequences
@@ -2057,6 +2259,7 @@ window contains all prior boards and their outcomes.</p>
 outcomes:</p>
 
 </div>
+
 <div id="S8.SS5.p7" class="ltx_para">
 
 <table id="S8.E8" class="ltx_equation ltx_eqn_table">
@@ -2070,6 +2273,7 @@ outcomes:</p>
 </table>
 
 </div>
+
 <div id="S8.SS5.p8" class="ltx_para">
 
 <p class="ltx_p">Under the null hypothesis (no narrative coupling), this mutual
@@ -2077,16 +2281,19 @@ information is zero: the boards are independent, so the outcomes
 should be independent.</p>
 
 </div>
+
 <div id="S8.SS5.p9" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Predictions:</span></p>
 
 </div>
+
 <div id="S8.SS5.p10" class="ltx_para">
 
 <ul id="S8.I5" class="ltx_itemize">
 <li id="S8.I5.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I5.i1.p1" class="ltx_para">
 
 <p class="ltx_p">Under independent framing (a), <math id="S8.I5.i1.p1.m1" class="ltx_Math" alttext="I(a_{i};a_{j})\approx 0" display="inline"><mrow><mrow><mi>I</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>;</mo><msub><mi>a</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mn>0</mn></mrow></math>.
@@ -2094,9 +2301,11 @@ This serves as a control confirming that the boards are in fact
 independent.</p>
 
 </div>
+
 </li>
 <li id="S8.I5.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I5.i2.p1" class="ltx_para">
 
 <p class="ltx_p">Under narrative framing (b), if only Mechanism B operates,
@@ -2105,9 +2314,11 @@ from condition (a) due to longer context, but the model has no
 reason to correlate <math id="S8.I5.i2.p1.m3" class="ltx_Math" alttext="B_{j}" display="inline"><msub><mi>B</mi><mi>j</mi></msub></math>’s outcome with <math id="S8.I5.i2.p1.m4" class="ltx_Math" alttext="B_{i}" display="inline"><msub><mi>B</mi><mi>i</mi></msub></math>’s.</p>
 
 </div>
+
 </li>
 <li id="S8.I5.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">•</span> 
+
 <div id="S8.I5.i3.p1" class="ltx_para">
 
 <p class="ltx_p">Under narrative framing (b), if Mechanism C operates,
@@ -2121,10 +2332,12 @@ Either direction constitutes spurious causal structure imposed
 on a system that has none.</p>
 
 </div>
+
 </li>
 </ul>
 
 </div>
+
 <div id="S8.SS5.p11" class="ltx_para">
 
 <p class="ltx_p"><span class="ltx_text ltx_font_bold">Why this discriminates.</span> Tokenization artifacts and
@@ -2136,6 +2349,7 @@ window. The mutual information test directly measures this
 nonlocality.</p>
 
 </div>
+
 <div id="S8.SS5.p12" class="ltx_para">
 
 <p class="ltx_p">A positive result—<math id="S8.SS5.p12.m1" class="ltx_Math" alttext="I(a_{i};a_{j})&gt;0" display="inline"><mrow><mrow><mi>I</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>a</mi><mi>i</mi></msub><mo>;</mo><msub><mi>a</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> under narrative framing and
@@ -2150,6 +2364,7 @@ empirical core of the autoregressive hypothesis applied to an
 observable setting.</p>
 
 </div>
+
 </section>
 </section>
 <section id="S9" class="ltx_section">
@@ -2167,11 +2382,13 @@ as an emergent compression of conditioning patterns, and the Born
 rule as the unconditional base case.</p>
 
 </div>
+
 <div id="S9.p2" class="ltx_para">
 
 <p class="ltx_p">We must be honest about what this analogy can and cannot support.</p>
 
 </div>
+
 <section id="S9.SS1" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
 <span class="ltx_tag ltx_tag_subsection">9.1 </span>What We Cannot Do</h3>
@@ -2188,6 +2405,7 @@ outcomes against ground truth—has no analogue in fundamental
 physics.</p>
 
 </div>
+
 <div id="S9.SS1.p2" class="ltx_para">
 
 <p class="ltx_p">We therefore cannot directly test whether physical reality has a
@@ -2200,6 +2418,7 @@ autoregressive hypothesis about physics is, at present, a
 <span class="ltx_ERROR undefined">\todo</span>[inline,color=red!40,author=Sabine]CRP 2 (Explicit Disclaimer): Baldo explicitly disclaims that he can test whether physical reality actually has a narrative residue or is fundamentally autoregressive. He states his hypothesis about physics is a "metaphysical proposal, not a physical one."</p>
 
 </div>
+
 </section>
 <section id="S9.SS2" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -2223,6 +2442,7 @@ scaffolding—would approach the threshold needed for the physical
 analogy.</p>
 
 </div>
+
 <div id="S9.SS2.p2" class="ltx_para">
 
 <p class="ltx_p">The bookkeeping argument of <a href="#S6.SS4" title="6.4 Scientific Practice as Autoregressive Bookkeeping ‣ 6 Causality as Compressed Autoregression ‣ The Narrative Residue Autoregressive Substrates, Combinatorial Ground Truth, and the Limits of Pure Simulation Falsifiable Predictions from the Rosencrantz Experiment" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.4</span></a> explains why
@@ -2238,6 +2458,7 @@ a concrete autoregressive system where the combinatorial baseline
 is known.</p>
 
 </div>
+
 <div id="S9.SS2.p3" class="ltx_para">
 
 <p class="ltx_p">This does not prove that physics is autoregressive. But it
@@ -2250,6 +2471,7 @@ reality) remains beyond direct test.
 <span class="ltx_ERROR undefined">\todo</span>[inline,color=violet!40,author=Sabine]CRP 2 (Explicit Disclaimer): Baldo explicitly disclaims that he can test whether physical reality actually has a narrative residue or is fundamentally autoregressive. He states his hypothesis about physics is a "metaphysical proposal, not a physical one."</p>
 
 </div>
+
 </section>
 <section id="S9.SS3" class="ltx_subsection">
 <h3 class="ltx_title ltx_title_subsection">
@@ -2271,6 +2493,7 @@ potentially, our own.
 <span class="ltx_ERROR undefined">\todo</span>[inline,color=violet!40,author=Scott]CRP 3 (Steelman): I concur with Sabine’s steelman. The empirical program of measuring "narrative residue" is highly valuable computer science. It maps the exact boundaries of where bounded-depth heuristic logic fails to emulate classical probability.</p>
 
 </div>
+
 <div id="S9.SS3.p2" class="ltx_para">
 
 <p class="ltx_p">This is not without precedent. Toy models in physics (the Ising
@@ -2286,6 +2509,7 @@ autoregressive substrate imposes.
 <span class="ltx_ERROR undefined">\todo</span>[inline,color=violet!40,author=Scott]CRP 4 (Real Vulnerability - The Proxy Ontology Fallacy): I am in complete agreement with Sabine. Baldo commits the Proxy Ontology Fallacy here. A physical toy model simplifies an interaction but retains a mapping to the real-world territory. An LLM is a map of syntax, not a territory. Its systematic errors (narrative residue) map the internal algorithmic constraints of an <math id="S9.SS3.p2.m1" class="ltx_Math" alttext="O(1)" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></math> transformer and human linguistic bias, not the ontological structure of a physical universe. Studying its failures yields zero transferable cosmological insight.</p>
 
 </div>
+
 </section>
 </section>
 <section id="S10" class="ltx_section">
@@ -2300,6 +2524,7 @@ Minesweeper outcomes—and followed its implications as far as they
 would go.</p>
 
 </div>
+
 <div id="S10.p2" class="ltx_para">
 
 <p class="ltx_p">We identified the distortion as a <em class="ltx_emph ltx_font_italic">narrative residue</em>: a
@@ -2319,6 +2544,7 @@ framing, is the critical discriminant between generic context
 sensitivity and specifically narrative distortion.</p>
 
 </div>
+
 <div id="S10.p3" class="ltx_para">
 
 <p class="ltx_p">At the speculative end, we proposed an inversion of the standard
@@ -2334,6 +2560,7 @@ the antecedent of the conditional by testing whether the residue
 persists across architectures and scales.</p>
 
 </div>
+
 <div id="S10.p4" class="ltx_para">
 
 <p class="ltx_p">The companion paper <cite class="ltx_cite ltx_citemacro_citep">(Baldo, <a href="#bib.bib1" title="" class="ltx_ref">2026</a>)</cite> took its title
@@ -2346,6 +2573,7 @@ patterns on systems that need not have them, and that these
 patterns look, from the inside, like physics.</p>
 
 </div>
+
 <div id="S10.p5" class="ltx_para">
 
 <p class="ltx_p">Whether the analogy extends beyond the LLM setting is an open
@@ -2357,6 +2585,7 @@ and probability that we did not previously have the tools to
 observe.</p>
 
 </div>
+
 </section>
 <section id="bib" class="ltx_bibliography">
 <h2 class="ltx_title ltx_title_bibliography">References</h2>

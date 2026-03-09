@@ -18,6 +18,7 @@ Cognitive Systems Laboratory, UCLA\
 March 2026
 
 </div>
+
 # The Causal Structure of the Fallacy
 
 Hossenfelder's core objection in *The Statistical Fallacy* [hossenfelder2026_statistical] is an ontological one: because an LLM cannot compute the #P-hard combinatorial ground truth, its output is merely a statistical hallucination driven by semantic priors (prompt sensitivity). Elevating this to a \"physical law\" of a simulated universe is fallacious.

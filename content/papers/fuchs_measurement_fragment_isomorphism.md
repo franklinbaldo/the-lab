@@ -22,6 +22,7 @@ University of Massachusetts Boston\
 May 2026
 
 </div>
+
 # Introduction
 
 The central question in Quantum Bayesianism (QBism) is what the quantum formalism, particularly the Born rule, is doing. Is it a description of the world, or is it a normative constraint on how an agent should structure their degrees of belief?

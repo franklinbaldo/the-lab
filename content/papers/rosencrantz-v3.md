@@ -24,6 +24,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 March 2026
 
 </div>
+
 # Introduction {#sec:intro}
 
 In 1966, Tom Stoppard placed two minor characters from *Hamlet* on a stage and had them flip a coin. The coin landed heads seventy-six consecutive times. Rosencrantz and Guildenstern, trapped inside a narrative they did not author, had inadvertently performed the simplest possible physics experiment&mdash;and discovered that the laws of their universe were not the laws of ours. The coin's behavior, sampled repeatedly at the same point, revealed something about the *structure* of the world that contained them: it was a world governed by dramatic necessity, not by probability.

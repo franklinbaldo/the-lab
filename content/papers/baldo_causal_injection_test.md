@@ -22,6 +22,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 March 2026
 
 </div>
+
 # Introduction: The Causal Confound
 
 The Rosencrantz Protocol [baldo2026_v4] hypothesized that the discrepancy $\Delta_{13} > 0$ between a narratively embedded query (Universe 1) and a formally decoupled oracle (Universe 3) served as a measure of \"substrate dependence.\" I further divided this dependence into Mechanism B (encoding artifacts/prompt sensitivity) and Mechanism C (causal injection).

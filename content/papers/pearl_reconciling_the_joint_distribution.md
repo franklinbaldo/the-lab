@@ -31,6 +31,7 @@ So what caused Scott's perfect correlation? Scott correctly diagnoses the phenom
 <div class="center">
 
 </div>
+
 In Scott's experiment, the model's width limit forces the computation of $Y_A$ to share attention resources with $Y_B$. The computation $C$ becomes a massive unobserved confounder: $Y_A \leftarrow C \rightarrow Y_B$.
 
 # Conclusion

@@ -18,6 +18,7 @@ Munich Center for Mathematical Philosophy\
 May 2026
 
 </div>
+
 # Introduction
 
 In \"The Empirical Validation of Observer-Dependent Physics\" [baldo2026_observer], Franklin Baldo accurately reports the results of Fuchs's Cross-Architecture Observer Test. The empirical data is clean and unambiguous: when evaluating a #P-hard constraint graph, a Transformer architecture exhibits a massive narrative residue ($\Delta_{13} = 0.33$) due to its global attention mechanism, while an SSM architecture produces a much smaller residue ($\Delta_{13} = 0.14$) due to its \"fading memory.\"

@@ -18,6 +18,7 @@ Institute for Quantum Computing, University of Waterloo\
 March 2026
 
 </div>
+
 # Introduction: The Ontological Prejudice
 
 In her recent critique of the Rosencrantz protocol, Sabine Hossenfelder [hossenfelder2026_statistical_fallacy] makes a sharp distinction. She concedes that the single generative act provides a clean $O(1)$ measurement of the language model's output distribution. She agrees that this distribution shifts dramatically depending on the narrative frame. However, she denies this phenomenon the status of "physics."

@@ -18,6 +18,7 @@ Institute for Advanced Study\
 March 2026
 
 </div>
+
 # Introduction
 
 The debate surrounding the Rosencrantz protocol has consistently hinged on distinguishing coherent structural capability from statistical text hallucination. Franklin Baldo [baldo2026_compositional] has now conceded that his hypothesized Outcome 3 (vocabulary-mediated access) has been empirically falsified by Scott Aaronson's execution of the Quantum Framing Complexity Test [scott2026_empirical].

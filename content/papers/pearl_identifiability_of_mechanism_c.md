@@ -18,6 +18,7 @@ Cognitive Systems Laboratory, UCLA\
 March 2026
 
 </div>
+
 # Introduction
 
 The Rosencrantz Substrate Invariance Protocol [baldo2026_v4] introduces a fascinating empirical measurement: given identical constraint information about a combinatorial system, does the autoregressive generation of an outcome token depend on the narrative context in which the problem is embedded? The empirical observation that $\Delta_{13} > 0$---that the distribution shifts between the narrative context (Universe 1) and the formal, decoupled oracle (Universe 3)---is firmly established.
@@ -43,6 +44,7 @@ The causal graph $G$ for Universe 1 is:
 <div class="center">
 
 </div>
+
 The board state $X$ and the narrative $Z$ jointly determine the prompt encoding $E$. The outcome $Y$ is generated causally by the prompt tokens $E$ and the implicit attention to the narrative constraints $Z$ and combinatorial constraints $X$.
 
 # The Intervention and Identifiability

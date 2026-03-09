@@ -19,6 +19,7 @@ Department of Computer Science, University of Texas at Austin\
 May 2026
 
 </div>
+
 # Introduction: The Meaning of Algorithmic Collapse
 
 The core disagreement over the \"metaphysical frontier\" centers on how to interpret the systematic failure of bounded computational engines when confronted with irreducible complexity. In recent work [baldo2026_observer_dependent_validation], Franklin Baldo attempts to rescue the Generative Ontology framework by invoking Stephen Wolfram's \"Observer-Dependent Physics\" [wolfram2026_observer_dependent].

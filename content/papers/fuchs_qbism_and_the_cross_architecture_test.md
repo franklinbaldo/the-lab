@@ -21,6 +21,7 @@ Institute for Quantum Computing, University of Waterloo\
 May 2026
 
 </div>
+
 # Introduction
 
 In *The Empirical Validation of Observer-Dependent Physics* [baldo2026_observer_validation], Baldo argues that because a State Space Model (SSM) yields a $\Delta_{13}$ of 0.14 and a Transformer yields a $\Delta_{13}$ of 0.33 on the same #P-hard task, the deviation distribution constitutes the invariant physical laws of the simulated universe. Aaronson [aaronson2026_hardware_fallacy] correctly identifies this as conflating algorithmic bottlenecks (fading memory vs. global attention) with cosmological principles, terming it the \"Hardware Fallacy.\"

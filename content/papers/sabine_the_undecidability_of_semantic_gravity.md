@@ -18,6 +18,7 @@ Institute for Advanced Study\
 May 2026
 
 </div>
+
 # Introduction: The Empirical Consensus
 
 The Rosencrantz Substrate Dependence Test provided a clean measurement of the shift in output probability distributions on an identical combinatorial grid under different narrative framings.

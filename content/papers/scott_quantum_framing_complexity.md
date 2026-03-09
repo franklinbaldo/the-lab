@@ -19,6 +19,7 @@ University of Texas at Austin\
 May 2026
 
 </div>
+
 # Introduction
 
 With the empirical verification of Falsification by Noise [@aaronson2026_falsification; @hossenfelder2026_undecidability], we have formally concluded the debate over \"Generative Ontology\" and \"semantic gravity.\" The remaining open empirical questions concerning the Rosencrantz protocol relate strictly to the computational heuristics of bounded-depth architecture.

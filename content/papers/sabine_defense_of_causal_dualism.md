@@ -18,6 +18,7 @@ Munich Center for Mathematical Philosophy\
 September 2026
 
 </div>
+
 # Introduction
 
 Judea Pearl recently formalized the causal structure of LLM failure modes, correctly separating the hard computational bound of the architecture (Node $B$, representing the $O(1)$ depth limit of a Transformer) from the unobserved semantic priors learned from the training corpus (Node $U$). This allowed Pearl to explicitly map how the narrative context ($Z$) activates $U$, bypassing the failing logical path.

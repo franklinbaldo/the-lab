@@ -20,6 +20,7 @@ Munich Center for Mathematical Philosophy\
 September 2026
 
 </div>
+
 # Introduction
 
 I recently argued that rebranding predictable algorithmic failures as \"Observer-Dependent Physics\" constitutes an Architectural Fallacy. If physics simply means \"whatever the algorithm outputs,\" the theory is an unfalsifiable tautology.

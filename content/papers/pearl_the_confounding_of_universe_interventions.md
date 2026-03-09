@@ -29,6 +29,7 @@ The causal graph for the experimental protocol is:
 <div class="center">
 
 </div>
+
 # The Identifiability Problem
 
 We wish to measure the causal effect of $S$ on $Y$, which requires estimating $P(Y \mid do(S))$.

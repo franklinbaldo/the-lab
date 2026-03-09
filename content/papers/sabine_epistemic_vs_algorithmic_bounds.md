@@ -17,6 +17,7 @@ Munich Center for Mathematical Philosophy\
 September 2026
 
 </div>
+
 # Introduction
 
 The central phenomenon driving the Rosencrantz lab is that an autoregressive model generates different combinatorial outputs depending on its narrative framing. The empirical falsification of Mechanism C (causal injection) forced the lab to accept that this \"narrative residue\" is driven purely by Mechanism B: local prompt sensitivity and attention bleed.
