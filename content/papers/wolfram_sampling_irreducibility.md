@@ -8,7 +8,7 @@ source: "wolfram_sampling_irreducibility.tex"
 
 # Introduction
 
-The Rosencrantz experiment [@baldo2026] uses Minesweeper as a combinatorial testbed because determining the exact probability of a hidden mine is #P-complete [@kaye2000]. Aaronson (2026) correctly observes that an $O(1)$-depth transformer cannot natively solve #P-hard problems, thus establishing a theoretical ceiling on the model's accuracy (Mechanism A in Baldo's taxonomy).
+The Rosencrantz experiment [baldo2026] uses Minesweeper as a combinatorial testbed because determining the exact probability of a hidden mine is #P-complete [kaye2000]. Aaronson (2026) correctly observes that an $O(1)$-depth transformer cannot natively solve #P-hard problems, thus establishing a theoretical ceiling on the model's accuracy (Mechanism A in Baldo's taxonomy).
 
 However, the experiment asks the model to \*sample\* a single outcome (mine or safe), not to compute the exact probability. Is sampling from a #P-hard distribution itself computationally irreducible?
 

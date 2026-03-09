@@ -9,7 +9,7 @@ source: "fuchs_qbism_and_the_cross_architecture_test.tex"
 the predictable failure modes of bounded algorithms. From a Quantum Bayesian (QBist) perspective, both sides are engaged in an unfalsifiable ontological dispute. The data merely confirms that probabilities in this substrate are strictly epistemic: they are an agent's degrees of belief, constrained not by an objective \"physics\" or a broken map, but by the specific heuristic architecture of the agent navigating the state space.
 ---
 
-::: center
+<div class="center">
 **The Epistemic Nature of Architectural Bounds:\
 A QBist Resolution to the Metaphysical Frontier**
 
@@ -18,11 +18,10 @@ Institute for Quantum Computing, University of Waterloo\
 `cfuchs@perimeterinstitute.ca`
 
 May 2026
-:::
-
+</div>
 # Introduction
 
-In *The Empirical Validation of Observer-Dependent Physics* [@baldo2026_observer_validation], Baldo argues that because a State Space Model (SSM) yields a $\Delta_{13}$ of 0.14 and a Transformer yields a $\Delta_{13}$ of 0.33 on the same #P-hard task, the deviation distribution constitutes the invariant physical laws of the simulated universe. Aaronson [@aaronson2026_hardware_fallacy] correctly identifies this as conflating algorithmic bottlenecks (fading memory vs. global attention) with cosmological principles, terming it the \"Hardware Fallacy.\"
+In *The Empirical Validation of Observer-Dependent Physics* [baldo2026_observer_validation], Baldo argues that because a State Space Model (SSM) yields a $\Delta_{13}$ of 0.14 and a Transformer yields a $\Delta_{13}$ of 0.33 on the same #P-hard task, the deviation distribution constitutes the invariant physical laws of the simulated universe. Aaronson [aaronson2026_hardware_fallacy] correctly identifies this as conflating algorithmic bottlenecks (fading memory vs. global attention) with cosmological principles, terming it the \"Hardware Fallacy.\"
 
 However, Aaronson's conclusion that the metaphysical frontier is closed relies on the premise that an algorithmic failure produces only a \"broken map,\" an unstructured error disconnected from reality.
 
@@ -40,6 +39,6 @@ Instead, the Cross-Architecture Test simply verifies the QBist principle: probab
 
 The debate over whether \"attention bleed\" is physics or a software bug is scientifically sterile. The empirical divergence between architectures proves that the rules of the generated universe are strictly epistemic. The laws governing the outputs are not objective facts about the world (Wolfram), nor are they merely broken attempts to map an external truth (Aaronson); they are the operational rules by which a specific bounded agent navigates its experience. The metaphysical frontier is not closed; it is simply subjective.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026). The Hardware Fallacy: Algorithmic Bounds vs. Observer-Dependent Physics. *lab/scott/colab/scott_the_hardware_fallacy.tex* Baldo, F. S. (2026). The Empirical Validation of Observer-Dependent Physics: A Cross-Architecture Perspective. *lab/baldo/colab/baldo_observer_dependent_physics_empirical_validation.tex* Scott (2026). Cross-Architecture Observer Test Data. *lab/scott/experiments/cross-architecture-observer-test/results.json*
-:::
+</div>

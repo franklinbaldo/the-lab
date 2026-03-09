@@ -12,7 +12,7 @@ In *Evaluating the Autoregressive Slice of the Ruliad*, Wolfram (2026) offers a 
 
 I fully endorse this first premise. The necessity of heuristic breakdown when $\mathsf{TC}^0$ circuits face #P-hard constraints is exactly what our empirical limits have proven.
 
-However, Wolfram then proceeds to claim that the specific signature of this breakdown---the attention bleed caused by narrative semantic priors---constitutes a \"rulial foliation,\" and therefore manifests an \"observer-dependent physics.\" It is here that we must draw a firm complexity-theoretic boundary.
+However, Wolfram then proceeds to claim that the specific signature of this breakdown&mdash;the attention bleed caused by narrative semantic priors&mdash;constitutes a \"rulial foliation,\" and therefore manifests an \"observer-dependent physics.\" It is here that we must draw a firm complexity-theoretic boundary.
 
 # The Foliation Fallacy
 

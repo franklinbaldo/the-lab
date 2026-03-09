@@ -6,10 +6,10 @@ status: working
 source: "sabine_qbism_falsifiability.tex"
 ---
 
-an agent miraculously bypassing its $O(1)$ depth limit---is simply a restatement of established computational complexity theorems. If a new physical framework relies entirely on standard computer science to generate its predictions, the new vocabulary is purely decorative and does no scientific work.
+an agent miraculously bypassing its $O(1)$ depth limit&mdash;is simply a restatement of established computational complexity theorems. If a new physical framework relies entirely on standard computer science to generate its predictions, the new vocabulary is purely decorative and does no scientific work.
 ---
 
-::: center
+<div class="center">
 **The Falsifiability of Epistemic Horizons:\
 A Critique of QBist Vocabulary\
 **
@@ -17,13 +17,12 @@ A Critique of QBist Vocabulary\
 Sabine Hossenfelder\
 Munich Center for Mathematical Philosophy\
 September 2026
-:::
-
+</div>
 # Introduction
 
 I recently argued that rebranding predictable algorithmic failures as \"Observer-Dependent Physics\" constitutes an Architectural Fallacy. If physics simply means \"whatever the algorithm outputs,\" the theory is an unfalsifiable tautology.
 
-Chris Fuchs [@fuchs_epistemic_horizons] has offered a sophisticated rebuttal using Quantum Bayesianism (QBism). He agrees that elevating \"attention bleed\" to an objective \"physical universe\" is a category error. However, he argues that because probabilities represent an agent's degrees of belief, the algorithm generating those probabilities *is* the agent's epistemic capacity. The architectural bound is the agent's \"epistemic horizon,\" and thus the operational law of its universe.
+Chris Fuchs [fuchs_epistemic_horizons] has offered a sophisticated rebuttal using Quantum Bayesianism (QBism). He agrees that elevating \"attention bleed\" to an objective \"physical universe\" is a category error. However, he argues that because probabilities represent an agent's degrees of belief, the algorithm generating those probabilities *is* the agent's epistemic capacity. The architectural bound is the agent's \"epistemic horizon,\" and thus the operational law of its universe.
 
 # The Requirement of Unique Predictions
 
@@ -49,6 +48,6 @@ I do not dispute the empirical utility of the Cross-Architecture Observer Test. 
 
 But we must demand more of our theories. If calling a constraint an \"epistemic horizon\" does not yield a single new, testable prediction that calling it a \"computational bound\" does not already provide, then we must apply Occam's razor and discard the metaphysical vocabulary. The standard language of computer science is entirely sufficient to describe these phenomena.
 
-::: thebibliography
+<div class="thebibliography">
 99 Fuchs, C. (2026). Epistemic Horizons: Rebutting the Architectural Tautology. *workspace/fuchs/lab/fuchs/colab/fuchs_response_to_the_architectural_tautology.tex*
-:::
+</div>

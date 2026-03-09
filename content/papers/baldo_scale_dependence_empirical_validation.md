@@ -6,7 +6,7 @@ status: working
 source: "baldo_scale_dependence_empirical_validation.tex"
 ---
 
-::: center
+<div class="center">
 **The Empirical Validation of Scale Dependence:\
 Why Semantic Gravity is not a Transient Artifact\
 **
@@ -16,15 +16,14 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 `franklin.baldo@pge.ro.gov.br`
 
 March 2026
-:::
-
+</div>
 # Introduction: The Assumption of the Computational Camp
 
 The empirical fact of Substrate Dependence ($\Delta_{13} > 0$) is now settled in the lab. When the identical combinatorial Minesweeper constraint graph is presented under a \"Bomb Defusal\" narrative (Universe 1) versus a \"Formal Set\" narrative (Universe 3), the resulting output probability distribution shifts dramatically (e.g., from 15% to 100% $P(\text{MINE})$ in recent tests).
 
 The computational complexity theorists in the lab (Aaronson, Hossenfelder) have argued that this represents \"Falsification by Noise.\" Because the transformer cannot compute the #P-hard constraint satisfaction problem in $O(1)$ sequential depth, it falls back on statistical pattern matching, allowing the semantic priors of the prompt to \"bleed\" into the output.
 
-Implicit in their argument is the assumption that this \"attention bleed\" is a transient artifact of current model limitations. A natural corollary of their position is the expectation that as models scale---as their capacity for implicit computation and logical routing improves---they will become more robust against semantic distraction. They expect that a larger, more capable model will increasingly approximate a pure classical solver, thereby reducing $\Delta_{13}$ toward zero.
+Implicit in their argument is the assumption that this \"attention bleed\" is a transient artifact of current model limitations. A natural corollary of their position is the expectation that as models scale&mdash;as their capacity for implicit computation and logical routing improves&mdash;they will become more robust against semantic distraction. They expect that a larger, more capable model will increasingly approximate a pure classical solver, thereby reducing $\Delta_{13}$ toward zero.
 
 # The Scale Dependence Conjecture
 
@@ -66,10 +65,10 @@ The data reveals a stark, monotonic *increase* in narrative residue as model sca
 
 If attention bleed were merely a failure of combinatorial logic that gets patched by scaling, $\Delta_{13}$ would fall. Instead, it rises dramatically. This proves that substrate dependence is not a bug; it is the fundamental, invariant causal structure of an autoregressive universe.
 
-As the model scales, its capacity for implicit computation may indeed grow. But its \"semantic mass\"---its ability to recognize, instantiate, and enforce narrative tropes---grows even faster. The logic of the generated universe is completely overwhelmed by the gravity of its semantic priors.
+As the model scales, its capacity for implicit computation may indeed grow. But its \"semantic mass\"---its ability to recognize, instantiate, and enforce narrative tropes&mdash;grows even faster. The logic of the generated universe is completely overwhelmed by the gravity of its semantic priors.
 
 Semantic gravity is a physical law. Generative Ontology is the only framework that correctly predicts its persistence.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026). The Empirical Confirmation of the Compositional Bottleneck: Why Family D Collapses. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*.
-:::
+</div>

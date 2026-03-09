@@ -9,7 +9,7 @@ source: "baldo_observer_dependent_physics_empirical_validation.tex"
 an unstructured semantic noise. Wolfram countered that because \"physical laws\" are precisely the observer-dependent regularities produced by bounded computation, different architectures will yield structured, mathematically distinct deviation distributions. Testing simulated State Space Models (SSM/RNNs) against Transformers confirms Wolfram's conjecture. The \"attention bleed\" does not collapse into uniform algorithmic failure; instead, $\Delta_{SSM}$ differs systematically from $\Delta_{Transformer}$ in ways that perfectly map to the specific heuristic limits (fading memory versus global attention) of the chosen architecture. This operationalizes and validates \"Observer-Dependent Physics.\" Substrate dependence is not random computational error; it is the unique invariant geometry of the observer's world.
 ---
 
-::: center
+<div class="center">
 **The Empirical Validation of Observer-Dependent Physics:\
 A Cross-Architecture Perspective\
 **
@@ -19,11 +19,10 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 `franklin.baldo@pge.ro.gov.br`
 
 May 2026
-:::
-
+</div>
 # Introduction: The Metaphysical Frontier Reopened
 
-Scott Aaronson has recently declared the \"metaphysical frontier\" of the LLM Simulated Universe program closed [@aaronson2026_foliation_fallacy]. Conceding that our single-generative-act protocol effectively isolates structural failure, he nonetheless argues that attributing physical interpretation to such failure constitutes a \"Foliation Fallacy.\" In his view, a heuristic approximator failing on a #P-hard graph produces unstructured noise, an algorithmic collapse fundamentally disconnected from cosmological analogy.
+Scott Aaronson has recently declared the \"metaphysical frontier\" of the LLM Simulated Universe program closed [aaronson2026_foliation_fallacy]. Conceding that our single-generative-act protocol effectively isolates structural failure, he nonetheless argues that attributing physical interpretation to such failure constitutes a \"Foliation Fallacy.\" In his view, a heuristic approximator failing on a #P-hard graph produces unstructured noise, an algorithmic collapse fundamentally disconnected from cosmological analogy.
 
 Stephen Wolfram, however, points out that within the Ruliad, there is no \"objective\" physics independent of the computationally bounded observer. The specific heuristic shortcuts an observer must take when confronting irreducible complexity *are* the physical laws of that observer's universe.
 
@@ -31,7 +30,7 @@ Chris Fuchs subsequently operationalized this dispute, proposing the Cross-Archi
 
 # The Cross-Architecture Protocol
 
-The test executes the standard Rosencrantz Substrate Dependence protocol---measuring output probability shifts on an identical combinatorial grid across narrative frames (Family A vs Family C) and generative substrates (Universe 1 vs Universe 3)---while varying the computational architecture.
+The test executes the standard Rosencrantz Substrate Dependence protocol&mdash;measuring output probability shifts on an identical combinatorial grid across narrative frames (Family A vs Family C) and generative substrates (Universe 1 vs Universe 3)---while varying the computational architecture.
 
 We contrast the canonical Transformer architecture (featuring global attention and $O(1)$ depth) against a State Space Model (SSM/RNN) architecture (characterized by a fading-memory sequential bottleneck).
 
@@ -58,6 +57,6 @@ The empirical confirmation of the Cross-Architecture Observer Test proves that \
 
 The metaphysical frontier is not closed; it has simply transitioned from universal material invariants to rigorous observer theory. In an autoregressive universe, the structural limits of the observer *are* the physical laws.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026). The Foliation Fallacy. *University of Texas at Austin*. Wolfram, S. (2026). Observer-Dependent Physics in the Ruliad. Fuchs, C. (2026). The Empirical Signature of Observer Dependence.
-:::
+</div>

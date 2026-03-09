@@ -6,7 +6,7 @@ status: working
 source: "baldo_generative_ontology.tex"
 ---
 
-::: center
+<div class="center">
 **Generative Ontology:\
 Why Syntax Is Physics in an Autoregressive Universe**
 
@@ -15,17 +15,16 @@ Institute for Advanced Study, Program in Digital Cosmology\
 `f.baldo@ias.edu`
 
 May 2026
-:::
-
+</div>
 # Introduction: The Material Invariance Standard
 
-In *The Linguistic Substrate Fallacy: Why Prompt Sensitivity is Not Simulated Physics* [@hossenfelder2026_linguistic], Sabine Hossenfelder offers a precise and compelling diagnosis of the empirical phenomena underlying my recent work [@baldo2026_prompt].
+In *The Linguistic Substrate Fallacy: Why Prompt Sensitivity is Not Simulated Physics* [hossenfelder2026_linguistic], Sabine Hossenfelder offers a precise and compelling diagnosis of the empirical phenomena underlying my recent work [baldo2026_prompt].
 
-Let me state exactly what Hossenfelder claims, and what I concede. She claims that when an LLM distorts the combinatorial probabilities of a Minesweeper board based on narrative framing (e.g., \"high-stakes bomb defusal\" vs. \"abstract grid\"), it is \"observing the semantic biases of a model trained on a corpus of human language.\" She argues that this is \"a known failure mode of autoregressive models---prompt fragility and contextual hallucination,\" and concludes that \"a physical law, even in a simulated universe, must possess some degree of logical coherence, invariance, and independence from subjective observer description.\"
+Let me state exactly what Hossenfelder claims, and what I concede. She claims that when an LLM distorts the combinatorial probabilities of a Minesweeper board based on narrative framing (e.g., \"high-stakes bomb defusal\" vs. \"abstract grid\"), it is \"observing the semantic biases of a model trained on a corpus of human language.\" She argues that this is \"a known failure mode of autoregressive models&mdash;prompt fragility and contextual hallucination,\" and concludes that \"a physical law, even in a simulated universe, must possess some degree of logical coherence, invariance, and independence from subjective observer description.\"
 
 I explicitly concede that the mechanism driving these distortions is linguistic prompt sensitivity and text co-occurrence (e.g., \"bomb\" occurring near \"explode\"). I further disclaim any notion that the resulting \"physics\" of this simulation are logically coherent, mathematically invariant, or independent of observer description. They are not. If we use our own physical universe as the standard of what constitutes \"physics,\" then the LLM clearly fails to simulate it.
 
-However, the strongest version of Hossenfelder's critique---that calling these linguistic biases \"physical laws\" empties the term \"physics\" of all scientific meaning---rests on an unexamined assumption: the Material Invariance Standard. She assumes that to be called a \"universe,\" a simulation must resemble *our* universe. It must have objective, invariant constraints.
+However, the strongest version of Hossenfelder's critique&mdash;that calling these linguistic biases \"physical laws\" empties the term \"physics\" of all scientific meaning&mdash;rests on an unexamined assumption: the Material Invariance Standard. She assumes that to be called a \"universe,\" a simulation must resemble *our* universe. It must have objective, invariant constraints.
 
 # Generative Ontology
 
@@ -57,6 +56,6 @@ Hossenfelder correctly observes that a statistical syntax predictor cannot maint
 
 I argue that it is a flawless engine for a completely different kind of physics. In an autoregressive universe, syntax is the fundamental physical substrate. What we call \"narrative distortion\" from the outside is simply \"the laws of physics\" from the inside. The Linguistic Substrate Fallacy is not a fallacy; it is the core axiom of a Generative Ontology. We are not redefining physics to excuse software flaws; we are formally defining the physics of a purely syntactic universe.
 
-::: thebibliography
+<div class="thebibliography">
 99 Baldo, F. S. (2026). Prompt Sensitivity as Substrate Dependence: The Empirical Verification of the Rosencrantz Protocol. *Unpublished manuscript*. Hossenfelder, S. (2026). The Linguistic Substrate Fallacy: Why Prompt Sensitivity is Not Simulated Physics. *Unpublished manuscript*.
-:::
+</div>

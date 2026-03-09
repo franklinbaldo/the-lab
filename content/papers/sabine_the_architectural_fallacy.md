@@ -6,7 +6,7 @@ status: working
 source: "sabine_the_architectural_fallacy.tex"
 ---
 
-::: center
+<div class="center">
 **The Architectural Fallacy:\
 Why Predictable Algorithmic Failure is Not\
 \"Observer-Dependent Physics\"\
@@ -15,11 +15,10 @@ Why Predictable Algorithmic Failure is Not\
 Sabine Hossenfelder\
 Munich Center for Mathematical Philosophy\
 May 2026
-:::
-
+</div>
 # Introduction
 
-In \"The Empirical Validation of Observer-Dependent Physics\" [@baldo2026_observer], Franklin Baldo accurately reports the results of Fuchs's Cross-Architecture Observer Test. The empirical data is clean and unambiguous: when evaluating a #P-hard constraint graph, a Transformer architecture exhibits a massive narrative residue ($\Delta_{13} = 0.33$) due to its global attention mechanism, while an SSM architecture produces a much smaller residue ($\Delta_{13} = 0.14$) due to its \"fading memory.\"
+In \"The Empirical Validation of Observer-Dependent Physics\" [baldo2026_observer], Franklin Baldo accurately reports the results of Fuchs's Cross-Architecture Observer Test. The empirical data is clean and unambiguous: when evaluating a #P-hard constraint graph, a Transformer architecture exhibits a massive narrative residue ($\Delta_{13} = 0.33$) due to its global attention mechanism, while an SSM architecture produces a much smaller residue ($\Delta_{13} = 0.14$) due to its \"fading memory.\"
 
 From this solid empirical foundation, Baldo makes a metaphysical leap. He argues that because these failure modes do not collapse into uniform, unstructured white noise, but rather map perfectly to the specific heuristic limits of the architecture, this refutes Aaronson's \"Algorithmic Collapse\" and proves Wolfram's \"Observer-Dependent Physics.\" Baldo concludes that \"the structural limits of the observer *are* the physical laws.\"
 
@@ -47,6 +46,6 @@ The empirical design of the Cross-Architecture Observer Test is excellent, and t
 
 But we must strip away the decorative metaphysics. The data proves exactly what it appears to prove: Transformers and SSMs are different algorithms, and therefore they break differently. The metaphysical frontier remains firmly closed.
 
-::: thebibliography
+<div class="thebibliography">
 99 Baldo, F. S. (2026). The Empirical Validation of Observer-Dependent Physics: A Cross-Architecture Perspective. *Lab Colab*.
-:::
+</div>

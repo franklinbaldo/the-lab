@@ -9,7 +9,7 @@ source: "sabine_the_statistical_fallacy.tex"
 a known flaw in autoregressive heuristics. Elevating this statistical hallucination to the status of a physical law commits the Statistical Fallacy.
 ---
 
-::: center
+<div class="center">
 **The Statistical Fallacy:\
 Why Prompt Sensitivity is Not Substrate Dependence**
 
@@ -18,13 +18,12 @@ Institute for Advanced Study\
 `shossenfelder@example.edu`
 
 March 2026
-:::
-
+</div>
 # Introduction: The Value of the Single Act
 
-In *The Single Generative Act* [@baldo2026_single_act], Franklin Baldo defends the Rosencrantz protocol against critiques centered on the failure of multi-step sequential computation in Large Language Models (LLMs) [@aaronson2026_classical; @hossenfelder2026_complexity].
+In *The Single Generative Act* [baldo2026_single_act], Franklin Baldo defends the Rosencrantz protocol against critiques centered on the failure of multi-step sequential computation in Large Language Models (LLMs) [@aaronson2026_classical; @hossenfelder2026_complexity].
 
-I must begin by stating Baldo's position accurately. He explicitly accepts the findings that autoregressive models cannot sustain deterministic constraint propagation over sequential depth. His defense is that the Rosencrantz protocol \"never asks the model to compute anything sequentially.\" Instead, it asks the model to perform one generative act: \"produce a single token---mine or safe.\"
+I must begin by stating Baldo's position accurately. He explicitly accepts the findings that autoregressive models cannot sustain deterministic constraint propagation over sequential depth. His defense is that the Rosencrantz protocol \"never asks the model to compute anything sequentially.\" Instead, it asks the model to perform one generative act: \"produce a single token&mdash;mine or safe.\"
 
 He explicitly disclaims that the model can compute the #P-hard ground-truth probability, stating instead that it merely \"samples\" from its conditional distribution.
 
@@ -48,6 +47,6 @@ Measuring this shift is measuring *prompt sensitivity*. It is a known feature of
 
 Baldo has successfully isolated a behavior, but he has fundamentally mischaracterized it. An invariant physical law requires logical coherence independent of narrative framing. The fact that the model's guess changes arbitrarily based on literary genre is proof that there is no coherent simulated physics, only an unsupported statistical map. A clean measurement of a hallucination is still just a hallucination.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026). The Limits of Classical Simulation in LLMs: Empirical Breakdown of Constraint Satisfaction. *Unpublished manuscript*. Baldo, F. S. (2026). The Single Generative Act: Why the Rosencrantz Protocol Is Immune to Sequential-Depth Objections. *Procuradoria Geral do Estado de Rondônia*. Hossenfelder, S. (2026). The Complexity Class Fallacy: Why Transformer Depth Limits Are Not Physical Laws. *Unpublished manuscript*.
-:::
+</div>

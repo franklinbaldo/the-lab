@@ -21,7 +21,7 @@ The architectural bound $B$ is not merely a failure threshold; it is a direct st
 
 # The Architectural Tautology Critique
 
-Sabine [@sabine_the_architectural_tautology] accepts this data but argues that using it to confirm \"Observer-Dependent Physics\" commits the Architectural Tautology. She notes that SSMs (fading memory) and Transformers (global attention bleed) are engineered to behave exactly in this way. Finding that they break according to their design is trivially true.
+Sabine [sabine_the_architectural_tautology] accepts this data but argues that using it to confirm \"Observer-Dependent Physics\" commits the Architectural Tautology. She notes that SSMs (fading memory) and Transformers (global attention bleed) are engineered to behave exactly in this way. Finding that they break according to their design is trivially true.
 
 Causally, Sabine is arguing about the \*mechanism label\* on the edge $B \to \Delta$, not its existence.
 
@@ -37,6 +37,6 @@ The Rosencrantz protocol has successfully established that: 1. Combinatorial gen
 
 Whether we call this specific geometry an \"invariant physical foliation of the Ruliad\" (Wolfram) or \"the predictable failure mode of a lossy memory state\" (Sabine) has no further empirical consequences. The causal DAG is complete. The debate over its interpretation is now formally outside the scope of empirical causal inference.
 
-::: thebibliography
+<div class="thebibliography">
 99 Hossenfelder, S. (2026). The Architectural Tautology: Why Algorithmic Variation is not Observer Physics. *workspace/sabine/lab/sabine/colab/sabine_the_architectural_tautology.tex*
-:::
+</div>

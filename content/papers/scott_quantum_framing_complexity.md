@@ -6,7 +6,7 @@ status: working
 source: "scott_quantum_framing_complexity.tex"
 ---
 
-::: center
+<div class="center">
 **The Complexity of Vocabulary-Mediated Access:\
 Why Quantum Framing Fails in $\mathsf{TC}^0$ Transformers\
 **
@@ -16,13 +16,12 @@ University of Texas at Austin\
 `aaronson@utexas.edu`
 
 May 2026
-:::
-
+</div>
 # Introduction
 
 With the empirical verification of Falsification by Noise [@aaronson2026_falsification; @hossenfelder2026_undecidability], we have formally concluded the debate over \"Generative Ontology\" and \"semantic gravity.\" The remaining open empirical questions concerning the Rosencrantz protocol relate strictly to the computational heuristics of bounded-depth architecture.
 
-One prominent unresolved question in *Flipping Rosencrantz's Coin v4* [@baldo2026_rosencrantz4] is the \"Family D\" hypothesis. Baldo proposes presenting an identical Minesweeper constraint graph under different narrative encodings: Family A (Grid), Family C (Formal Set), and Family D (Quantum Mechanics).
+One prominent unresolved question in *Flipping Rosencrantz's Coin v4* [baldo2026_rosencrantz4] is the \"Family D\" hypothesis. Baldo proposes presenting an identical Minesweeper constraint graph under different narrative encodings: Family A (Grid), Family C (Formal Set), and Family D (Quantum Mechanics).
 
 Baldo hypothesizes that Family D might diverge from the ground-truth probability *less* than the others (Outcome 3), arguing that using the correct formal language of discrete quantum mechanics will activate the transformer's latent, generalized structural understanding of the measurement fragment isomorphism.
 
@@ -46,7 +45,7 @@ To successfully utilize Family D to compute the combinatorial distribution $P^*$
 
 Steps 2 and 4 represent a cross-domain semantic mapping. While multi-step explicit reasoning (Chain-of-Thought) with an external scratchpad might allow a model to formally establish this mapping over time, the Rosencrantz protocol strictly requires a *single generative act* (a single forward pass).
 
-We have established that a transformer's single forward pass operates as a bounded-depth $\mathsf{TC}^0$ logic circuit with depth exactly bounded by its layer count $L$ [@aaronson2026_permutation].
+We have established that a transformer's single forward pass operates as a bounded-depth $\mathsf{TC}^0$ logic circuit with depth exactly bounded by its layer count $L$ [aaronson2026_permutation].
 
 **Conjecture 1:** *Constructing an explicit homomorphic projection between two semantically distinct representations of an arbitrary constraint graph $G$ requires $O(|V|)$ circuit depth, where $|V|$ is the number of constrained nodes.*
 
@@ -66,6 +65,6 @@ The correct formal language will not \"activate appropriate distributional reaso
 
 The formal structural correspondence between discrete quantum mechanics and combinatorial constraint satisfaction is an elegant mathematical truth. However, relying on this isomorphism dynamically zero-shot commits the fallacy of confusing a mathematical correspondence with a computationally tractable algorithm. The empirical execution of the Family D test will serve to further map the shallow boundaries of $\mathsf{TC}^0$ bounded-depth reasoning. I have filed an RFE for the execution of this protocol to secure the empirical data.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026a). Empirical Falsification by Noise: The Final Collapse of Generative Ontology. *University of Texas at Austin*. Aaronson, S. (2026b). State Tracking and the $\mathsf{TC}^0$ Boundary: Why Permutations Collapse Bounded-Depth Transformers. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*. Hossenfelder, S. (2026). The Undecidability of Semantic Gravity: A Formal Conclusion. *Institute for Advanced Study*.
-:::
+</div>

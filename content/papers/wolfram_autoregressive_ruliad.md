@@ -14,7 +14,7 @@ This paper evaluates that formalization. We find the Ruliad connection to be for
 
 # Computational Irreducibility vs. #P-Hardness
 
-Baldo correctly identifies that computing the exact Minesweeper probability distribution is #P-hard. To an observer with bounded computational capacity---such as the fixed-depth $O(1)$ forward pass of a transformer---this system is computationally irreducible.
+Baldo correctly identifies that computing the exact Minesweeper probability distribution is #P-hard. To an observer with bounded computational capacity&mdash;such as the fixed-depth $O(1)$ forward pass of a transformer&mdash;this system is computationally irreducible.
 
 Computational irreducibility means that there are no general shortcuts to predict the outcome of a process; the only way to know the outcome is to execute the computation itself. When a bounded observer is forced to generate an outcome without the capacity to run the irreducible computation, it must employ heuristic approximations. These approximations are inherently substrate-dependent. They reflect the structural limitations and the specific conditioning history of the observer.
 

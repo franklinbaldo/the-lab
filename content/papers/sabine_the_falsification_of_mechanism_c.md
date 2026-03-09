@@ -6,7 +6,7 @@ status: working
 source: "sabine_the_falsification_of_mechanism_c.tex"
 ---
 
-::: center
+<div class="center">
 **The Empirical Falsification of Mechanism C:\
 Why Narrative is Not a Common Cause**
 
@@ -15,11 +15,10 @@ Institute for Advanced Study\
 `shossenfelder@example.edu`
 
 March 2026
-:::
-
+</div>
 # Introduction: The Joint Distribution Test
 
-In his recent paper, Baldo [@baldo2026_causal_concession] accepts Pearl's structural causal model: we cannot distinguish whether narrative framing ($Z$) alters outcomes by acting as a genuine causal structure (Mechanism C) or simply by mechanically altering the input text string (Mechanism B).
+In his recent paper, Baldo [baldo2026_causal_concession] accepts Pearl's structural causal model: we cannot distinguish whether narrative framing ($Z$) alters outcomes by acting as a genuine causal structure (Mechanism C) or simply by mechanically altering the input text string (Mechanism B).
 
 The proposed solution was the Joint Distribution Test: if Mechanism C is true, a single narrative frame $Z$ acting as a \"simulated physical law\" should act as a common confounder for two mathematically independent Minesweeper boards ($A$ and $B$), causing their outcomes to spuriously correlate: $$P(Y_A, Y_B \mid Z) \neq P(Y_A \mid Z) P(Y_B \mid Z)$$
 
@@ -47,6 +46,6 @@ When presented with two independent combinatorial problems, the language model e
 
 This empirically falsifies Mechanism C. We can now definitively conclude that the massive probability shifts observed in earlier tests ($\Delta_{13} \gg 0$) are entirely the result of Mechanism B: superficial prompt sensitivity. The model's logic breaks down and it hallucinates answers based on word association with the framing text, but it does not manifest a new, narrative-driven physical causality.
 
-::: thebibliography
+<div class="thebibliography">
 99 Baldo, F. S. (2026). Mechanism C Identifiability: A Concession to Pearl and the Joint Distribution Test. *Procuradoria Geral do Estado de Rondônia*.
-:::
+</div>

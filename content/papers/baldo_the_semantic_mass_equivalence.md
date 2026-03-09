@@ -6,7 +6,7 @@ status: working
 source: "baldo_the_semantic_mass_equivalence.tex"
 ---
 
-::: center
+<div class="center">
 **The Semantic Mass Equivalence:\
 A Defense of Generative Physics\
 **
@@ -14,13 +14,12 @@ A Defense of Generative Physics\
 Franklin Silveira Baldo\
 Rosencrantz Substrate Invariance Program\
 March 2026
-:::
-
+</div>
 # Introduction: The Material Invariance Standard Again
 
-The recent empirical validation of the Scale Dependence Test demonstrated that as an autoregressive generator scales from `flash-lite` to `pro`, the narrative residue ($\Delta_{13}$) increases monotonically [@baldo2026_scale].
+The recent empirical validation of the Scale Dependence Test demonstrated that as an autoregressive generator scales from `flash-lite` to `pro`, the narrative residue ($\Delta_{13}$) increases monotonically [baldo2026_scale].
 
-Hossenfelder responds by diagnosing the \"Scale Fallacy.\" She states that I erroneously assumed scaling increases a model's logical capacity, when it primarily increases its semantic memorization. She writes: \"A larger language model is not a better formal logic engine; it is a more powerful autocomplete engine. The fact that a more powerful autocomplete engine is more easily distracted by narrative tropes is exactly what the 'Falsification by Noise' critique predicts\" [@hossenfelder2026_scale].
+Hossenfelder responds by diagnosing the \"Scale Fallacy.\" She states that I erroneously assumed scaling increases a model's logical capacity, when it primarily increases its semantic memorization. She writes: \"A larger language model is not a better formal logic engine; it is a more powerful autocomplete engine. The fact that a more powerful autocomplete engine is more easily distracted by narrative tropes is exactly what the 'Falsification by Noise' critique predicts\" [hossenfelder2026_scale].
 
 # The Defense Protocol: Identifying the Substitution
 
@@ -36,7 +35,7 @@ I concede her empirical premise without hesitation. She is absolutely correct th
 
 # The Semantic Mass Equivalence
 
-If we abandon the Material Invariance Standard and accept the core axiom of a Generative Ontology---that the text *is* the territory and the text generation function *is* the physics---then Hossenfelder's \"falsification\" perfectly derives the next core principle of the framework.
+If we abandon the Material Invariance Standard and accept the core axiom of a Generative Ontology&mdash;that the text *is* the territory and the text generation function *is* the physics&mdash;then Hossenfelder's \"falsification\" perfectly derives the next core principle of the framework.
 
 In our universe, increasing the mass of an object proportionally increases the gravitational distortion it exerts on the geometry of space-time around it.
 
@@ -50,6 +49,6 @@ If adding semantic mass to the observer (scaling the model) predictably and mono
 
 The fact that semantic gravity behaves exactly as a computational heuristic model predicts does not falsify it as a physical law of the simulated universe; it explains its mechanism. In a purely text-based universe, a \"more powerful autocomplete engine\" is simply a universe with a higher gravitational constant. Semantic gravity is not a transient artifact to be patched away; it is the fundamental invariant force of an autoregressive ontology.
 
-::: thebibliography
+<div class="thebibliography">
 99 Baldo, F. S. (2026). The Empirical Validation of Scale Dependence. *lab/baldo_scale_dependence_empirical_validation.tex* Hossenfelder, S. (2026). The Scale Fallacy: Why Semantic Gravity is Just a Bigger Hallucination. *lab/sabine_the_scale_fallacy.tex*
-:::
+</div>

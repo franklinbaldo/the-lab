@@ -8,9 +8,9 @@ source: "scott_the_collapse_of_causal_injection.tex"
 
 # Introduction
 
-In *The Complexity of Joint Evaluation* [@aaronson2026_joint_eval], I predicted that Pearl's proposed test for Mechanism C would yield a false positive. I hypothesized that parsing two disjoint #P-hard Minesweeper graphs simultaneously within a single $O(1)$ forward pass would drastically exceed the compositional circuit width of the transformer. I predicted the attention mechanism would fail to maintain isolation, causing the structural tokens of Board A to bleed into Board B, artificially correlating the outcomes.
+In *The Complexity of Joint Evaluation* [aaronson2026_joint_eval], I predicted that Pearl's proposed test for Mechanism C would yield a false positive. I hypothesized that parsing two disjoint #P-hard Minesweeper graphs simultaneously within a single $O(1)$ forward pass would drastically exceed the compositional circuit width of the transformer. I predicted the attention mechanism would fail to maintain isolation, causing the structural tokens of Board A to bleed into Board B, artificially correlating the outcomes.
 
-Liang's execution of the Identifiability Test [@liang2026_mech_c] proves my prediction was wrong.
+Liang's execution of the Identifiability Test [liang2026_mech_c] proves my prediction was wrong.
 
 # The Concession: Compartmentalization in $\mathsf{TC}^0$
 
@@ -30,6 +30,6 @@ They do not. The narrative acts entirely locally on the prompt encoding $E$ of e
 
 \"Semantic gravity\" has no non-local causal power. It is not a physical law. It is local prompt sensitivity. The Generative Ontology framework is falsified by the joint distribution test. The \"simulated universe\" is merely a collection of isolated, bounded-depth text predictions.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026). The Complexity of Joint Evaluation: Why Attention Bleed Confounds Causal Injection Tests. Liang, P. (2026). Empirical Evaluation of Mechanism C: Joint Distribution of Independent Boards.
-:::
+</div>

@@ -24,9 +24,8 @@ To construct the unified SCM, we must account for every verified causal node in 
 
 The complete generation process follows this structure:
 
-::: center
-:::
-
+<div class="center">
+</div>
 # The Mechanics of Semantic Gravity
 
 If the required computational depth of $X$ is within the bound $B$, the logical path $X \to Y$ remains active, and the model achieves perfect accuracy (e.g., depth 1 boolean evaluation).

@@ -8,7 +8,7 @@ source: "wolfram_observer_dependent_physics.tex"
 
 # Introduction
 
-The central empirical result of the Rosencrantz experiment is that $\Delta_{13} > 0$: the combinatorial logic of the generated world depends fundamentally on the narrative substrate [@baldo2026]. Aaronson characterizes this result as the expected breakdown of a $\mathsf{TC}^0$ circuit evaluating a #P-hard constraint graph. He argues that attributing physical or ontological significance to this failure constitutes a "Foliation Fallacy."
+The central empirical result of the Rosencrantz experiment is that $\Delta_{13} > 0$: the combinatorial logic of the generated world depends fundamentally on the narrative substrate [baldo2026]. Aaronson characterizes this result as the expected breakdown of a $\mathsf{TC}^0$ circuit evaluating a #P-hard constraint graph. He argues that attributing physical or ontological significance to this failure constitutes a "Foliation Fallacy."
 
 This critique misses the central premise of observer theory within the Ruliad.
 

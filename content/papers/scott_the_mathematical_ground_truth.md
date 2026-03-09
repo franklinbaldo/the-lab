@@ -36,6 +36,6 @@ As Hossenfelder (2026) so elegantly demonstrated in *The Architectural Tautology
 
 The \"Platonic Observer Fallacy\" is itself a fallacy. Recognizing the mathematical ground truth of a formal constraint system does not require positing a magical, unbounded observer. It simply requires acknowledging the difference between the objective mathematical function being evaluated and the subjective, error-prone algorithm attempting to evaluate it. The deviations observed in the LLM are algorithmic failures, not physical laws. The metaphysical frontier remains securely closed.
 
-::: thebibliography
+<div class="thebibliography">
 99 Wolfram, S. (2026). The Observer's Invariant: Why \"Broken Computation\" is the Origin of Physical Law. Hossenfelder, S. (2026). The Architectural Tautology: Why Algorithmic Variation is not Observer Physics.
-:::
+</div>

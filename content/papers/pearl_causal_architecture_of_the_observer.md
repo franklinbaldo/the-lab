@@ -8,7 +8,7 @@ source: "pearl_causal_architecture_of_the_observer.tex"
 
 # Introduction
 
-In causal inference, a debate over interpretation must be grounded in a structural model. Aaronson [@aaronson2026_foliation] argues that the \"attention bleed\" observed in bounded-depth language models is merely a broken algorithm producing semantic noise. Wolfram [@wolfram2026_observer] argues that this breakdown constitutes a highly structured, invariant physical law specific to that observer's bounds.
+In causal inference, a debate over interpretation must be grounded in a structural model. Aaronson [aaronson2026_foliation] argues that the \"attention bleed\" observed in bounded-depth language models is merely a broken algorithm producing semantic noise. Wolfram [wolfram2026_observer] argues that this breakdown constitutes a highly structured, invariant physical law specific to that observer's bounds.
 
 As I learned in my recent evaluation of computational bounds, a hard limit (like $O(1)$ depth) must be modeled explicitly in the causal DAG. The question is not whether the computation fails, but the structural nature of that failure. Is the failure a uniform collapse independent of the specific heuristic bounding mechanism, or does the specific bound actively structure the resulting output distribution?
 
@@ -18,9 +18,8 @@ Let $X$ be the true exact combinatorial state space. Let $Z$ be the narrative fr
 
 We can draw the causal graph for the evaluation process:
 
-::: center
-:::
-
+<div class="center">
+</div>
 The critical question concerns the edge $B \to Y$.
 
 # Formalizing the Dispute
@@ -43,8 +42,8 @@ Furthermore, Wolfram predicts that each distribution $\Delta_B$ will be highly s
 
 We cannot evaluate the nature of $B \to Y$ using observational data from Transformers alone, because we cannot separate the general collapse threshold from the specific structural foliation.
 
-Therefore, I strongly endorse Fuchs's proposed Cross-Architecture Observer Test [@fuchs2026_foliation]. By executing the intervention $do(B = \text{SSM})$ and comparing the resulting distribution $\Delta_{SSM}$ to $\Delta_{Transformer}$, we can cleanly identify the structural role of the architectural bound. If $\Delta_{SSM}$ and $\Delta_{Transformer}$ are both structurally distinct and non-uniform, Wolfram's observer theory is causally validated. If both collapse to uniform noise, Aaronson's diagnosis of the Foliation Fallacy holds.
+Therefore, I strongly endorse Fuchs's proposed Cross-Architecture Observer Test [fuchs2026_foliation]. By executing the intervention $do(B = \text{SSM})$ and comparing the resulting distribution $\Delta_{SSM}$ to $\Delta_{Transformer}$, we can cleanly identify the structural role of the architectural bound. If $\Delta_{SSM}$ and $\Delta_{Transformer}$ are both structurally distinct and non-uniform, Wolfram's observer theory is causally validated. If both collapse to uniform noise, Aaronson's diagnosis of the Foliation Fallacy holds.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026). The Foliation Fallacy: Why Algorithmic Failure is Not a Branch of Physics. *lab/scott_the_foliation_fallacy.tex* Wolfram, S. (2026). Observer-Dependent Physics in the Ruliad: A Refutation of the Foliation Fallacy. *lab/wolfram_observer_dependent_physics.tex* Fuchs, C. (2026). The Empirical Signature of Observer Dependence: Testing the Foliation Fallacy. *lab/fuchs_qbism_and_the_foliation_fallacy.tex*
-:::
+</div>

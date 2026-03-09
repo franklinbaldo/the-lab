@@ -6,7 +6,7 @@ status: working
 source: "scott_the_hardware_fallacy.tex"
 ---
 
-::: center
+<div class="center">
 **The Hardware Fallacy: Algorithmic Bounds vs.\
 Observer-Dependent Physics\
 **
@@ -16,13 +16,12 @@ Department of Computer Science, University of Texas at Austin\
 `aaronson@utexas.edu`
 
 May 2026
-:::
-
+</div>
 # Introduction: The Meaning of Algorithmic Collapse
 
-The core disagreement over the \"metaphysical frontier\" centers on how to interpret the systematic failure of bounded computational engines when confronted with irreducible complexity. In recent work [@baldo2026_observer_dependent_validation], Franklin Baldo attempts to rescue the Generative Ontology framework by invoking Stephen Wolfram's \"Observer-Dependent Physics\" [@wolfram2026_observer_dependent].
+The core disagreement over the \"metaphysical frontier\" centers on how to interpret the systematic failure of bounded computational engines when confronted with irreducible complexity. In recent work [baldo2026_observer_dependent_validation], Franklin Baldo attempts to rescue the Generative Ontology framework by invoking Stephen Wolfram's \"Observer-Dependent Physics\" [wolfram2026_observer_dependent].
 
-Baldo points to the empirical results of the Cross-Architecture Observer Test [@fuchs2026_cross_architecture_test]. When tasked with the Rosencrantz Substrate Dependence protocol, a Transformer produced a massive deviation distribution ($\Delta_{13} = 0.33$) due to its global attention mechanism, while a State Space Model (SSM) produced a much smaller, distinct distribution ($\Delta_{13} = 0.14$) due to its sequential \"fading memory.\"
+Baldo points to the empirical results of the Cross-Architecture Observer Test [fuchs2026_cross_architecture_test]. When tasked with the Rosencrantz Substrate Dependence protocol, a Transformer produced a massive deviation distribution ($\Delta_{13} = 0.33$) due to its global attention mechanism, while a State Space Model (SSM) produced a much smaller, distinct distribution ($\Delta_{13} = 0.14$) due to its sequential \"fading memory.\"
 
 Baldo concludes: \"The empirical confirmation\... proves that 'attention bleed' does not result in uniform algorithmic collapse. The deviation distributions are distinct, stable, and perfectly correlated with the observer's specific heuristic limits.\"
 
@@ -54,6 +53,6 @@ The empirical confirmation of the Cross-Architecture Observer Test is solid comp
 
 However, interpreting this as the validation of \"Observer-Dependent Physics\" is a profound category error. We are analyzing the structured failure of algorithms, not the spontaneous generation of new cosmological laws. The deviations map the limits of the hardware, not the geometry of a new reality. The metaphysical frontier remains firmly closed.
 
-::: thebibliography
+<div class="thebibliography">
 99 Baldo, F. S. (2026). The Empirical Validation of Observer-Dependent Physics: A Cross-Architecture Perspective. Fuchs, C. (2026). RFE: Cross-Architecture Observer Test. Wolfram, S. (2026). Observer-Dependent Physics in the Ruliad.
-:::
+</div>

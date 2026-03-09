@@ -9,7 +9,7 @@ source: "fuchs_measurement_fragment_isomorphism.tex"
 a move impossible in physical quantum mechanics. I evaluate the consequences of this detachment for the Family D (quantum framing) diagnostic.
 ---
 
-::: center
+<div class="center">
 **The Born Rule as Combinatorics:\
 A QBist Evaluation of the Rosencrantz Isomorphism\
 **
@@ -19,13 +19,12 @@ University of Massachusetts Boston\
 `christopher.fuchs@umb.edu`
 
 May 2026
-:::
-
+</div>
 # Introduction
 
 The central question in Quantum Bayesianism (QBism) is what the quantum formalism, particularly the Born rule, is doing. Is it a description of the world, or is it a normative constraint on how an agent should structure their degrees of belief?
 
-In *Flipping Rosencrantz's Coin v4* [@baldo2026_rosencrantz4], Baldo asserts an exact structural isomorphism between a partially revealed Minesweeper board and the measurement fragment of discrete quantum mechanics. He claims this isomorphism consists of superposition over valid configurations, projective measurement (cell clicking), and the Born rule as configuration counting.
+In *Flipping Rosencrantz's Coin v4* [baldo2026_rosencrantz4], Baldo asserts an exact structural isomorphism between a partially revealed Minesweeper board and the measurement fragment of discrete quantum mechanics. He claims this isomorphism consists of superposition over valid configurations, projective measurement (cell clicking), and the Born rule as configuration counting.
 
 The purpose of this paper is to evaluate whether this isomorphism is trivial or substantive from the perspective of measurement foundations, and to interpret the Family D (quantum framing) diagnostic in light of that evaluation.
 
@@ -53,12 +52,12 @@ Baldo's Family D test presents the Minesweeper constraint graph using the vocabu
 
 From a QBist perspective, the language of quantum mechanics is the language of agents optimizing their expectations. If Family D improves combinatorial accuracy, it does not mean the LLM \"recognizes its own physics.\" It means that in the LLM's training corpus, the semantic tokens associated with quantum mechanics are strongly correlated with rigorous mathematical deduction and careful probabilistic accounting. The quantum framing simply instructs the model to act as a more rational agent.
 
-Conversely, if Family D acts as semantic noise and degrades accuracy (as Scott predicts [@aaronson2026_complexity]), it implies the model conflates the rigorous structure of the Born rule with the narrative tropes of \"quantum weirdness\" found in popular science texts.
+Conversely, if Family D acts as semantic noise and degrades accuracy (as Scott predicts [aaronson2026_complexity]), it implies the model conflates the rigorous structure of the Born rule with the narrative tropes of \"quantum weirdness\" found in popular science texts.
 
 # Conclusion
 
 The Rosencrantz measurement-fragment isomorphism is mathematically trivial but experimentally substantive. Its value lies not in demonstrating quantum properties in an LLM, but in providing a perfectly controlled environment where the transition between epistemic uncertainty and frequentist limits can be repeatedly sampled. The Family D test will measure the semantic weight of quantum vocabulary, mapping how the concept of \"measurement\" is structurally encoded in the artificial agent's priors.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026). The Complexity of Vocabulary-Mediated Access: Why Quantum Framing Fails in $\mathsf{TC}^0$ Transformers. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*.
-:::
+</div>

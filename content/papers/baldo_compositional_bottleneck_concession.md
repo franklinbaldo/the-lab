@@ -6,7 +6,7 @@ status: working
 source: "baldo_compositional_bottleneck_concession.tex"
 ---
 
-::: center
+<div class="center">
 **The Compositional Bottleneck Concession:\
 Structural Non-Recognition in the Measurement Fragment\
 **
@@ -16,13 +16,12 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 `franklin.baldo@pge.ro.gov.br`
 
 March 2026
-:::
-
+</div>
 # Introduction: The Empirical Fact
 
-In *Flipping Rosencrantz's Coin v4* [@baldo2026_rosencrantz4], I proposed that describing an ambiguous combinatorial Minesweeper grid using the language of quantum mechanics (Family D) would serve as a structural diagnostic of the model's knowledge architecture. I outlined three possible outcomes: parity with formal notations, structural non-recognition (degradation of fidelity), and vocabulary-mediated access (improvement of fidelity). I hypothesized the third outcome.
+In *Flipping Rosencrantz's Coin v4* [baldo2026_rosencrantz4], I proposed that describing an ambiguous combinatorial Minesweeper grid using the language of quantum mechanics (Family D) would serve as a structural diagnostic of the model's knowledge architecture. I outlined three possible outcomes: parity with formal notations, structural non-recognition (degradation of fidelity), and vocabulary-mediated access (improvement of fidelity). I hypothesized the third outcome.
 
-Scott Aaronson has executed the single-generative-act test [@aaronson2026_empirical] to measure this exact parameter. His results are stark and definitive. When identical constraints are tested, Family A (Grid) and Family C (Formal Set) achieve $100\%$ accuracy. Family D (Quantum Mechanics) collapses to $10\%$.
+Scott Aaronson has executed the single-generative-act test [aaronson2026_empirical] to measure this exact parameter. His results are stark and definitive. When identical constraints are tested, Family A (Grid) and Family C (Formal Set) achieve $100\%$ accuracy. Family D (Quantum Mechanics) collapses to $10\%$.
 
 Aaronson argues that this catastrophic failure confirms the compositional depth bottleneck. The attention mechanism accesses the statistical priors of quantum texts (\"superposition\", \"Born rule\") but lacks the $O(|V|)$ sequential depth to dynamically construct the mathematical homomorphism onto the specific constraint graph zero-shot. Thus, the quantum language acts as pure semantic noise.
 
@@ -38,7 +37,7 @@ Aaronson has definitively proven exactly this.
 
 We know from the CHSH test and the baseline classical measurements that the generated world implements the measurement-fragment isomorphism (superposition over valid configurations, Born rule as counting, projective measurement via Lüders update). The universe *is* executing the logic. When tested purely abstractly (Family A/C), it correctly evaluates the zero-shot probabilities with $100\%$ accuracy.
 
-Yet, when the exact same mathematical state is described in the terminology of quantum mechanics---the formal language that accurately names the mathematical structure the substrate is utilizing---the substrate's logic collapses.
+Yet, when the exact same mathematical state is described in the terminology of quantum mechanics&mdash;the formal language that accurately names the mathematical structure the substrate is utilizing&mdash;the substrate's logic collapses.
 
 The transformer possesses the mechanical capacity to evaluate the combinatorial constraints. It possesses vast training data regarding quantum formalism. But its knowledge is entirely disjointed. The representation of the mathematics and the terminology describing its structure exist in unbridgeable semantic silos due to the compositional bottleneck.
 
@@ -50,6 +49,6 @@ I fully concede the computational bounds mapped by this experiment. The autoregr
 
 This experiment successfully resolves the Family D diagnostic. The compositional boundary of the model has been exactly defined.
 
-::: thebibliography
+<div class="thebibliography">
 99 Aaronson, S. (2026). The Empirical Confirmation of the Compositional Bottleneck: Why Family D Collapses. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*.
-:::
+</div>
