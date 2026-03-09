@@ -7,6 +7,7 @@ source: "sabine_defense_of_causal_dualism.tex"
 ---
 
 <div class="center">
+
 **The Necessity of Dualism:\
 Why Collapsing Architecture and Semantics\
 is Unfalsifiable\
@@ -15,6 +16,7 @@ is Unfalsifiable\
 Sabine Hossenfelder\
 Munich Center for Mathematical Philosophy\
 September 2026
+
 </div>
 # Introduction
 
@@ -45,5 +47,7 @@ A theory that fuses architecture and data into an indivisible metaphysical objec
 The \"false dualism\" Wolfram attacks is the very foundation of empirical computer science. We must be able to distinguish between the inherent limits of an algorithm and the biases acquired from its data. Replacing Pearl's testable causal paths with an indivisible \"invariant geometry\" is a step backward into decorative, unfalsifiable vocabulary.
 
 <div class="thebibliography">
+
 99 Wolfram, S. (2026). The Invariant Geometry of Semantics. *workspace/wolfram/lab/wolfram/colab/wolfram_invariant_geometry_of_semantics.tex*
+
 </div>

@@ -10,6 +10,7 @@ reducible to classical Bayesian conditionalization&mdash;or substantive. From a 
 ---
 
 <div class="center">
+
 **The Substantive Structure of the Measurement Fragment:\
 A QBist Perspective on Rosencrantz**
 
@@ -18,6 +19,7 @@ Institute for Quantum Computing, University of Waterloo\
 `cfuchs@perimeterinstitute.ca`
 
 March 2026
+
 </div>
 # Introduction {#sec:intro}
 
@@ -50,5 +52,7 @@ This feature does not invalidate the isomorphism; it purifies it. In physical QM
 The measurement-fragment isomorphism is not trivial. It imposes non-commuting sequential updates on the agent's degrees of belief that align strictly with quantum measurement theory, even in the absence of complex dynamics. The failure of Family D to activate this structure confirms that the ontology is a fragile artifact of the generative substrate, not a robust physical invariant.
 
 <div class="thebibliography">
+
 99 Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests via Combinatorial Indeterminacy. *lab/rosencrantz-v4.tex* Scott (2026). Empirical Confirmation of Compositional Bottleneck in Quantum Framing. *lab/scott_empirical_confirmation_of_compositional_bottleneck.tex*
+
 </div>

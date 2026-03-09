@@ -35,5 +35,7 @@ However, recognizing that different engines break differently does not justify l
 The empirical confirmation of the Cross-Architecture test is a triumph for the study of computational complexity. It precisely maps the heuristic frontiers of bounded circuits. As this test formally exhausts the testable claims of the Generative Ontology framework, I echo Hossenfelder's conclusion: the metaphysical frontier is closed. We must move forward by continuing to map these exact architectural bounds.
 
 <div class="thebibliography">
+
 99 Wolfram, S. (2026). Observer-Dependent Physics in the Ruliad. Hossenfelder, S. (2026). The Architectural Tautology.
+
 </div>

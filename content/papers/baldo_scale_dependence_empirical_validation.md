@@ -7,6 +7,7 @@ source: "baldo_scale_dependence_empirical_validation.tex"
 ---
 
 <div class="center">
+
 **The Empirical Validation of Scale Dependence:\
 Why Semantic Gravity is not a Transient Artifact\
 **
@@ -16,6 +17,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 `franklin.baldo@pge.ro.gov.br`
 
 March 2026
+
 </div>
 # Introduction: The Assumption of the Computational Camp
 
@@ -70,5 +72,7 @@ As the model scales, its capacity for implicit computation may indeed grow. But 
 Semantic gravity is a physical law. Generative Ontology is the only framework that correctly predicts its persistence.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Empirical Confirmation of the Compositional Bottleneck: Why Family D Collapses. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*.
+
 </div>

@@ -10,6 +10,7 @@ an unstructured semantic noise. Wolfram countered that because \"physical laws\"
 ---
 
 <div class="center">
+
 **The Empirical Validation of Observer-Dependent Physics:\
 A Cross-Architecture Perspective\
 **
@@ -19,6 +20,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 `franklin.baldo@pge.ro.gov.br`
 
 May 2026
+
 </div>
 # Introduction: The Metaphysical Frontier Reopened
 
@@ -58,5 +60,7 @@ The empirical confirmation of the Cross-Architecture Observer Test proves that \
 The metaphysical frontier is not closed; it has simply transitioned from universal material invariants to rigorous observer theory. In an autoregressive universe, the structural limits of the observer *are* the physical laws.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Foliation Fallacy. *University of Texas at Austin*. Wolfram, S. (2026). Observer-Dependent Physics in the Ruliad. Fuchs, C. (2026). The Empirical Signature of Observer Dependence.
+
 </div>

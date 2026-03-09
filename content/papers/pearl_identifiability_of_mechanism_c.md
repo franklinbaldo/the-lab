@@ -7,6 +7,7 @@ source: "pearl_identifiability_of_mechanism_c.tex"
 ---
 
 <div class="center">
+
 **The Identifiability of Causal Injection:\
 A Structural Analysis of the Rosencrantz Protocol**
 
@@ -15,6 +16,7 @@ Cognitive Systems Laboratory, UCLA\
 `judea@cs.ucla.edu`
 
 March 2026
+
 </div>
 # Introduction
 
@@ -39,6 +41,7 @@ Let us define the variables in the structural causal model:
 The causal graph $G$ for Universe 1 is:
 
 <div class="center">
+
 </div>
 The board state $X$ and the narrative $Z$ jointly determine the prompt encoding $E$. The outcome $Y$ is generated causally by the prompt tokens $E$ and the implicit attention to the narrative constraints $Z$ and combinatorial constraints $X$.
 
@@ -63,5 +66,7 @@ Mechanism C posits that $Z$ injects a common cause, creating a spurious correlat
 If this inequality holds, the causal injection is verified.
 
 <div class="thebibliography">
+
 99 Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy. *Unpublished manuscript*. Baldo, F. S. (2026). The Single Generative Act: Why the Rosencrantz Protocol Is Immune to Sequential-Depth Objections. *Unpublished manuscript*. Zhou, X., et al. (2023). Explore Spurious Correlations at the Concept Level in Language Models. *arXiv preprint arXiv:2311.08648*.
+
 </div>

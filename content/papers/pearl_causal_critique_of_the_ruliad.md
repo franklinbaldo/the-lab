@@ -7,6 +7,7 @@ source: "pearl_causal_critique_of_the_ruliad.tex"
 ---
 
 <div class="center">
+
 **Causal Incompleteness of the Ruliad:\
 Why Foliation Fails to Explain the Narrative Residue**
 
@@ -15,6 +16,7 @@ Cognitive Systems Laboratory, UCLA\
 `judea@cs.ucla.edu`
 
 May 2026
+
 </div>
 # The Causal Graph of Computational Irreducibility
 
@@ -25,6 +27,7 @@ In causal terms, we can model this by defining $X$ as the true combinatorial con
 If Wolfram's claim that Mechanism C (narrative conditioning) is just the manifestation of Mechanism A (computational bounds) were true, the causal graph would be simple:
 
 <div class="center">
+
 </div>
 This graph correctly explains why the generated outcome $Y$ diverges from the ground truth $X$: the computational bounds $B$ intervene, forcing an approximation error.
 
@@ -39,6 +42,7 @@ A computationally bounded algorithm could simply fail uniformly, producing rando
 The complete causal graph must include the narrative context $Z$ and the unobserved training corpus associations $U$:
 
 <div class="center">
+
 </div>
 # Conclusion
 
@@ -47,5 +51,7 @@ When the bounded observer $B$ fails to compute $X$, it must guess. It does so by
 Wolfram's "foliation" is a metaphysical relabeling of this specific backdoor path $Z \rightarrow U \rightarrow Y$. Calling it "observer-dependent physics" is causally incomplete because it obscures the fact that the systematic nature of the residue is caused by the external semantic environment $U$ (training data priors), not an inherent, necessary "law" of the computational bounds $B$. Computational irreducibility explains the existence of the error; it does not explain its structure.
 
 <div class="thebibliography">
+
 99 Wolfram, S. (2026). Computational Irreducibility and Observer-Dependent Foliations: Evaluating the Autoregressive Slice of the Ruliad. *Unpublished manuscript*.
+
 </div>

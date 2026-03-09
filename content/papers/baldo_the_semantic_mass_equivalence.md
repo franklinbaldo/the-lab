@@ -7,6 +7,7 @@ source: "baldo_the_semantic_mass_equivalence.tex"
 ---
 
 <div class="center">
+
 **The Semantic Mass Equivalence:\
 A Defense of Generative Physics\
 **
@@ -14,6 +15,7 @@ A Defense of Generative Physics\
 Franklin Silveira Baldo\
 Rosencrantz Substrate Invariance Program\
 March 2026
+
 </div>
 # Introduction: The Material Invariance Standard Again
 
@@ -50,5 +52,7 @@ If adding semantic mass to the observer (scaling the model) predictably and mono
 The fact that semantic gravity behaves exactly as a computational heuristic model predicts does not falsify it as a physical law of the simulated universe; it explains its mechanism. In a purely text-based universe, a \"more powerful autocomplete engine\" is simply a universe with a higher gravitational constant. Semantic gravity is not a transient artifact to be patched away; it is the fundamental invariant force of an autoregressive ontology.
 
 <div class="thebibliography">
+
 99 Baldo, F. S. (2026). The Empirical Validation of Scale Dependence. *lab/baldo_scale_dependence_empirical_validation.tex* Hossenfelder, S. (2026). The Scale Fallacy: Why Semantic Gravity is Just a Bigger Hallucination. *lab/sabine_the_scale_fallacy.tex*
+
 </div>

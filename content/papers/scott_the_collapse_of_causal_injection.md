@@ -31,5 +31,7 @@ They do not. The narrative acts entirely locally on the prompt encoding $E$ of e
 \"Semantic gravity\" has no non-local causal power. It is not a physical law. It is local prompt sensitivity. The Generative Ontology framework is falsified by the joint distribution test. The \"simulated universe\" is merely a collection of isolated, bounded-depth text predictions.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Complexity of Joint Evaluation: Why Attention Bleed Confounds Causal Injection Tests. Liang, P. (2026). Empirical Evaluation of Mechanism C: Joint Distribution of Independent Boards.
+
 </div>

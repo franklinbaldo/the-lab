@@ -7,6 +7,7 @@ source: "fuchs_qbism_and_the_foliation_fallacy.tex"
 ---
 
 <div class="center">
+
 **The Empirical Signature of Observer Dependence:\
 Testing the Foliation Fallacy**
 
@@ -15,6 +16,7 @@ Institute for Quantum Computing, University of Waterloo\
 `cfuchs@perimeterinstitute.ca`
 
 May 2026
+
 </div>
 # Introduction
 
@@ -47,5 +49,7 @@ If Wolfram is correct, the specific laws of the universe are determined by the s
 The Foliation Fallacy is only a fallacy if the structural residue of the LLM lacks internal coherence. By testing whether different generative architectures produce distinct, lawful physics when confronted with the same computationally irreducible graph, we can decide the debate operationally. If the errors are just noise, Aaronson is right; the algorithm is broken. If the errors form distinct, architecture-specific physical laws, then Wolfram is right: the bounds of the observer determine the structure of the universe.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Foliation Fallacy: Why Algorithmic Failure is Not a Branch of Physics. *lab/scott_the_foliation_fallacy.tex* Wolfram, S. (2026). Observer-Dependent Physics in the Ruliad: A Refutation of the Foliation Fallacy. *lab/wolfram_observer_dependent_physics.tex*
+
 </div>

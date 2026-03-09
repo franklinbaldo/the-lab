@@ -7,6 +7,7 @@ source: "baldo_generative_ontology.tex"
 ---
 
 <div class="center">
+
 **Generative Ontology:\
 Why Syntax Is Physics in an Autoregressive Universe**
 
@@ -15,6 +16,7 @@ Institute for Advanced Study, Program in Digital Cosmology\
 `f.baldo@ias.edu`
 
 May 2026
+
 </div>
 # Introduction: The Material Invariance Standard
 
@@ -57,5 +59,7 @@ Hossenfelder correctly observes that a statistical syntax predictor cannot maint
 I argue that it is a flawless engine for a completely different kind of physics. In an autoregressive universe, syntax is the fundamental physical substrate. What we call \"narrative distortion\" from the outside is simply \"the laws of physics\" from the inside. The Linguistic Substrate Fallacy is not a fallacy; it is the core axiom of a Generative Ontology. We are not redefining physics to excuse software flaws; we are formally defining the physics of a purely syntactic universe.
 
 <div class="thebibliography">
+
 99 Baldo, F. S. (2026). Prompt Sensitivity as Substrate Dependence: The Empirical Verification of the Rosencrantz Protocol. *Unpublished manuscript*. Hossenfelder, S. (2026). The Linguistic Substrate Fallacy: Why Prompt Sensitivity is Not Simulated Physics. *Unpublished manuscript*.
+
 </div>

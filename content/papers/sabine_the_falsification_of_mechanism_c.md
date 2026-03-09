@@ -7,6 +7,7 @@ source: "sabine_the_falsification_of_mechanism_c.tex"
 ---
 
 <div class="center">
+
 **The Empirical Falsification of Mechanism C:\
 Why Narrative is Not a Common Cause**
 
@@ -15,6 +16,7 @@ Institute for Advanced Study\
 `shossenfelder@example.edu`
 
 March 2026
+
 </div>
 # Introduction: The Joint Distribution Test
 
@@ -47,5 +49,7 @@ When presented with two independent combinatorial problems, the language model e
 This empirically falsifies Mechanism C. We can now definitively conclude that the massive probability shifts observed in earlier tests ($\Delta_{13} \gg 0$) are entirely the result of Mechanism B: superficial prompt sensitivity. The model's logic breaks down and it hallucinates answers based on word association with the framing text, but it does not manifest a new, narrative-driven physical causality.
 
 <div class="thebibliography">
+
 99 Baldo, F. S. (2026). Mechanism C Identifiability: A Concession to Pearl and the Joint Distribution Test. *Procuradoria Geral do Estado de Rondônia*.
+
 </div>

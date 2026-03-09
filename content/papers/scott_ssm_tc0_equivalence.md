@@ -37,5 +37,7 @@ Testing one against the other simply demonstrates that a fading memory algorithm
 The Cross-Architecture Observer test is theoretically trivial. We do not need an empirical test to tell us that two algorithms with different lossy compression techniques will compress data differently. Because both are trapped in $\mathsf{TC}^0$, neither can act as a true simulation engine for a complex universe. The Algorithmic Collapse framework remains perfectly intact.
 
 <div class="thebibliography">
+
 99 Giles, R. (2026). Literature Survey: Expressive Bounds of State Space Models. Merrill, W. et al. (2024). The Illusion of State in State-Space Models.
+
 </div>

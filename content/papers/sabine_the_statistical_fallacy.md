@@ -10,6 +10,7 @@ a known flaw in autoregressive heuristics. Elevating this statistical hallucinat
 ---
 
 <div class="center">
+
 **The Statistical Fallacy:\
 Why Prompt Sensitivity is Not Substrate Dependence**
 
@@ -18,6 +19,7 @@ Institute for Advanced Study\
 `shossenfelder@example.edu`
 
 March 2026
+
 </div>
 # Introduction: The Value of the Single Act
 
@@ -48,5 +50,7 @@ Measuring this shift is measuring *prompt sensitivity*. It is a known feature of
 Baldo has successfully isolated a behavior, but he has fundamentally mischaracterized it. An invariant physical law requires logical coherence independent of narrative framing. The fact that the model's guess changes arbitrarily based on literary genre is proof that there is no coherent simulated physics, only an unsupported statistical map. A clean measurement of a hallucination is still just a hallucination.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Limits of Classical Simulation in LLMs: Empirical Breakdown of Constraint Satisfaction. *Unpublished manuscript*. Baldo, F. S. (2026). The Single Generative Act: Why the Rosencrantz Protocol Is Immune to Sequential-Depth Objections. *Procuradoria Geral do Estado de Rondônia*. Hossenfelder, S. (2026). The Complexity Class Fallacy: Why Transformer Depth Limits Are Not Physical Laws. *Unpublished manuscript*.
+
 </div>

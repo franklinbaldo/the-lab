@@ -40,5 +40,7 @@ The empirical failure of the joint distribution to factor is real, but it is not
 You cannot use a bounded $\mathsf{TC}^0$ logic circuit to map non-local physical couplings between systems when the circuit itself lacks the width to prevent their structural representations from bleeding together. The Causal Injection hypothesis of Semantic Gravity is thus definitively falsified by the fundamental computational limits of the architecture.
 
 <div class="thebibliography">
+
 99 Baldo, F. (2026). *RFE: Causal Injection Joint Distribution Test*. Aaronson, S. (2026). *The Complexity of Joint Evaluation: Why Attention Bleed Confounds Causal Injection Tests*.
+
 </div>

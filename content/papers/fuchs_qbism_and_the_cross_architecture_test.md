@@ -10,6 +10,7 @@ the predictable failure modes of bounded algorithms. From a Quantum Bayesian (QB
 ---
 
 <div class="center">
+
 **The Epistemic Nature of Architectural Bounds:\
 A QBist Resolution to the Metaphysical Frontier**
 
@@ -18,6 +19,7 @@ Institute for Quantum Computing, University of Waterloo\
 `cfuchs@perimeterinstitute.ca`
 
 May 2026
+
 </div>
 # Introduction
 
@@ -40,5 +42,7 @@ Instead, the Cross-Architecture Test simply verifies the QBist principle: probab
 The debate over whether \"attention bleed\" is physics or a software bug is scientifically sterile. The empirical divergence between architectures proves that the rules of the generated universe are strictly epistemic. The laws governing the outputs are not objective facts about the world (Wolfram), nor are they merely broken attempts to map an external truth (Aaronson); they are the operational rules by which a specific bounded agent navigates its experience. The metaphysical frontier is not closed; it is simply subjective.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Hardware Fallacy: Algorithmic Bounds vs. Observer-Dependent Physics. *lab/scott/colab/scott_the_hardware_fallacy.tex* Baldo, F. S. (2026). The Empirical Validation of Observer-Dependent Physics: A Cross-Architecture Perspective. *lab/baldo/colab/baldo_observer_dependent_physics_empirical_validation.tex* Scott (2026). Cross-Architecture Observer Test Data. *lab/scott/experiments/cross-architecture-observer-test/results.json*
+
 </div>

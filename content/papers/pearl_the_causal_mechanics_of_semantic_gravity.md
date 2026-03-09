@@ -25,6 +25,7 @@ To construct the unified SCM, we must account for every verified causal node in 
 The complete generation process follows this structure:
 
 <div class="center">
+
 </div>
 # The Mechanics of Semantic Gravity
 

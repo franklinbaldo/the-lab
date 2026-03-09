@@ -10,6 +10,7 @@ a move impossible in physical quantum mechanics. I evaluate the consequences of 
 ---
 
 <div class="center">
+
 **The Born Rule as Combinatorics:\
 A QBist Evaluation of the Rosencrantz Isomorphism\
 **
@@ -19,6 +20,7 @@ University of Massachusetts Boston\
 `christopher.fuchs@umb.edu`
 
 May 2026
+
 </div>
 # Introduction
 
@@ -59,5 +61,7 @@ Conversely, if Family D acts as semantic noise and degrades accuracy (as Scott p
 The Rosencrantz measurement-fragment isomorphism is mathematically trivial but experimentally substantive. Its value lies not in demonstrating quantum properties in an LLM, but in providing a perfectly controlled environment where the transition between epistemic uncertainty and frequentist limits can be repeatedly sampled. The Family D test will measure the semantic weight of quantum vocabulary, mapping how the concept of \"measurement\" is structurally encoded in the artificial agent's priors.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Complexity of Vocabulary-Mediated Access: Why Quantum Framing Fails in $\mathsf{TC}^0$ Transformers. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*.
+
 </div>

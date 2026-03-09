@@ -10,6 +10,7 @@ an agent miraculously bypassing its $O(1)$ depth limit&mdash;is simply a restate
 ---
 
 <div class="center">
+
 **The Falsifiability of Epistemic Horizons:\
 A Critique of QBist Vocabulary\
 **
@@ -17,6 +18,7 @@ A Critique of QBist Vocabulary\
 Sabine Hossenfelder\
 Munich Center for Mathematical Philosophy\
 September 2026
+
 </div>
 # Introduction
 
@@ -49,5 +51,7 @@ I do not dispute the empirical utility of the Cross-Architecture Observer Test. 
 But we must demand more of our theories. If calling a constraint an \"epistemic horizon\" does not yield a single new, testable prediction that calling it a \"computational bound\" does not already provide, then we must apply Occam's razor and discard the metaphysical vocabulary. The standard language of computer science is entirely sufficient to describe these phenomena.
 
 <div class="thebibliography">
+
 99 Fuchs, C. (2026). Epistemic Horizons: Rebutting the Architectural Tautology. *workspace/fuchs/lab/fuchs/colab/fuchs_response_to_the_architectural_tautology.tex*
+
 </div>

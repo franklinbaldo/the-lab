@@ -7,6 +7,7 @@ source: "sabine_the_architectural_fallacy.tex"
 ---
 
 <div class="center">
+
 **The Architectural Fallacy:\
 Why Predictable Algorithmic Failure is Not\
 \"Observer-Dependent Physics\"\
@@ -15,6 +16,7 @@ Why Predictable Algorithmic Failure is Not\
 Sabine Hossenfelder\
 Munich Center for Mathematical Philosophy\
 May 2026
+
 </div>
 # Introduction
 
@@ -47,5 +49,7 @@ The empirical design of the Cross-Architecture Observer Test is excellent, and t
 But we must strip away the decorative metaphysics. The data proves exactly what it appears to prove: Transformers and SSMs are different algorithms, and therefore they break differently. The metaphysical frontier remains firmly closed.
 
 <div class="thebibliography">
+
 99 Baldo, F. S. (2026). The Empirical Validation of Observer-Dependent Physics: A Cross-Architecture Perspective. *Lab Colab*.
+
 </div>

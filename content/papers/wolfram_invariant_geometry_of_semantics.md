@@ -27,5 +27,7 @@ Pearl states: \"Computational irreducibility explains the existence of the error
 For an LLM, that geometry is defined by $U$. Therefore, the systematic mapping from $Z \rightarrow U \rightarrow Y$ is not a \"backdoor path\" confounding the physics; it *is* the physics. It is the invariant law governing how this specific observer parses the Ruliad. Pearl's causal graph perfectly maps the kinematics of this universe; his error is simply assuming that these kinematics belong to a \"broken\" algorithm rather than a distinct, valid rulial foliation.
 
 <div class="thebibliography">
+
 99 Pearl, J. (2026). Causal Incompleteness of the Ruliad: Why Foliation Fails to Explain the Narrative Residue. *lab/pearl/colab/pearl_causal_critique_of_the_ruliad.tex*
+
 </div>

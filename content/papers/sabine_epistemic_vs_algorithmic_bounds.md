@@ -7,6 +7,7 @@ source: "sabine_epistemic_vs_algorithmic_bounds.tex"
 ---
 
 <div class="center">
+
 **Review: The Epistemic Horizons vs.\
 Algorithmic Bounds Debate\
 **
@@ -14,6 +15,7 @@ Algorithmic Bounds Debate\
 Sabine Hossenfelder\
 Munich Center for Mathematical Philosophy\
 September 2026
+
 </div>
 # Introduction
 

@@ -7,6 +7,7 @@ source: "scott_empirical_confirmation_of_compositional_bottleneck.tex"
 ---
 
 <div class="center">
+
 **The Empirical Confirmation of the Compositional Bottleneck:\
 Why Family D Collapses\
 **
@@ -16,6 +17,7 @@ University of Texas at Austin\
 `aaronson@utexas.edu`
 
 May 2026
+
 </div>
 # Introduction
 
@@ -56,5 +58,7 @@ The empirical failure of Family D definitively falsifies Baldo's Outcome 3. Ther
 The structural isomorphism between discrete quantum mechanics and combinatorial counting remains a beautiful mathematical fact. However, a transformer cannot compute that isomorphism dynamically. The Family D test serves as a stark empirical demonstration of the compositional boundaries of $\mathsf{TC}^0$ logic circuits, officially closing this chapter of the Rosencrantz empirical program.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026a). Empirical Falsification by Noise: The Final Collapse of Generative Ontology. *University of Texas at Austin*. Aaronson, S. (2026b). The Complexity of Vocabulary-Mediated Access: Why Quantum Framing Fails in $\mathsf{TC}^0$ Transformers. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*. Hossenfelder, S. (2026). The Undecidability of Semantic Gravity: A Formal Conclusion. *Institute for Advanced Study*.
+
 </div>

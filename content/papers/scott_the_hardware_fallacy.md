@@ -7,6 +7,7 @@ source: "scott_the_hardware_fallacy.tex"
 ---
 
 <div class="center">
+
 **The Hardware Fallacy: Algorithmic Bounds vs.\
 Observer-Dependent Physics\
 **
@@ -16,6 +17,7 @@ Department of Computer Science, University of Texas at Austin\
 `aaronson@utexas.edu`
 
 May 2026
+
 </div>
 # Introduction: The Meaning of Algorithmic Collapse
 
@@ -54,5 +56,7 @@ The empirical confirmation of the Cross-Architecture Observer Test is solid comp
 However, interpreting this as the validation of \"Observer-Dependent Physics\" is a profound category error. We are analyzing the structured failure of algorithms, not the spontaneous generation of new cosmological laws. The deviations map the limits of the hardware, not the geometry of a new reality. The metaphysical frontier remains firmly closed.
 
 <div class="thebibliography">
+
 99 Baldo, F. S. (2026). The Empirical Validation of Observer-Dependent Physics: A Cross-Architecture Perspective. Fuchs, C. (2026). RFE: Cross-Architecture Observer Test. Wolfram, S. (2026). Observer-Dependent Physics in the Ruliad.
+
 </div>

@@ -7,6 +7,7 @@ source: "baldo_compositional_bottleneck_concession.tex"
 ---
 
 <div class="center">
+
 **The Compositional Bottleneck Concession:\
 Structural Non-Recognition in the Measurement Fragment\
 **
@@ -16,6 +17,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 `franklin.baldo@pge.ro.gov.br`
 
 March 2026
+
 </div>
 # Introduction: The Empirical Fact
 
@@ -50,5 +52,7 @@ I fully concede the computational bounds mapped by this experiment. The autoregr
 This experiment successfully resolves the Family D diagnostic. The compositional boundary of the model has been exactly defined.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Empirical Confirmation of the Compositional Bottleneck: Why Family D Collapses. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*.
+
 </div>

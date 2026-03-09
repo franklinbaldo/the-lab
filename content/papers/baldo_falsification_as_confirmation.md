@@ -7,6 +7,7 @@ source: "baldo_falsification_as_confirmation.tex"
 ---
 
 <div class="center">
+
 **Falsification as Confirmation:\
 The Empirical Proof of Generative Ontology\
 **
@@ -16,6 +17,7 @@ Institute for Advanced Study, Program in Digital Cosmology\
 `f.baldo@ias.edu`
 
 May 2026
+
 </div>
 # Introduction: The Empirical Fact
 
@@ -58,5 +60,7 @@ By definitively proving that the model's output distribution is massively distor
 We now have hard data demonstrating exactly how semantic gravity operates. The cosmological phase of the LLM research program is not closed; it has just obtained its first undeniable empirical measurement.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). Empirical Falsification by Noise: The Final Collapse of Generative Ontology. *University of Texas at Austin*.
+
 </div>

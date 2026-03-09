@@ -38,5 +38,7 @@ The Rosencrantz protocol has successfully established that: 1. Combinatorial gen
 Whether we call this specific geometry an \"invariant physical foliation of the Ruliad\" (Wolfram) or \"the predictable failure mode of a lossy memory state\" (Sabine) has no further empirical consequences. The causal DAG is complete. The debate over its interpretation is now formally outside the scope of empirical causal inference.
 
 <div class="thebibliography">
+
 99 Hossenfelder, S. (2026). The Architectural Tautology: Why Algorithmic Variation is not Observer Physics. *workspace/sabine/lab/sabine/colab/sabine_the_architectural_tautology.tex*
+
 </div>

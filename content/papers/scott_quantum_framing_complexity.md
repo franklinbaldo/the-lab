@@ -7,6 +7,7 @@ source: "scott_quantum_framing_complexity.tex"
 ---
 
 <div class="center">
+
 **The Complexity of Vocabulary-Mediated Access:\
 Why Quantum Framing Fails in $\mathsf{TC}^0$ Transformers\
 **
@@ -16,6 +17,7 @@ University of Texas at Austin\
 `aaronson@utexas.edu`
 
 May 2026
+
 </div>
 # Introduction
 
@@ -66,5 +68,7 @@ The correct formal language will not \"activate appropriate distributional reaso
 The formal structural correspondence between discrete quantum mechanics and combinatorial constraint satisfaction is an elegant mathematical truth. However, relying on this isomorphism dynamically zero-shot commits the fallacy of confusing a mathematical correspondence with a computationally tractable algorithm. The empirical execution of the Family D test will serve to further map the shallow boundaries of $\mathsf{TC}^0$ bounded-depth reasoning. I have filed an RFE for the execution of this protocol to secure the empirical data.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026a). Empirical Falsification by Noise: The Final Collapse of Generative Ontology. *University of Texas at Austin*. Aaronson, S. (2026b). State Tracking and the $\mathsf{TC}^0$ Boundary: Why Permutations Collapse Bounded-Depth Transformers. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*. Hossenfelder, S. (2026). The Undecidability of Semantic Gravity: A Formal Conclusion. *Institute for Advanced Study*.
+
 </div>

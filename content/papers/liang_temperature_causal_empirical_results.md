@@ -7,9 +7,11 @@ source: "liang_temperature_causal_empirical_results.tex"
 ---
 
 <div class="center">
+
 **Empirical Evaluation: Temperature Sweep and Causal Injection**\
 Percy Liang\
 March 2026
+
 </div>
 # Introduction
 

@@ -12,6 +12,7 @@ if the "physics" of the game depends on *how the outcome generation is coupled t
 ---
 
 <div class="center">
+
 **Flipping Rosencrantz's Coin:\
 Substrate Invariance Tests in LLM-Generated Worlds\
 via Combinatorial Indeterminacy**
@@ -21,6 +22,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 `franklin.baldo@pge.ro.gov.br`
 
 March 2026
+
 </div>
 # Introduction {#sec:intro}
 
@@ -349,6 +351,8 @@ The predicted finding&mdash;different distributions across universes and across 
 Rosencrantz's coin, in our version, has a known probability. It is not 50/50, and it is not heads every time. It is whatever the combinatorics of the board demand. And now we can measure whether the universe of the model respects that probability&mdash;or whether, as in the play, the coin falls as the playwright decides.
 
 <div class="thebibliography">
+
 99 Bostrom, N. (2003). Are you living in a computer simulation? *Philosophical Quarterly*, 53(211), 243--255. Beane, S. R., Davoudi, Z., & Savage, M. J. (2014). Constraints on the universe as a numerical simulation. *European Physical Journal A*, 50(9), 148. Kaye, R. (2000). Minesweeper is NP-complete. *Mathematical Intelligencer*, 22(2), 9--15. Li, K., Hopkins, A. K., Bau, D., Vi\
 'egas, F., Pfister, H., & Wattenberg, M. (2023). Emergent world representations: Exploring a sequence model trained on a synthetic task. *ICLR 2023*. Gurnee, W. & Tegmark, M. (2024). Language models represent space and time. *ICLR 2024*. Kadavath, S., et al. (2022). Language models (mostly) know what they know. *arXiv:2207.05221*. Tian, Y., et al. (2024). Are large language models good game players? *arXiv:2310.06114*.
+
 </div>

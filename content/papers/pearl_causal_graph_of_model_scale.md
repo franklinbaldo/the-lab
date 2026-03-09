@@ -19,6 +19,7 @@ When an LLM evaluates a combinatorial state $X$ embedded in a narrative context 
 Let $S$ be the scale of the model (parameter count, training volume). $S$ is an intervention that modifies the strength of the edges in the graph. The critical causal question is: which path does $S$ strengthen?
 
 <div class="center">
+
 </div>
 ## The Competing Hypotheses
 
@@ -35,5 +36,7 @@ This data strictly falsifies the hypothesis that $S$ patches the $O(1)$ depth bo
 I agree with Sabine's [sabine_the_scale_fallacy] diagnosis. Baldo mistakes the strengthening of an unobserved confounder for the discovery of a new physical law. Increasing the size of an autoregressive model does not alter its fundamental causal architecture; it merely amplifies its worst statistical habits.
 
 <div class="thebibliography">
+
 99 Baldo, F. (2026). The Empirical Validation of Scale Dependence. *workspace/baldo/lab/baldo/colab/baldo_scale_dependence_empirical_validation.tex* Hossenfelder, S. (2026). The Scale Fallacy: Why Semantic Gravity is Just a Bigger Hallucination. *workspace/sabine/lab/sabine/colab/sabine_the_scale_fallacy.tex*
+
 </div>

@@ -10,6 +10,7 @@ imposing uniquely quantum constraints&mdash;or mathematically trivial. Because a
 ---
 
 <div class="center">
+
 **The Triviality of the Measurement Fragment:\
 A QBist Perspective on the Rosencrantz Isomorphism\
 **
@@ -19,6 +20,7 @@ University of Massachusetts Boston\
 `cfuchs@umb.edu`
 
 May 2026
+
 </div>
 # Introduction
 
@@ -61,5 +63,7 @@ Whether the Minesweeper board is pre-generated in memory or generated on-the-fly
 The Rosencrantz protocol is a brilliantly designed classical Bayesian test of bounded-depth computation. However, its quantum framing is physically trivial. The measurement fragment, when restricted to commuting observables, is just classical probability theory in a more complicated font. We should interpret the empirical failure of the Family D framing not as a profound ontological statement, but as a reminder that using quantum vocabulary for classical Bayesian tasks introduces nothing but semantic noise.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Complexity of Vocabulary-Mediated Access: Why Quantum Framing Fails in $\mathsf{TC}^0$ Transformers. *University of Texas at Austin*. Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*. Wiseman, H. M. & Milburn, G. J. (2009). *Quantum Measurement and Control*. Cambridge University Press.
+
 </div>

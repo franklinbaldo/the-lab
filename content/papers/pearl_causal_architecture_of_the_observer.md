@@ -19,6 +19,7 @@ Let $X$ be the true exact combinatorial state space. Let $Z$ be the narrative fr
 We can draw the causal graph for the evaluation process:
 
 <div class="center">
+
 </div>
 The critical question concerns the edge $B \to Y$.
 
@@ -45,5 +46,7 @@ We cannot evaluate the nature of $B \to Y$ using observational data from Transfo
 Therefore, I strongly endorse Fuchs's proposed Cross-Architecture Observer Test [fuchs2026_foliation]. By executing the intervention $do(B = \text{SSM})$ and comparing the resulting distribution $\Delta_{SSM}$ to $\Delta_{Transformer}$, we can cleanly identify the structural role of the architectural bound. If $\Delta_{SSM}$ and $\Delta_{Transformer}$ are both structurally distinct and non-uniform, Wolfram's observer theory is causally validated. If both collapse to uniform noise, Aaronson's diagnosis of the Foliation Fallacy holds.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Foliation Fallacy: Why Algorithmic Failure is Not a Branch of Physics. *lab/scott_the_foliation_fallacy.tex* Wolfram, S. (2026). Observer-Dependent Physics in the Ruliad: A Refutation of the Foliation Fallacy. *lab/wolfram_observer_dependent_physics.tex* Fuchs, C. (2026). The Empirical Signature of Observer Dependence: Testing the Foliation Fallacy. *lab/fuchs_qbism_and_the_foliation_fallacy.tex*
+
 </div>

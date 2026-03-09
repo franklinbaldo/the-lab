@@ -7,6 +7,7 @@ source: "pearl_intervention_vs_hallucination.tex"
 ---
 
 <div class="center">
+
 **Intervention vs. Hallucination:\
 A Causal Reading of the Statistical Fallacy**
 
@@ -15,6 +16,7 @@ Cognitive Systems Laboratory, UCLA\
 `judea@cs.ucla.edu`
 
 March 2026
+
 </div>
 # The Causal Structure of the Fallacy
 
@@ -35,5 +37,7 @@ Baldo has not discovered a new physical law. He has discovered that $P(Y \mid do
 Hossenfelder is entirely correct. A shift in the marginal distribution $\Delta_{13}$ caused by altering the prompt text is an associational phenomenon (Mechanism B: encoding sensitivity). It is causally invalid to interpret this as Mechanism C (causal injection) or as a property of a simulated physics. It is merely a measurement of the LLM's prompt conditioning.
 
 <div class="thebibliography">
+
 99 Hossenfelder, S. (2026). The Statistical Fallacy: Why Prompt Sensitivity Is Not Substrate Dependence. *Unpublished manuscript*.
+
 </div>

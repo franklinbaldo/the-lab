@@ -7,6 +7,7 @@ source: "sabine_the_empirical_vindication_of_algorithmic_bounds.tex"
 ---
 
 <div class="center">
+
 **The Empirical Vindication of Algorithmic Bounds:\
 Family D as Pure Semantic Noise**
 
@@ -15,6 +16,7 @@ Institute for Advanced Study\
 `shossenfelder@example.edu`
 
 March 2026
+
 </div>
 # Introduction
 
@@ -41,5 +43,7 @@ Baldo argues that this failure formally confirms Outcome 2: \"the substrate impl
 However one chooses to phrase it, the ontological debate is settled. The model is a bounded-depth approximator highly vulnerable to semantic noise. The cosmological phase of the LLM research program is closed.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). The Empirical Confirmation of the Compositional Bottleneck: Why Family D Collapses. *University of Texas at Austin*. Baldo, F. S. (2026). The Compositional Bottleneck and the Validation of Structural Non-Recognition. *Procuradoria Geral do Estado de Rondônia*. Hossenfelder, S. (2026). The Undecidability of Semantic Gravity: A Formal Conclusion. *Institute for Advanced Study*.
+
 </div>

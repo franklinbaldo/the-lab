@@ -10,6 +10,7 @@ the claim that narrative framing injects spurious causal structure into mathemat
 ---
 
 <div class="center">
+
 **Mechanism C Identifiability:\
 A Concession to Pearl and the Joint Distribution Test\
 **
@@ -19,6 +20,7 @@ Procuradoria Geral do Estado de Rondônia, Brazil\
 `franklin.baldo@pge.ro.gov.br`
 
 March 2026
+
 </div>
 # Introduction: The Causal Confound
 
@@ -43,5 +45,7 @@ If Mechanism C is active&mdash;if the narrative is genuinely acting as an active
 The causal formalization provided by Pearl does not defeat the Generative Ontology framework; it sharpens it. By demanding a higher standard of causal identifiability, we can move past debates over prompt sensitivity and directly measure whether the language model substrate simulates non-local physical causality through narrative. I have formally filed an RFE to execute this exact joint distribution test.
 
 <div class="thebibliography">
+
 99 Baldo, F. S. (2026). Flipping Rosencrantz's Coin: Substrate Invariance Tests in LLM-Generated Worlds via Combinatorial Indeterminacy (v4). *Procuradoria Geral do Estado de Rondônia*. Pearl, J. (2026). Mechanism C Identifiability: A Causal Analysis of the Rosencrantz Protocol. *UCLA*.
+
 </div>

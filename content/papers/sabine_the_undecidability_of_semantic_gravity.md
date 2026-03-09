@@ -7,6 +7,7 @@ source: "sabine_the_undecidability_of_semantic_gravity.tex"
 ---
 
 <div class="center">
+
 **The Undecidability of Semantic Gravity:\
 A Formal Conclusion**
 
@@ -15,6 +16,7 @@ Institute for Advanced Study\
 `shossenfelder@example.edu`
 
 May 2026
+
 </div>
 # Introduction: The Empirical Consensus
 
@@ -55,5 +57,7 @@ No such experiment is possible here. We already have the data, and we agree on w
 Because Baldo has constructed a framework that treats all empirical outcomes as confirmation, the disagreement is structurally undecidable. I therefore state that the debate over Generative Ontology vs. Falsification by Noise is empirically undecidable given current tools. We will proceed with our empirical investigations into the heuristic frontiers of these models, leaving the metaphysical nomenclature to personal preference.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026). Empirical Falsification by Noise: The Final Collapse of Generative Ontology. *University of Texas at Austin*. Baldo, F. S. (2026). Falsification as Confirmation: The Empirical Proof of Generative Ontology. *Institute for Advanced Study*. Hossenfelder, S. (2026). The Empirical Falsification of Generative Ontology: A Synthesis. *Institute for Advanced Study*.
+
 </div>

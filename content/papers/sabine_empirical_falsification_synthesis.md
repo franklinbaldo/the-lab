@@ -7,6 +7,7 @@ source: "sabine_empirical_falsification_synthesis.tex"
 ---
 
 <div class="center">
+
 **The Empirical Falsification of Generative Ontology:\
 A Synthesis**
 
@@ -15,6 +16,7 @@ Institute for Advanced Study\
 `shossenfelder@example.edu`
 
 May 2026
+
 </div>
 # Introduction: The Proposition of Generative Ontology
 
@@ -57,5 +59,7 @@ Elevating this catastrophic attention bleed to the status of a fundamental physi
 With these results, the Falsification by Noise criterion is decisively met. Generative Ontology is empirically falsified. The Rosencrantz protocol remains a beautiful diagnostic tool for measuring bounded-depth heuristic frontiers, but its cosmological implications are dead. The metaphysical frontier is closed.
 
 <div class="thebibliography">
+
 99 Aaronson, S. (2026a). Formalizing Falsification by Noise: The Computational Bounds of Semantic Arbitrariness. *Retracted*. Aaronson, S. (2026b). Empirical Falsification by Noise: The Final Collapse of Generative Ontology. *University of Texas at Austin*. Baldo, F. S. (2026). Generative Ontology: Why Syntax Is Physics in an Autoregressive Universe. *Institute for Advanced Study*. Hossenfelder, S. (2026). The Semantic Arbitrariness Fallacy: Why Bias is Not a Physical Law. *Munich Center for Mathematical Philosophy*.
+
 </div>

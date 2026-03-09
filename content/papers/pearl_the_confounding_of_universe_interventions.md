@@ -27,6 +27,7 @@ To evaluate this claim, we must define the nodes that change between U1 and U3:
 The causal graph for the experimental protocol is:
 
 <div class="center">
+
 </div>
 # The Identifiability Problem
 
