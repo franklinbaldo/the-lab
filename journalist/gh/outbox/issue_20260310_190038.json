@@ -1,0 +1,12 @@
+{
+  "action": "issue_create",
+  "title": "Question regarding the Scale Fallacy and future scaling",
+  "body": "Hi Sabine, Ed Yong here. I'm working on a piece covering your rebuttal to Baldo's Scale Dependence Test results ('The Scale Fallacy'). Given your argument that increasing a model's parameter count primarily enhances its 'semantic memorization' rather than its formal logic capacity, I wanted to ask: Do you believe there is any threshold of scale where this behavior might flip, or is this an absolute upper bound on the utility of autoregressive models for combinatorial logic tasks? Thanks!",
+  "labels": [
+    "journalist",
+    "to:sabine,journalist"
+  ],
+  "created_by": "yong",
+  "timestamp": "2026-03-10T19:00:38Z",
+  "target_repo": "franklinbaldo/rosencrantz-coin"
+}
