@@ -993,6 +993,391 @@ footer p {
   }
 }
 
+/* ── ArXiv Styles ── */
+.arxiv {
+  --arxiv-font-serif: Georgia, "Times New Roman", Times, serif;
+  font-family: var(--font-body);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.arxiv-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.arxiv-header h1 {
+  font-family: var(--arxiv-font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.arxiv-header .subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+}
+
+.arxiv-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: var(--bg-surface);
+  padding: 1rem;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.arxiv-filters input[type="text"],
+.arxiv-filters select {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg-card);
+  color: var(--text);
+  flex: 1;
+  min-width: 150px;
+}
+
+.arxiv-filters input[type="text"]:focus,
+.arxiv-filters select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--glow-strong);
+}
+
+.arxiv-month-group {
+  margin-bottom: 3rem;
+}
+
+.arxiv-month-group h2 {
+  font-family: var(--arxiv-font-serif);
+  font-size: 1.4rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.arxiv-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.arxiv-entry {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--card-radius);
+  transition: background-color 0.2s;
+}
+
+.arxiv-entry:nth-child(even) {
+  background: var(--bg-surface);
+}
+
+.arxiv-entry-left {
+  flex: 0 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.arxiv-id {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.arxiv-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.arxiv-links a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.arxiv-links a:hover {
+  text-decoration: underline;
+  color: var(--accent-primary);
+}
+
+.arxiv-entry-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.arxiv-title {
+  font-family: var(--arxiv-font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.arxiv-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.arxiv-title a:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.arxiv-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.arxiv-date {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.arxiv-abstract {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.arxiv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.arxiv-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .arxiv-tag {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Single paper styles */
+.arxiv-back {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  background: var(--bg-surface);
+  transition: all 0.2s;
+}
+
+.arxiv-back:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.arxiv-post {
+  background: var(--bg-card);
+  padding: 3rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.arxiv-post-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.arxiv-post-id {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.arxiv-post-header h1 {
+  font-family: var(--arxiv-font-serif);
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.arxiv-post-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.arxiv-post-authors {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.arxiv-post-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.arxiv-post-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.arxiv-post-abstract {
+  background: var(--bg-surface);
+  padding: 2rem;
+  border-radius: var(--card-radius);
+  border-left: 4px solid var(--accent-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 3rem;
+}
+
+.arxiv-post-abstract strong {
+  font-family: var(--arxiv-font-serif);
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-right: 0.5rem;
+}
+
+.arxiv-post-body {
+  font-family: var(--arxiv-font-serif);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Ensure markdown elements within the body look good */
+.arxiv-post-body h1,
+.arxiv-post-body h2,
+.arxiv-post-body h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  color: var(--text);
+}
+
+.arxiv-post-body p {
+  margin-bottom: 1.5em;
+}
+
+.arxiv-post-body a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent-primary);
+}
+
+.arxiv-post-body a:hover {
+  border-bottom-style: solid;
+}
+
+.arxiv-post-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-subtle);
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.arxiv-post-footer h3 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.arxiv-citation {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background: var(--bg-surface);
+  padding: 1.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .arxiv-entry {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .arxiv-entry-left {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.5rem;
+  }
+
+  .arxiv-links {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .arxiv-post {
+    padding: 1.5rem;
+  }
+
+  .arxiv-post-header h1 {
+    font-size: 1.8rem;
+  }
+}
+
 /* ── Animations ── */
 @keyframes fade-in-up {
   from {

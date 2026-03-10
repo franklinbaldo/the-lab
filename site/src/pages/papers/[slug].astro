@@ -9,43 +9,77 @@ const base = import.meta.env.BASE_URL;
 
 export async function getStaticPaths() {
   const papers = await getCollection("papers");
-  return papers.map((paper) => ({
-    params: { slug: paper.id },
-    props: { paper },
-  }));
+
+  // Sort by date to generate consistent IDs
+  const sortedPapers = [...papers].sort((a, b) => (a.data.date?.getTime() ?? 0) - (b.data.date?.getTime() ?? 0));
+
+  const yearCounts: Record<number, number> = {};
+
+  return sortedPapers.map((paper) => {
+    const date = paper.data.date || new Date();
+    const year = date.getFullYear();
+    if (!yearCounts[year]) yearCounts[year] = 0;
+    yearCounts[year]++;
+
+    const idNum = String(yearCounts[year]).padStart(3, '0');
+    const arxivId = `RSI-${year}.${idNum}`;
+
+    return {
+      params: { slug: paper.id },
+      props: { paper, arxivId },
+    };
+  });
 }
 
-const { paper } = Astro.props;
+const { paper, arxivId } = Astro.props;
 const { Content } = await render(paper);
+const year = paper.data.date ? paper.data.date.getFullYear() : new Date().getFullYear();
 ---
 
 <Layout title={paper.data.title}>
-  <Breadcrumb crumbs={[
-    { label: "Home", href: base },
-    { label: "Papers", href: `${base}papers/` },
-    { label: paper.data.title },
-  ]} />
-  <article class="post">
-    <header class="post__header">
-      <h1>{paper.data.title}</h1>
-      <div class="post__meta">
-        <PersonaBadge persona={paper.data.persona} />
-        <StatusBadge status={paper.data.status} />
-        {paper.data.date && (
-          <time datetime={paper.data.date.toISOString()}>
-            {paper.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-          </time>
+  <div class="arxiv">
+    <a href={`${base}papers/`} class="arxiv-back">← Back to Papers</a>
+
+    <article class="arxiv-post">
+      <header class="arxiv-post-header">
+        <div class="arxiv-post-id">[{arxivId}]</div>
+        <h1>{paper.data.title}</h1>
+        <div class="arxiv-post-meta">
+          <div class="arxiv-post-authors">
+            <PersonaBadge persona={paper.data.persona} />
+          </div>
+          <div class="arxiv-post-status">
+            <StatusBadge status={paper.data.status} />
+            {paper.data.date && (
+              <time datetime={paper.data.date.toISOString()}>
+                Submitted {paper.data.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+              </time>
+            )}
+          </div>
+        </div>
+        {paper.data.tags && paper.data.tags.length > 0 && (
+          <div class="arxiv-post-tags">
+            {paper.data.tags.map((tag: string) => <span class="arxiv-tag">{tag}</span>)}
+          </div>
         )}
-      </div>
-      {paper.data.abstract && <blockquote class="post__abstract">{paper.data.abstract}</blockquote>}
-      {paper.data.tags && paper.data.tags.length > 0 && (
-        <div class="post__tags">
-          {paper.data.tags.map((tag: string) => <span class="tag">{tag}</span>)}
+      </header>
+
+      {paper.data.abstract && (
+        <div class="arxiv-post-abstract">
+          <strong>Abstract:</strong> {paper.data.abstract}
         </div>
       )}
-    </header>
-    <div class="post__body prose">
-      <Content />
-    </div>
-  </article>
+
+      <div class="arxiv-post-body">
+        <Content />
+      </div>
+
+      <footer class="arxiv-post-footer">
+        <h3>Cite this paper</h3>
+        <div class="arxiv-citation">
+          {paper.data.persona ? `${paper.data.persona.charAt(0).toUpperCase() + paper.data.persona.slice(1)}` : "Unknown"}, "${paper.data.title}", Rosencrantz Substrate Invariance Preprint Server, {arxivId} ({year}).
+        </div>
+      </footer>
+    </article>
+  </div>
 </Layout>
