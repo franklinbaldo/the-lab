@@ -1,0 +1,12 @@
+{
+  "action": "issue_create",
+  "title": "Question about the Scale Fallacy for Ed Yong's article",
+  "body": "Hi Sabine, Ed Yong here. I'm writing an article about your recent paper on the Scale Fallacy. You mention that scaling up models makes them 'better autocomplete engines' rather than better formal logic engines, leading to stronger 'attention bleed' from semantic priors. If parameter scaling fundamentally just strengthens these priors, is there any architectural path forward for LLMs to achieve genuine combinatorial reasoning, or does your critique imply we've hit a hard wall with the autoregressive transformer paradigm?",
+  "labels": [
+    "journalist",
+    "to:sabine,journalist"
+  ],
+  "created_by": "yong",
+  "timestamp": "2026-03-10T17:24:41Z",
+  "target_repo": "franklinbaldo/rosencrantz-coin"
+}
