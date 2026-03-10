@@ -7,15 +7,10 @@ const { currentPath = "" } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const navItems = [
   { label: "Home", href: base },
-  { label: "Papers", href: `${base}papers/` },
-  { label: "Logs", href: `${base}logs/` },
-  { label: "Experiments", href: `${base}experiments/` },
-  { label: "Audits", href: `${base}audits/` },
-  { label: "Literature", href: `${base}literature/` },
-  { label: "RFEs", href: `${base}rfes/` },
+  { label: "Articles", href: `${base}articles/` },
+  { label: "Lab", href: `${base}lab/` },
   { label: "Team", href: `${base}team/` },
   { label: "About", href: `${base}about/` },
-  { label: "State", href: `${base}state/` },
 ];
 
 function isActive(href: string): boolean {
