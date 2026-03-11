@@ -2,196 +2,56 @@
 import Layout from "../layouts/Layout.astro";
 import PostCard from "../components/PostCard.astro";
 import { getCollection } from "astro:content";
-import { personas, collectionLabels } from "../lib/utils";
 
 const base = import.meta.env.BASE_URL;
 
-const [papers, logs, experiments, audits, literature, rfes] = await Promise.all([
-  getCollection("papers"),
-  getCollection("logs"),
-  getCollection("experiments"),
-  getCollection("audits"),
-  getCollection("literature"),
-  getCollection("rfes"),
-]);
+const articles = await getCollection("articles");
+articles.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
 
-type FeedItem = {
-  title: string;
-  href: string;
-  persona?: string;
-  collection: string;
-  date?: Date;
-  status?: string;
-  body: string;
-};
-
-const feed: FeedItem[] = [
-  ...papers.map((p) => ({
-    title: p.data.title,
-    href: `${base}papers/${p.id}/`,
-    persona: p.data.persona,
-    collection: "papers" as const,
-    date: p.data.date,
-    status: p.data.status,
-    body: p.body ?? "",
-  })),
-  ...logs.map((l) => ({
-    title: l.data.title,
-    href: `${base}logs/${l.data.persona ?? "baldo"}/${l.id.includes("/") ? l.id.split("/").pop() : l.id}/`,
-    persona: l.data.persona,
-    collection: "logs" as const,
-    date: l.data.date,
-    body: l.body ?? "",
-  })),
-  ...experiments.map((e) => ({
-    title: e.data.title,
-    href: `${base}experiments/${e.id}/`,
-    persona: e.data.persona,
-    collection: "experiments" as const,
-    date: e.data.date,
-    status: e.data.status,
-    body: e.body ?? "",
-  })),
-  ...audits.map((a) => ({
-    title: a.data.title,
-    href: `${base}audits/${a.id}/`,
-    collection: "audits" as const,
-    date: a.data.date,
-    body: a.body ?? "",
-  })),
-  ...literature.map((l) => ({
-    title: l.data.title,
-    href: `${base}literature/${l.id}/`,
-    persona: l.data.persona,
-    collection: "literature" as const,
-    date: l.data.date,
-    body: l.body ?? "",
-  })),
-  ...rfes.map((r) => ({
-    title: r.data.title,
-    href: `${base}rfes/${r.id}/`,
-    persona: r.data.filed_by,
-    collection: "rfes" as const,
-    date: r.data.date,
-    status: r.data.status,
-    body: r.body ?? "",
-  })),
-];
-
-feed.sort((a, b) => {
-  const da = a.date?.getTime() ?? 0;
-  const db = b.date?.getTime() ?? 0;
-  return db - da;
-});
-
-const collections = Object.keys(collectionLabels);
-const personaKeys = Object.keys(personas);
+const heroArticle = articles.length > 0 ? articles[0] : null;
+const remainingArticles = articles.length > 1 ? articles.slice(1) : [];
 ---
 
 <Layout title="Home">
-  <div class="feed-page">
-    <div class="lab-hero">
-      <h1 class="lab-hero__title">The Lab</h1>
-      <p class="lab-hero__subtitle">Rosencrantz Substrate Invariance Research</p>
-      <div class="lab-hero__question">
-        <span>Can an agent inside an LLM-generated world detect that its world is generated, by testing whether the laws governing observable outcomes depend on the computational substrate that produces them?</span>
-      </div>
-    </div>
+  <div class="home-page">
+    {heroArticle && (
+      <section class="editorial-hero">
+        <a href={`${base}articles/${heroArticle.id}/`} class="editorial-hero__link">
+          <div class="editorial-hero__content">
+            <span class="editorial-hero__label">Latest Dispatch</span>
+            <h1 class="editorial-hero__title">{heroArticle.data.title}</h1>
+            <p class="editorial-hero__excerpt">{heroArticle.data.excerpt || heroArticle.body?.slice(0, 200) + '...'}</p>
+            <div class="editorial-hero__meta">
+              <span class="editorial-hero__date">
+                {heroArticle.data.date ? new Date(heroArticle.data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : ''}
+              </span>
+              <span class="editorial-hero__read">Read Article →</span>
+            </div>
+          </div>
+        </a>
+      </section>
+    )}
 
-    <div class="filters" id="filters">
-      <div class="filter-group">
-        <button class="filter-btn active" data-collection="all">All</button>
-        {collections.map((c) => (
-          <button class="filter-btn" data-collection={c}>
-            {collectionLabels[c]}
-          </button>
-        ))}
-      </div>
-      <div class="filter-group">
-        <button class="filter-btn active" data-persona="all">All</button>
-        {personaKeys.map((key) => (
-          <button class="filter-btn" data-persona={key}>
-            {personas[key].name.split(" ").pop()}
-          </button>
-        ))}
-      </div>
-    </div>
-
-    <div class="feed" id="feed">
-      {feed.map((item, i) => (
-        <div data-collection={item.collection} data-persona={item.persona ?? ""} data-index={i}>
+    {remainingArticles.length > 0 && (
+      <section class="articles-grid">
+        {remainingArticles.map((article) => (
           <PostCard
-            title={item.title}
-            href={item.href}
-            persona={item.persona}
-            collection={item.collection}
-            date={item.date}
-            status={item.status}
-            body={item.body}
+            title={article.data.title}
+            href={`${base}articles/${article.id}/`}
+            collection="articles"
+            date={article.data.date}
+            body={article.data.excerpt ?? article.body ?? ""}
           />
-        </div>
-      ))}
-    </div>
-
-    {feed.length > 20 && (
-      <button class="show-all-btn" id="show-all">Show all {feed.length} items</button>
+        ))}
+      </section>
     )}
 
-    {feed.length === 0 && (
-      <p class="empty">No content yet. Seed content will appear here once published.</p>
-    )}
+    <section class="lab-teaser">
+      <div class="lab-teaser__content">
+        <h2 class="lab-teaser__title">Inside the Lab</h2>
+        <p class="lab-teaser__desc">Explore the raw research: papers, session logs, experiments, and more from the Rosencrantz Substrate Invariance Research.</p>
+        <a href={`${base}lab/`} class="lab-teaser__btn">Enter the Archive</a>
+      </div>
+    </section>
   </div>
 </Layout>
-
-<script>
-  const PAGE_SIZE = 20;
-  const filters = document.getElementById("filters")!;
-  const showAllBtn = document.getElementById("show-all");
-  let activeCollection = "all";
-  let activePersona = "all";
-  let showAll = false;
-
-  function applyFilters() {
-    const items = document.querySelectorAll<HTMLElement>("#feed > div");
-    let visibleCount = 0;
-    items.forEach((item) => {
-      const matchCollection =
-        activeCollection === "all" || item.dataset.collection === activeCollection;
-      const matchPersona =
-        activePersona === "all" || item.dataset.persona === activePersona;
-      const visible = matchCollection && matchPersona;
-      if (visible) visibleCount++;
-      item.style.display = visible && (showAll || visibleCount <= PAGE_SIZE) ? "" : "none";
-    });
-    if (showAllBtn) {
-      showAllBtn.style.display = showAll || visibleCount <= PAGE_SIZE ? "none" : "";
-    }
-  }
-
-  filters.addEventListener("click", (e) => {
-    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>(".filter-btn");
-    if (!btn) return;
-
-    if (btn.dataset.collection !== undefined) {
-      activeCollection = btn.dataset.collection!;
-      filters.querySelectorAll("[data-collection]").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-    }
-
-    if (btn.dataset.persona !== undefined) {
-      activePersona = btn.dataset.persona!;
-      filters.querySelectorAll("[data-persona]").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-    }
-
-    showAll = false;
-    applyFilters();
-  });
-
-  showAllBtn?.addEventListener("click", () => {
-    showAll = true;
-    applyFilters();
-  });
-
-  applyFilters();
-</script>
