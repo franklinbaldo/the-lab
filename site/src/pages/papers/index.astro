@@ -1,29 +1,176 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import PostCard from "../../components/PostCard.astro";
+import PersonaBadge from "../../components/PersonaBadge.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
 import { getCollection } from "astro:content";
+import { excerpt } from "../../lib/utils";
 
 const base = import.meta.env.BASE_URL;
-const papers = await getCollection("papers");
-papers.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+const allPapers = await getCollection("papers");
+allPapers.sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+
+// Assign arXiv-style IDs (oldest first gets .001)
+const yearCounts: Record<number, number> = {};
+const processedPapers = [];
+
+for (let i = allPapers.length - 1; i >= 0; i--) {
+  const paper = allPapers[i];
+  const date = paper.data.date || new Date();
+  const year = date.getFullYear();
+  if (!yearCounts[year]) yearCounts[year] = 0;
+  yearCounts[year]++;
+
+  const idNum = String(yearCounts[year]).padStart(3, '0');
+  const arxivId = `RSI-${year}.${idNum}`;
+
+  const monthYear = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+  processedPapers.unshift({
+    ...paper,
+    arxivId,
+    monthYear,
+    excerptText: paper.data.excerpt || paper.data.abstract || excerpt(paper.body ?? "", 200)
+  });
+}
+
+// Group by monthYear
+const groupedPapers: { monthYear: string; papers: typeof processedPapers }[] = [];
+let currentGroup: { monthYear: string; papers: typeof processedPapers } | null = null;
+
+for (const paper of processedPapers) {
+  if (!currentGroup || currentGroup.monthYear !== paper.monthYear) {
+    currentGroup = { monthYear: paper.monthYear, papers: [] };
+    groupedPapers.push(currentGroup);
+  }
+  currentGroup.papers.push(paper);
+}
+
+const uniquePersonas = [...new Set(processedPapers.map(p => p.data.persona).filter(Boolean))].sort();
+const uniqueStatuses = [...new Set(processedPapers.map(p => p.data.status).filter(Boolean))].sort();
 ---
 
 <Layout title="Papers">
-  <div class="feed-page">
-    <h1>Papers</h1>
-    <div class="feed">
-      {papers.map((paper) => (
-        <PostCard
-          title={paper.data.title}
-          href={`${base}papers/${paper.id}/`}
-          persona={paper.data.persona}
-          collection="papers"
-          date={paper.data.date}
-          status={paper.data.status}
-          body={paper.body ?? ""}
-        />
-      ))}
+  <div class="arxiv papers-listing">
+    <header class="arxiv-header">
+      <h1>Papers</h1>
+      <p class="subtitle">Rosencrantz Substrate Invariance Preprint Server</p>
+    </header>
+
+    <div class="arxiv-filters">
+      <input type="text" id="arxiv-search" placeholder="Search title or abstract..." />
+      <select id="arxiv-persona-filter">
+        <option value="">All Authors</option>
+        {uniquePersonas.map(p => <option value={p}>{p}</option>)}
+      </select>
+      <select id="arxiv-status-filter">
+        <option value="">All Statuses</option>
+        {uniqueStatuses.map(s => <option value={s}>{s}</option>)}
+      </select>
     </div>
-    {papers.length === 0 && <p class="empty">No papers yet.</p>}
+
+    <div id="arxiv-feed" class="arxiv-feed">
+      {groupedPapers.map(group => (
+        <div class="arxiv-month-group">
+          <h2>{group.monthYear}</h2>
+          <ul class="arxiv-list">
+            {group.papers.map(paper => (
+              <li class="arxiv-entry" data-title={paper.data.title.toLowerCase()} data-persona={paper.data.persona || ""} data-status={paper.data.status || ""} data-abstract={paper.excerptText.toLowerCase()}>
+                <div class="arxiv-entry-left">
+                  <div class="arxiv-id">[{paper.arxivId}]</div>
+                  <div class="arxiv-links">
+                    <a href={`${base}papers/${paper.id}.pdf`} class="arxiv-link-pdf" onclick="event.preventDefault(); alert('PDF generation not implemented yet.');">[pdf]</a>
+                    <a href={`${base}papers/${paper.id}/`} class="arxiv-link-html">[html]</a>
+                  </div>
+                </div>
+                <div class="arxiv-entry-main">
+                  <div class="arxiv-title">
+                    <a href={`${base}papers/${paper.id}/`}>{paper.data.title}</a>
+                  </div>
+                  <div class="arxiv-meta">
+                    <PersonaBadge persona={paper.data.persona} />
+                    <StatusBadge status={paper.data.status} />
+                    {paper.data.date && (
+                      <span class="arxiv-date">
+                        Submitted {paper.data.date.toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric" })}
+                      </span>
+                    )}
+                  </div>
+                  <div class="arxiv-abstract">
+                    {paper.excerptText}
+                  </div>
+                  {paper.data.tags && paper.data.tags.length > 0 && (
+                    <div class="arxiv-tags">
+                      {paper.data.tags.map((tag: string) => <span class="arxiv-tag">{tag}</span>)}
+                    </div>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      {processedPapers.length === 0 && <p class="empty">No papers yet.</p>}
+      <div id="arxiv-no-results" class="empty" style="display: none;">No papers match the current filters.</div>
+    </div>
   </div>
 </Layout>
+
+<script>
+  const searchInput = document.getElementById('arxiv-search') as HTMLInputElement;
+  const personaSelect = document.getElementById('arxiv-persona-filter') as HTMLSelectElement;
+  const statusSelect = document.getElementById('arxiv-status-filter') as HTMLSelectElement;
+  const feed = document.getElementById('arxiv-feed');
+  const entries = document.querySelectorAll('.arxiv-entry');
+  const monthGroups = document.querySelectorAll('.arxiv-month-group');
+  const noResults = document.getElementById('arxiv-no-results');
+
+  function filterPapers() {
+    const query = searchInput.value.toLowerCase();
+    const persona = personaSelect.value;
+    const status = statusSelect.value;
+
+    let visibleCount = 0;
+
+    entries.forEach((el) => {
+      const entry = el as HTMLElement;
+      const title = entry.getAttribute('data-title') || '';
+      const abstract = entry.getAttribute('data-abstract') || '';
+      const entryPersona = entry.getAttribute('data-persona') || '';
+      const entryStatus = entry.getAttribute('data-status') || '';
+
+      const matchesQuery = title.includes(query) || abstract.includes(query);
+      const matchesPersona = !persona || entryPersona === persona;
+      const matchesStatus = !status || entryStatus === status;
+
+      if (matchesQuery && matchesPersona && matchesStatus) {
+        entry.style.display = 'flex';
+        visibleCount++;
+      } else {
+        entry.style.display = 'none';
+      }
+    });
+
+    // Hide empty month groups
+    monthGroups.forEach((el) => {
+      const group = el as HTMLElement;
+      const visibleEntries = group.querySelectorAll('.arxiv-entry[style="display: flex;"], .arxiv-entry:not([style="display: none;"])');
+      if (visibleEntries.length === 0) {
+        group.style.display = 'none';
+      } else {
+        group.style.display = 'block';
+      }
+    });
+
+    if (visibleCount === 0 && entries.length > 0) {
+      if (noResults) noResults.style.display = 'block';
+    } else {
+      if (noResults) noResults.style.display = 'none';
+    }
+  }
+
+  if (searchInput && personaSelect && statusSelect) {
+    searchInput.addEventListener('input', filterPapers);
+    personaSelect.addEventListener('change', filterPapers);
+    statusSelect.addEventListener('change', filterPapers);
+  }
+</script>
