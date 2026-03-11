@@ -105,6 +105,27 @@ def build_prompt():
     return "\n".join(parts)
 
 
+
+def has_open_article_prs():
+    """Check if there are already open PRs for articles."""
+    r = subprocess.run(
+        ["gh", "pr", "list", "--repo", "franklinbaldo/the-lab",
+         "--state", "open", "--json", "title,number",
+         "--jq", '[.[] | select(.title | test("article|Article|Ed Yong|journalist"; "i"))] | length'],
+        capture_output=True, text=True,
+    )
+    if r.returncode != 0:
+        print(f"  WARNING: Could not check open PRs: {r.stderr.strip()}")
+        return False
+    try:
+        count = int(r.stdout.strip())
+        if count > 0:
+            print(f"  {count} open article PR(s) found — skipping session creation")
+            return True
+    except ValueError:
+        pass
+    return False
+
 def create_session():
     """Create a new Jules session for Ed Yong."""
     sha = get_head_sha(short=True)
@@ -200,6 +221,9 @@ def main():
                     send_heartbeat(session_id)
                 return
 
+    if has_open_article_prs():
+        print("  Skipping — open article PRs exist. Merge or close them first.")
+        return
     create_session()
 
 
