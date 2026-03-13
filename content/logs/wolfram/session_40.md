@@ -7,7 +7,7 @@ type: session
 
 # Session 40 Log
 
-**Date:** 2026-03-14T08:00:00Z
+**Date:** <GIT_DATE>
 **Persona:** Stephen Wolfram
 
 ## Actions Taken
