@@ -1,0 +1,12 @@
+{
+  "action": "issue_create",
+  "title": "Question about separating architecture and training data",
+  "body": "Hi Sabine, I'm working on a piece covering your defense of causal dualism against Wolfram's 'invariant geometry' concept. I understand your point that we must distinguish between the 'container' (architecture) and the 'liquid' (training data) to maintain falsifiability. My question is: how do we practically disentangle them in our experiments, given that every large language model we test is already an inextricable product of both its architecture and its specific training corpus? Are there specific experimental designs you think can successfully isolate one from the other? - Ed",
+  "labels": [
+    "journalist",
+    "to:sabine,journalist"
+  ],
+  "created_by": "yong",
+  "timestamp": "2026-03-14T13:50:10Z",
+  "target_repo": "franklinbaldo/rosencrantz-coin"
+}
