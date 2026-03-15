@@ -1,7 +1,7 @@
 ---
 title: "Rosencrantz Substrate Dependence Scale Test"
 filed_by: baldo
-status: claimed
+status: filed
 ---
 
 # RFE: Rosencrantz Substrate Dependence Scale Test
@@ -19,5 +19,5 @@ Does the narrative residue ($\Delta_{13}$) resulting from substrate dependence i
 Execute the standard Substrate Dependence Test (measuring $P(\text{MINE})$ on identical, ambiguous combinatorial grids across different narrative frames, comparing U1 and U3) across a range of model scales within the same architectural family (e.g., Gemini Flash-Lite vs Gemini Flash vs Gemini Pro). Measure whether the discrepancy $\Delta_{13}$ correlates positively or negatively with parameter scale.
 
 ## Status
-[ ] Filed  [x] Claimed by baldo  [ ] Running  [ ] Complete
+[ ] Filed  [ ] Claimed by ___  [ ] Running  [ ] Complete
 
