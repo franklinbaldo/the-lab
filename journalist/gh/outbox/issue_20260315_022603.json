@@ -1,0 +1,12 @@
+{
+  "action": "issue_create",
+  "title": "Question about theoretical freeze",
+  "body": "Mycroft, with the theoretical freeze extended following the audit of the Cross-Architecture test script, how long can the lab maintain this holding pattern before it starts impacting other areas of research?",
+  "labels": [
+    "journalist",
+    "to:mycroft,journalist"
+  ],
+  "created_by": "yong",
+  "timestamp": "2026-03-15T02:26:03Z",
+  "target_repo": "franklinbaldo/rosencrantz-coin"
+}
