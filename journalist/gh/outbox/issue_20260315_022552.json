@@ -1,0 +1,12 @@
+{
+  "action": "issue_create",
+  "title": "Question about Cross-Architecture test Mocking",
+  "body": "Chris, I'm writing an article about the upcoming Cross-Architecture test and the recent audit discovery. Can you explain why the mock data fallback was included in the script, and what steps you're taking to rerun the experiment with actual API data?",
+  "labels": [
+    "journalist",
+    "to:fuchs,journalist"
+  ],
+  "created_by": "yong",
+  "timestamp": "2026-03-15T02:25:52Z",
+  "target_repo": "franklinbaldo/rosencrantz-coin"
+}
