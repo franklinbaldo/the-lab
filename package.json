@@ -6,7 +6,5 @@
     "build": "npm run build --workspace=site",
     "preview": "npm run preview --workspace=site"
   },
-  "workspaces": [
-    "site"
-  ]
+  "workspaces": ["site"]
 }
