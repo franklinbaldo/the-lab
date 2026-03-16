@@ -83,18 +83,51 @@ def build_prompt():
             for p in paper_files:
                 parts.append(f"- `{p.name}`")
 
-    # List available articles (already written)
+    # List available articles (already written) with frontmatter details
     articles_dir = Path("content/articles")
+    covered_papers = set()
     if articles_dir.exists():
         article_files = [f for f in sorted(articles_dir.glob("*.md")) if f.name != ".gitkeep"]
         if article_files:
-            parts.append("\n## Already Written Articles\n")
+            parts.append("\n## Already Written Articles (DO NOT duplicate these topics or papers)\n")
             for a in article_files:
-                parts.append(f"- `{a.name}` (already published, don't duplicate)")
+                text = a.read_text(errors="replace")
+                # Extract title from frontmatter
+                title_match = re.search(r'^title:\s*["\'](.*?)["\']\s*$', text, re.MULTILINE)
+                title = title_match.group(1) if title_match else a.stem
+                # Extract papers from frontmatter
+                papers_match = re.search(r'^papers:\n((?:  - .*\n)*)', text, re.MULTILINE)
+                article_papers = []
+                if papers_match:
+                    article_papers = re.findall(r'  - (\S+)', papers_match.group(1))
+                    covered_papers.update(article_papers)
+                # Extract excerpt
+                excerpt_match = re.search(r'^excerpt:\s*["\'](.*?)["\']\s*$', text, re.MULTILINE)
+                excerpt = excerpt_match.group(1) if excerpt_match else ""
+                papers_str = ", ".join(article_papers) if article_papers else "no papers listed"
+                parts.append(f"- `{a.name}`: **{title}**")
+                parts.append(f"  - Covers: {papers_str}")
+                if excerpt:
+                    parts.append(f"  - Excerpt: {excerpt}")
+            parts.append("")
+            if covered_papers:
+                parts.append(f"**Papers already covered ({len(covered_papers)} total):** " +
+                              ", ".join(f"`{p}`" for p in sorted(covered_papers)))
 
     # Task
+    uncovered_hint = ""
+    if covered_papers:
+        uncovered_hint = (
+            "\n**IMPORTANT**: The papers listed above have already been written about. "
+            "Do NOT write another article covering the same papers or the same angle. "
+            "First, identify which papers in 'Available Papers' are NOT in the covered list above, "
+            "then write about one of those uncovered papers. "
+            "If all papers are covered, find a genuinely NEW angle, synthesis, or emerging controversy "
+            "not addressed in any existing article.\n"
+        )
     parts.append(
         "\n## Your Task\n"
+        + uncovered_hint +
         "Review the available papers and write an accessible article about one "
         "that hasn't been covered yet. If all papers have been covered, look at "
         "recent session logs for interesting developments to write about.\n"
