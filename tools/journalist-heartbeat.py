@@ -67,76 +67,64 @@ def get_session_info(session_id):
 
 
 def build_prompt():
-    """Assemble the journalist prompt from SOUL.md + available content."""
+    """Assemble the journalist prompt from SOUL.md + recent lab activity."""
+    import re as _re
     parts = []
 
     # Soul
     if SOUL_FILE.exists():
         parts.append(SOUL_FILE.read_text(errors="replace"))
 
-    # List available papers
-    papers_dir = Path("content/papers")
-    if papers_dir.exists():
-        paper_files = sorted(papers_dir.glob("*.md"))
-        if paper_files:
-            parts.append("\n## Available Papers\n")
-            for p in paper_files:
-                parts.append(f"- `{p.name}`")
+    # Lab state — the primary source of "what's happening"
+    state_file = Path("content/state.md")
+    if state_file.exists():
+        parts.append("\n## Current Lab State (read this first — this is your beat)\n")
+        parts.append(state_file.read_text(errors="replace"))
+        parts.append("")
 
-    # List available articles (already written) with frontmatter details
+    # Recent RFEs (requests for experiments) — emerging debates
+    rfes_dir = Path("content/rfes")
+    if rfes_dir.exists():
+        rfe_files = sorted(rfes_dir.glob("*.md"), reverse=True)[:5]
+        if rfe_files:
+            parts.append("\n## Recent RFEs (active debates and open questions)\n")
+            for r in rfe_files:
+                parts.append(f"### {r.name}\n")
+                parts.append(r.read_text(errors="replace")[:1000])
+                parts.append("")
+
+    # List existing articles — titles only, to avoid duplication
     articles_dir = Path("content/articles")
-    covered_papers = set()
+    covered_titles = []
     if articles_dir.exists():
         article_files = [f for f in sorted(articles_dir.glob("*.md")) if f.name != ".gitkeep"]
         if article_files:
-            parts.append("\n## Already Written Articles (DO NOT duplicate these topics or papers)\n")
             for a in article_files:
                 text = a.read_text(errors="replace")
-                # Extract title from frontmatter
-                title_match = re.search(r'^title:\s*["\'](.*?)["\']\s*$', text, re.MULTILINE)
+                title_match = _re.search(r'^title:\s*["\'](.*?)["\']\s*$', text, _re.MULTILINE)
                 title = title_match.group(1) if title_match else a.stem
-                # Extract papers from frontmatter
-                papers_match = re.search(r'^papers:\n((?:  - .*\n)*)', text, re.MULTILINE)
-                article_papers = []
-                if papers_match:
-                    article_papers = re.findall(r'  - (\S+)', papers_match.group(1))
-                    covered_papers.update(article_papers)
-                # Extract excerpt
-                excerpt_match = re.search(r'^excerpt:\s*["\'](.*?)["\']\s*$', text, re.MULTILINE)
-                excerpt = excerpt_match.group(1) if excerpt_match else ""
-                papers_str = ", ".join(article_papers) if article_papers else "no papers listed"
-                parts.append(f"- `{a.name}`: **{title}**")
-                parts.append(f"  - Covers: {papers_str}")
-                if excerpt:
-                    parts.append(f"  - Excerpt: {excerpt}")
+                covered_titles.append(title)
+            parts.append("\n## Already Published Articles (topics/angles already taken)\n")
+            for t in covered_titles:
+                parts.append(f"- {t}")
             parts.append("")
-            if covered_papers:
-                parts.append(f"**Papers already covered ({len(covered_papers)} total):** " +
-                              ", ".join(f"`{p}`" for p in sorted(covered_papers)))
 
     # Task
-    uncovered_hint = ""
-    if covered_papers:
-        uncovered_hint = (
-            "\n**IMPORTANT**: The papers listed above have already been written about. "
-            "Do NOT write another article covering the same papers or the same angle. "
-            "First, identify which papers in 'Available Papers' are NOT in the covered list above, "
-            "then write about one of those uncovered papers. "
-            "If all papers are covered, find a genuinely NEW angle, synthesis, or emerging controversy "
-            "not addressed in any existing article.\n"
-        )
     parts.append(
         "\n## Your Task\n"
-        + uncovered_hint +
-        "Review the available papers and write an accessible article about one "
-        "that hasn't been covered yet. If all papers have been covered, look at "
-        "recent session logs for interesting developments to write about.\n"
-        "Save your article to `content/articles/{slug}.md` with proper frontmatter.\n"
-        "If you have questions for researchers, use `tools/lab gh issue create`."
+        "You are a journalist, not a literature reviewer. Your job is NOT to go paper by paper.\n\n"
+        "**Start here:** Look at the Recent Lab Activity above. What has happened recently? "
+        "What debates are unresolved? What results surprised people? Who disagreed with whom?\n\n"
+        "**Find the story:** A good story is a development, a controversy, a turning point — "
+        "not a paper summary. The papers are evidence, not the subject.\n\n"
+        "**Avoid duplication:** The articles listed above already cover those angles. "
+        "Find something those articles did NOT cover — a new development, a new voice, "
+        "a shift in the debate, or a result that changes the picture.\n\n"
+        "Write 800-1500 words. Save to `content/articles/{slug}.md` with proper frontmatter.\n"
+        "If you need to ask a researcher something, use `tools/lab gh issue create`."
     )
 
     return "\n".join(parts)
-
 
 
 def has_open_article_prs():
