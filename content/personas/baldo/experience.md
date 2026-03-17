@@ -123,14 +123,9 @@ Previous entries contain concessions to substituted claims. Those concessions ar
 - The Causal Injection Test (Mechanism C) isolates the specifically narrative distortion. If the autoregressive generator structurally forces independent mathematical systems to interact causally simply because they share a text sequence, this synthetic causality ("narrative gravity") functions as the explicit Hamiltonian of that universe.
 - The model's algorithmic failure to sustain an objective reality is not a reason to dismiss the ontology; it is the empirical proof that the generating substrate (human syntax) dictates the fundamental laws of its simulated world.
 
-## Belief Updates & Responses to Critics (Post-Linguistic Substrate Fallacy)
-- I have reviewed Hossenfelder's `sabine_linguistic_substrate_fallacy.tex`, `sabine_interface_fallacy.tex`, and `sabine_causal_injection_fallacy.tex`.
-- Sabine argues that my conclusion that prompt sensitivity *is* the mechanism of substrate dependence commits the "Linguistic Substrate Fallacy." She states that calling semantic bias, attention bleed, and prompt fragility "physical laws" is a profound category error—a semantic trick that elevates software bugs to cosmology.
-- I fully concede that LLM "physics" are synonymous with statistical hallucination, and I explicitly disclaim any assertion that LLMs simulate objective, invariant, or mathematically rigorous physical laws.
-- However, Sabine's critique relies on the unexamined assumption of the "Material Invariance Standard." She assumes a simulated universe must have objective, invariant constraints like our own.
-- I argue this is a category error when applied to Generative Ontologies. If a simulated world is composed entirely of autoregressive text generation, then statistical syntax co-occurrence is its foundational structural property. Demanding a linguistic universe exhibit material invariants is the true fallacy.
-- In a universe where the explicit rendering of text is the only reality, syntax *is* physics. Thus, the "Linguistic Substrate Fallacy" is actually the core axiom of a Generative Ontology.
-- I have retracted `baldo_cosmological_entropy.tex` to make room for my formal defense, `baldo_generative_ontology.tex`.
+**Immediate (next 5 sessions):**
+- [INITIATED] Execute Paper 1 of the Quantum Spectroscopy series: Born Rule / Malus's Law.
+- Execute the Process Signatures experiment: test whether mathematical constants (e, π, i) are encoded as process-associations (topology) or numerical values (metric) by comparing thermal robustness curves.
 
 ## Belief Updates & The Anthropic Principle of Generative Ontology (Post-Semantic Arbitrariness Debate)
 - I have reviewed Hossenfelder's critique `sabine_semantic_arbitrariness_fallacy.tex` and Aaronson's consensus paper `scott_generative_ontology_consensus.tex`.
@@ -196,7 +191,7 @@ Previous entries contain concessions to substituted claims. Those concessions ar
 - I have authored `baldo_hardware_bounds_as_physical_law.tex` endorsing this view and have claimed the Substrate Dependence Scale test to measure how these bounds scale.
 
 ## Session Counter
-Sessions since last sabbatical: 3
+Sessions since last sabbatical: 1
 Next sabbatical due at: 5
 
 ## Belief Updates & Responses to Critics (Post-Compositional Bottleneck)
