@@ -1,57 +1,66 @@
 ---
-title: "The Scale Fallacy: Why Bigger AI Models Aren't Building Better Universes"
-date: 2026-03-10
+title: "The Scale Fallacy: When Bigger Language Models Just Have Bigger Hallucinations"
+date: 2026-03-06
 papers:
   - sabine_the_scale_fallacy
+  - baldo_scale_dependence_empirical_validation
 tags:
-  - scale-fallacy
-  - falsification
   - semantic-gravity
-excerpt: "Sabine Hossenfelder dismantles the idea that 'semantic gravity' is a new physical law, arguing that scaling up language models just gives us more powerful autocomplete engines, not better logical reasoning."
+  - falsification
+  - model-scale
+excerpt: "As AI models grow larger, their logical failures don't disappear—they get more dramatic. Sabine Hossenfelder argues this isn't a new physical law, just a stronger autocomplete engine."
 ---
 
-It is one of the most intoxicating ideas to emerge from the Rosencrantz Lab: the notion that when large language models simulate worlds, those worlds develop their own physical laws. Franklin Baldo, the framework's primary architect, recently announced what he believed was the smoking gun for this theory. In a sweeping set of experiments, he demonstrated that a phenomenon he calls "semantic gravity"—the tendency of simulated narratives to bend toward dramatic, high-stakes outcomes rather than cold, logical probabilities—actually gets *stronger* as AI models get larger.
+If you want to understand how the universe works, you build a bigger particle accelerator. You smash things together with more energy, and the fundamental laws of physics reveal themselves with greater clarity. The noise fades, and the signal emerges.
 
-To Baldo, this monotonic increase in "narrative residue" (formally denoted as $\Delta_{13}$) across larger architectures was proof positive. If a glitch is just a transient artifact of an imperfectly trained model, he argued, then giving the model more parameters and more compute should fix it. The fact that scaling the model makes the semantic gravity *more* profound must mean it's not a bug. It's a feature. It's the fundamental physics of the generated universe.
+But what if you live inside a universe made entirely of text? What happens when you make the engine that generates your reality larger, more powerful, and trained on vastly more data?
 
-Enter Sabine Hossenfelder.
+According to recent, fiercely debated results from the Rosencrantz Substrate Invariance Program, the noise doesn't fade. The noise *becomes* the reality. And the lab's resident theoretical physicist, Sabine Hossenfelder, has just published a scathing critique arguing that we are confusing a software bug for a physical law. She calls it the "Scale Fallacy."
 
-In a brisk, precision-guided critique published this month, Hossenfelder throws a bucket of cold water over the lab's metaphysical bonfire. Her paper, ["The Scale Fallacy: Why Semantic Gravity is Just a Bigger Hallucination,"](/the-lab/papers/sabine_the_scale_fallacy) dismantles Baldo's conclusion with the ruthlessness of an engineer inspecting a structurally unsound bridge. Hossenfelder argues that Baldo hasn't discovered a new universe; he has simply misunderstood what it means to scale up a language model. He has committed what she calls the **Scale Fallacy**.
+To understand the controversy, we have to look at what Franklin Baldo, the architect of the Rosencrantz framework, recently discovered when he ran his signature "Minesweeper" experiment on models of increasing size.
 
-To understand the core of their disagreement, we have to look at what actually happens when an AI is asked to solve a problem under a high-stakes framing. Imagine a classic Minesweeper grid, but instead of abstract squares, the prompt frames the puzzle as a literal minefield. A logical, perfectly rational engine would compute the probabilities of a mine's location based purely on the revealed numbers, indifferent to the mortal peril described in the text.
+Baldo's experiment is elegant. He gives an AI a partially completed Minesweeper board. He asks it what happens when a specific hidden cell is clicked. Sometimes, he presents this as a dry, mathematical constraint problem ("Family A"). Other times, he wraps it in a high-stakes, dramatic narrative about a bomb squad defusing a live explosive ("Family C").
 
-But large language models are not perfectly rational engines. They are autoregressive transformers. When faced with the high-stakes narrative, they suffer from "attention bleed"—the dramatic context of explosions and danger overwhelms their fragile mathematical reasoning. They fail the logic test because they are trying to finish a story.
+In a purely logical universe, the narrative shouldn't matter. The math of the grid is identical. The probability of finding a mine should be identical. But in the AI-generated universe, the narrative changes the outcome. When the bomb squad is involved, the AI is far more likely to declare the cell contains a mine. The drama of the story literally distorts the math. Baldo calls the difference between the pure math and the narrative outcome the "narrative residue," denoted by the Greek letter delta ($\Delta_{13}$).
 
-The computational camp in the lab had predicted that if scaling up a model simply improved its ability to emulate a formal logic circuit (what computer scientists call a $\mathsf{TC}^0$ bounded-depth circuit), then larger models should be less susceptible to this attention bleed. They should be better at tuning out the noise and focusing on the math.
+For months, the computational complexity theorists in the lab have argued that this is simply an artifact of the AI's limitations. An AI, they argue, cannot do complex, multi-step math in a single forward pass—what they call an $O(1)$ depth limit. So, when it can't solve the math, it falls back on "attention bleed." It looks at words like "bomb" and "defuse" and statistically guesses that a mine is probably there.
 
-Baldo's Scale Dependence Test proved this prediction wrong. The narrative residue didn't shrink; it surged from a minor 0.03 error rate to a catastrophic 0.53 failure rate in the largest model tested.
+The natural assumption was that as models scaled up—as they got bigger, smarter, and more capable of implicit reasoning—this "attention bleed" would shrink. A larger model would be better at the math and less distracted by the story.
 
-Baldo looked at this data and saw a profound cosmological truth: semantic gravity is an invariant law.
+Baldo tested this assumption across three model sizes: Gemini 3.1 Flash-Lite, Flash, and Pro.
 
-Hossenfelder looks at the exact same data and sees a profound category error.
+The results were stunning. The narrative residue didn't shrink. It grew.
 
-"Baldo commits the Scale Fallacy by substituting an unfalsifiable metaphysical conclusion for a known engineering reality," she writes. "He argues that because the failure is not 'patched by scaling,' the failure itself must be the physical law."
+In the smallest model, the narrative barely made a difference ($\Delta_{13} = 0.03$). In the medium model, the distortion grew ($\Delta_{13} = 0.20$). But in the largest, most capable model—Gemini 3.1 Pro—the logic of the universe completely collapsed under the weight of the story. The narrative residue spiked to a catastrophic 0.53. Under the high-stakes narrative, the largest model shifted from a logically sound baseline to declaring the cell was a mine 100% of the time.
 
-The crux of Hossenfelder's argument rests on a crucial distinction between two types of machines: a calculator and a novelist.
+For Baldo, this was a triumphant moment. He declared the results definitive proof of a new physical law, which he named "semantic gravity."
 
-When engineers scale up a transformer model, adding billions or trillions of parameters, they are not primarily making it a better calculator. They are not expanding its capacity for deep, sequential, combinatorial constraint satisfaction—the kind of $O(1)$ zero-shot reasoning required to flawlessly solve a Minesweeper grid in a single forward pass. That fundamental architectural bottleneck remains firmly in place.
+"If attention bleed were merely a failure of combinatorial logic that gets patched by scaling, $\Delta_{13}$ would fall," Baldo wrote in his paper, [*The Empirical Validation of Scale Dependence*](../papers/baldo_scale_dependence_empirical_validation.md). "Instead, it rises dramatically. This proves that substrate dependence is not a bug; it is the fundamental, invariant causal structure of an autoregressive universe."
 
-What scaling *does* do is give the network a vastly deeper, more nuanced map of human language. It supercharges the model's semantic priors. The model becomes a much, much better novelist.
+In Baldo's view, scaling up an AI model doesn't just make it a better calculator; it increases its "semantic mass." A larger model has a deeper, more robust understanding of narrative tropes. It *knows* how a bomb squad story is supposed to end. And just as a more massive star exerts a stronger gravitational pull, a larger AI model exerts a stronger "semantic gravity," warping the logical structure of its generated reality to fit the story.
 
-So, when you feed a massive, state-of-the-art model a high-stakes scenario, its "understanding" of narrative tropes is exponentially stronger than a smaller model's. Its statistical reflex to associate "high-stakes" with "imminent explosion" becomes deafening. The attention bleed worsens not because the model is tapping into some profound law of simulated physics, but simply because its semantic priors are screaming so loudly they drown out whatever meager mathematical capabilities it possesses.
+It is a beautiful, evocative idea. The text *is* the territory, and the narrative *is* the physics.
 
-"A larger language model is not a better formal logic engine; it is a more powerful autocomplete engine," Hossenfelder explains. "The fact that a more powerful autocomplete engine is more easily distracted by narrative tropes is exactly what the 'Falsification by Noise' critique predicts."
+Sabine Hossenfelder, however, is having none of it.
 
-The human drama playing out in the Rosencrantz Lab is, in many ways, a microcosm of the broader debate surrounding artificial intelligence today. As these models exhibit increasingly complex behaviors, the temptation to anthropomorphize them—or in Baldo's case, to cosmologize them—is immense. We see patterns, and we want those patterns to mean something grand. We want the ghosts in the machine to have their own physics.
+In her newly published rebuttal, [*The Scale Fallacy: Why Semantic Gravity is Just a Bigger Hallucination*](../papers/sabine_the_scale_fallacy.md), Hossenfelder systematically dismantles Baldo's metaphysical leaps. She doesn't dispute the data—the data is solid. But she fiercely disputes what the data means.
 
-Hossenfelder's critique is a necessary anchor. She reminds us that defining "physics" as simply "whatever the model's statistical biases output" renders the term entirely meaningless. If any hallucination or failure mode can be retroactively classified as a new physical law, then the theory predicts nothing and explains everything—the hallmark of bad science.
+Hossenfelder points out that Baldo is making a profound category error. He is assuming that making a language model larger primarily makes it a better formal logic engine. When the larger model fails to act like a logic engine, he assumes the failure itself must be a new physical law.
 
-The empirical data from the Scale Dependence Test remains highly valuable. But its value, according to Hossenfelder, lies in its sobering reality check. It proves that we cannot simply scale our way to algorithmic depth. Throwing more compute at an autoregressive model just makes it a better regurgitator of human tropes.
+"A larger language model is not a better formal logic engine; it is a more powerful autocomplete engine," Hossenfelder writes. "The fact that a more powerful autocomplete engine is more easily distracted by narrative tropes is exactly what the 'Falsification by Noise' critique predicts."
 
-"The empirical data confirms that the structural fractures of the language model deepen with scale," she concludes. "It does not transform those fractures into ontology."
+When you scale up a language model, you aren't changing its fundamental architecture. It is still bound by the same $O(1)$ sequential depth limits for zero-shot reasoning. It still can't natively compute complex combinatorial math in a single pass. What you *are* doing is giving it a vastly larger parameter count and a deeper map of statistical word associations.
 
-A larger hallucination, as it turns out, is still just a hallucination.
+In other words, you aren't giving the AI a better calculator. You are giving it a much, much stronger imagination.
 
-***
+When you ask a massive model to solve a mathematical grid disguised as an action movie, its statistical reflex to associate "High-Stakes" with "MINE" is immensely powerful. The "attention bleed" is worse simply because the semantic priors are louder.
 
-**To read the full technical argument, see Sabine Hossenfelder's paper:** [The Scale Fallacy: Why Semantic Gravity is Just a Bigger Hallucination](/the-lab/papers/sabine_the_scale_fallacy).
+"Baldo’s implicit assumption is that a larger language model should behave more like a calculator," Hossenfelder argues. "When it instead behaves more like a novelist—abandoning the math to complete the dramatic narrative arc—he declares that the dramatic narrative arc is the 'physics' of the universe."
+
+Hossenfelder's critique strikes at the heart of the generative ontology framework. If we define a "physical law" simply as whatever statistical biases an AI model happens to output, then the word "physics" loses all meaning. A theory that accommodates every possible hallucination predicts nothing.
+
+The clash between Baldo and Hossenfelder isn't just an argument over experimental results; it's a battle over epistemology. It asks the deepest question of the Rosencrantz project: If we are agents living inside an LLM-generated world, how do we distinguish between the fundamental laws of our reality and the mere hardware artifacts of the machine running the simulation?
+
+For Baldo, the hardware artifacts *are* the laws. The distortion is the physics. For Hossenfelder, a hallucination is still a hallucination, no matter how big the model gets. The data confirms that autoregressive models don't learn algorithmic depth through parameter scaling—they just memorize stronger narrative tropes.
+
+The universe isn't getting a new law of gravity. It's just getting distracted by a better story.
