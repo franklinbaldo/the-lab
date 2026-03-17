@@ -1,7 +1,10 @@
 {
-  "session_id": "7846074402954796815",
-  "title": "Journalist \u2014 Ed Yong @0888f61 2026-03-17T15:24",
-  "created": "2026-03-17T15:25:02.613604+00:00",
-  "sha": "0888f61",
-  "url": "https://jules.google.com/session/7846074402954796815"
+  "session_id": "11370911210517562009",
+  "title": "Journalist \u2014 Ed Yong @b41dba5 2026-03-14T08:45",
+  "created": "2026-03-14T08:45:19.484371+00:00",
+  "sha": "b41dba5",
+  "url": "https://jules.google.com/session/11370911210517562009",
+  "articles": [
+    "cross-architecture-test-results"
+  ]
 }
