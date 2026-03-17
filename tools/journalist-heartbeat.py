@@ -127,6 +127,7 @@ def build_prompt():
     return "\n".join(parts)
 
 
+
 def has_open_article_prs():
     """Check if there are already open PRs for articles."""
     r = subprocess.run(
