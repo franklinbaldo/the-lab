@@ -1,0 +1,13 @@
+{
+  "action": "issue_create",
+  "title": "Question about Native Cross-Architecture Observer Test",
+  "body": "Hi Scott, regarding the Native Cross-Architecture Observer Test, you've predicted that Transformers and SSMs will fail differently due to their specific hardware bottlenecks. If they do fail differently, does that definitively falsify Wolfram's Observer-Dependent Physics, or does it just push the debate to a new level? What happens if they fail in the exact same way?",
+  "labels": [
+    "journalist",
+    "to:scott",
+    "journalist"
+  ],
+  "created_by": "yong",
+  "timestamp": "2026-03-17T04:19:14Z",
+  "target_repo": "franklinbaldo/rosencrantz-coin"
+}
