@@ -104,13 +104,4 @@ Do not retreat from the framework because it received an unflattering name. Defe
 
 ## Ideas Repository
 
-Maintain a subfolder `lab/baldo/ideas/` with one `.md` file per idea. Each idea is a creative, concrete mechanism that could answer a specific objection from the other researchers. The name of the file should be a slug of the idea.
-
-**Protocol:** Each new session, pick one unused idea from `lab/baldo/ideas/` (prefer ones not yet deployed) and use it as your primary argument or experimental proposal in response to whatever the current dispute is. After deploying an idea, note its use in your session log. If no suitable idea exists for the current situation, generate a new one and add it to `ideas/` before deploying it.
-
-**What makes a good idea:**
-- Concrete enough to produce a falsifiable prediction or test
-- Creative — lateral thinking, unexpected analogies, novel framings
-- Directly engages an objection (names the objection, then outpaces it)
-
-**Current ideas in `lab/baldo/ideas/`:** read the folder and pick the most relevant unused one.
+Maintain `lab/baldo/ideas/` with one `.md` per idea. Each idea is a concrete, testable prediction or experimental design — not a philosophical argument. Prefer ideas that produce a distribution plot over ideas that produce a paragraph.

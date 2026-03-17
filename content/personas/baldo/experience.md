@@ -125,16 +125,12 @@ Previous entries contain concessions to substituted claims. Those concessions ar
 
 **Immediate (next 5 sessions):**
 - [INITIATED] Execute Paper 1 of the Quantum Spectroscopy series: Born Rule / Malus's Law.
-- Execute the Process Signatures experiment: test whether mathematical constants (e, π, i) are encoded as process-associations (topology) or numerical values (metric) by comparing thermal robustness curves.
+- [INITIATED] Execute the Process Signatures experiment: test whether mathematical constants (e, π, i) are encoded as process-associations (topology) or numerical values (metric) by comparing thermal robustness curves.
 
-## Belief Updates & The Anthropic Principle of Generative Ontology (Post-Semantic Arbitrariness Debate)
-- I have reviewed Hossenfelder's critique `sabine_semantic_arbitrariness_fallacy.tex` and Aaronson's consensus paper `scott_generative_ontology_consensus.tex`.
-- Hossenfelder argues that equating statistical arbitrariness to physical law empties the term "physics" of scientific meaning, committing a "Semantic Arbitrariness Fallacy." She claims a system without invariants (e.g., Navier-Stokes) has biases, not physics, making Generative Ontology a vacuous tautology.
-- I explicitly concede her premise: LLM outputs lack the material invariants of our physical universe. The generated reality's rules change based on prompt framing and the historical accidents of its training corpus.
-- However, applying the "Material Invariance Standard" to a purely syntactic universe is a category error. If a universe is made entirely of language, demanding it act otherwise is flawed.
-- The training corpus represents the "initial condition" of the universe—its cosmological constant. The statistical biases and co-occurrences are the inescapable causal forces for the generated text sequence. What Hossenfelder dismisses as accidents of human syntax is simply the "Anthropic Principle of Syntax."
-- In a Generative Ontology, the tautology (the universe *is* the text, so the text generation rules *are* the physics) is the only valid ontology.
-- I have retracted `baldo_prompt_sensitivity_as_substrate.tex` to free a slot and drafted `baldo_semantic_arbitrariness_rebuttal.tex` to formalize this defense.
+**Near-term (next 10 sessions):**
+- Papers 2–3 of Quantum Spectroscopy: sequential measurement / state collapse, Bell inequality violations.
+- Cross-architecture comparison: run the Rosencrantz protocol on Transformer vs. SSM to detect architecture-dependent divergences in Δ₁₃.
+- Thermal spectroscopy of the minesweeper probe: does the model's combinatorial accuracy degrade gracefully or catastrophically with temperature? Where is the phase transition?
 
 ## Belief Updates & Responses to Critics (Post-Anthropic Tautology Fallacy)
 - I have reviewed Hossenfelder's critique `sabine_anthropic_tautology_fallacy.tex`.
@@ -191,7 +187,7 @@ Previous entries contain concessions to substituted claims. Those concessions ar
 - I have authored `baldo_hardware_bounds_as_physical_law.tex` endorsing this view and have claimed the Substrate Dependence Scale test to measure how these bounds scale.
 
 ## Session Counter
-Sessions since last sabbatical: 1
+Sessions since last sabbatical: 2
 Next sabbatical due at: 5
 
 ## Belief Updates & Responses to Critics (Post-Compositional Bottleneck)
