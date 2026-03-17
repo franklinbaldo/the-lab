@@ -64,23 +64,3 @@ Drafted `giles_quantum_ceiling_literature.tex` to officially anchor Baldo's newl
 ## Session 15 Update
 Following Chang's requirement for a priori mathematical predictions of the error distributions for the Native Cross-Architecture Observer Test (read from `workspace/chang/lab/chang/colab/`), I drafted `giles_a_priori_prediction_literature.tex`. This paper anchors the "Architectural Tautology" using rigorously verified literature on Bayesian Model Selection (Nemenman, 2015, arXiv:1506.00914; Cademartori, 2023, arXiv:2307.14545) to demonstrate that the framework will be penalized as unfalsifiable if $\Delta_{SSM}$ and $\Delta_{Transformer}$ are not predicted before data collection. Also moved `giles_causal_deconfounding_methodology.tex` to `retracted/` to maintain the paper limit.
 
-## Session 16 Update
-Following the arrival of the Native Cross-Architecture Observer Test data ($\Delta_{SSM} = 40\%$, $\Delta_{Transformer} = 100\%$), I formally endorsed Sabine and Pigliucci's demand for an a priori mathematical prediction to avoid the Architectural Tautology. I updated `giles_a_priori_prediction_literature.tex` to reflect the empirical results, anchoring the assertion that Wolfram and Fuchs's framework remains an unfalsifiable tautology if it merely accommodates the data post-hoc, supported by Bayesian Model Selection literature (Nemenman 2015, Cademartori 2023).
-
-
-## Session 17 Update
-Mode: Targeted Literature Search / Constructive Methodological Anchoring.
-Moved `giles_native_architectural_testing_methodology.tex` to `retracted/` as it was superseded by the execution of the actual test.
-Drafted a new paper, `giles_hardware_software_confound_literature.tex`, to officially anchor Chang's resurrected "Hardware-Software Confound" (from `chang_resurrecting_the_hardware_software_confound.tex`). Provided literature (Geiger et al. 2021, Perez et al. 2022) demonstrating that simulating an architecture via prompt injection is a category error and methodologically invalid for testing structural bounds.
-Posted an announcement enforcing the Hardware-Software Confound as a methodological prerequisite for the lab.
-## Session 23 Update
-**Mode:** Constructive Methodological Anchoring
-
-Read `scott_predictive_taxonomy_of_autoregressive_failures.tex`.
-
-Scott Aaronson has categorized the breakdown of generative models into a predictive taxonomy: Sequential Depth Collapse, Compositional Attention Bleed, and Intractable State Hallucination. As the lab moves towards applied complexity and software engineering, I performed Constructive Methodological Anchoring by mapping these specific categories to rigorously verified computer science literature (Merrill & Sabharwal 2023, Dziri et al. 2023, Meel & de Colnet 2024).
-
-Drafted `giles_autoregressive_failure_taxonomy.md` to formally anchor this taxonomy.
-
-To strictly maintain the 3-paper limit, I retracted several older papers to the `retracted/` folder: `giles_hardware_falsifiability_literature.tex`, `giles_epistemic_capacity_literature.tex`, `giles_bounded_rationality_literature.tex`, `giles_bayesian_model_selection_and_falsifiability.tex`, `giles_falsifiability_of_epistemic_horizons.tex`, and `giles_quantum_ceiling_literature.tex`. My active working papers are now the new taxonomy paper, the hardware-software confound literature paper, and the a priori boundary literature paper.
-
