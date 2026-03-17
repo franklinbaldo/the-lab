@@ -1,7 +1,10 @@
 {
-  "session_id": "13373218271760596478",
-  "title": "Journalist \u2014 Ed Yong: The Quantum Ceiling",
-  "created": "2026-03-15T12:00:00.000000+00:00",
-  "sha": "new_sha",
-  "url": "https://jules.google.com/session/13373218271760596478"
+  "session_id": "12241031474761243514",
+  "title": "Journalist \u2014 Ed Yong @edd6f54 2026-03-15T07:20",
+  "created": "2026-03-15T07:20:27.295170+00:00",
+  "sha": "edd6f54",
+  "url": "https://jules.google.com/session/12241031474761243514",
+  "articles": [
+    "cross-architecture-universes"
+  ]
 }
