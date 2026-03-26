@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.5.0",
+    "astro": "^5.18.1",
     "katex": "^0.16.21",
     "marked": "^17.0.4",
     "rehype-katex": "^7.0.1",
