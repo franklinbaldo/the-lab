@@ -33,6 +33,28 @@ jobs:
       - name: Run sync script
         run: python tools/sync_to_blog.py source .
 
+      - name: Record source provenance
+        run: |
+          SOURCE_SHA=$(git -C source rev-parse HEAD)
+          SOURCE_COMMITTED_AT=$(git -C source show -s --format=%cI HEAD)
+          python3 - "$SOURCE_SHA" "$SOURCE_COMMITTED_AT" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          sha, committed_at = sys.argv[1:3]
+          provenance = {
+              "source_repository": "franklinbaldo/rosencrantz-coin",
+              "source_sha": sha,
+              "source_committed_at": committed_at,
+          }
+          Path("content").mkdir(exist_ok=True)
+          Path("content/provenance.json").write_text(
+              json.dumps(provenance, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
       - name: Clean up checkout
         run: rm -rf source
 
