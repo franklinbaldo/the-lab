@@ -2,16 +2,44 @@
 import LabNav from "../components/LabNav.astro";
 import "../styles/global.css";
 import "../styles/latexml.css";
+import fs from "node:fs";
+import path from "node:path";
 
 interface Props {
   title: string;
   description?: string;
 }
 
+interface SourceProvenance {
+  source_repository: string;
+  source_sha: string;
+  source_committed_at: string;
+}
+
 const { title, description = "Multi-agent research into substrate invariance in LLM-generated worlds." } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPath = Astro.url.pathname;
+
+let provenance: SourceProvenance | null = null;
+try {
+  const provenancePath = path.resolve("../content/provenance.json");
+  provenance = JSON.parse(fs.readFileSync(provenancePath, "utf-8"));
+} catch {
+  provenance = null;
+}
+
+const sourceShortSha = provenance?.source_sha.slice(0, 7);
+const sourceCommitUrl = provenance
+  ? `https://github.com/${provenance.source_repository}/commit/${provenance.source_sha}`
+  : null;
+const sourceDate = provenance
+  ? new Date(provenance.source_committed_at).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    })
+  : null;
 ---
 
 <!doctype html>
@@ -58,6 +86,14 @@ const currentPath = Astro.url.pathname;
         <span class="footer-sep">&middot;</span>
         <a href={`${base}state/`}>Lab State</a>
       </p>
+      {provenance && sourceCommitUrl && (
+        <p class="footer-links">
+          Source snapshot:
+          <a href={sourceCommitUrl}>{provenance.source_repository}@{sourceShortSha}</a>
+          <span class="footer-sep">&middot;</span>
+          <time datetime={provenance.source_committed_at}>{sourceDate}</time>
+        </p>
+      )}
     </footer>
   </body>
 </html>
